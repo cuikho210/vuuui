@@ -3,10 +3,10 @@ import "./OutlinedButton.scss";
 
 interface OutlinedButtonProps {
 	icon?: JSX.Element,
-	label?: string,
 	className?: string,
 	disabled?: boolean,
 	title?: string,
+	children?: any,
 	onClick?(): void,
 }
 
@@ -25,7 +25,7 @@ const OutlinedButton = (props: OutlinedButtonProps) => {
 					{props.icon}
 				</span>
 			}
-			{props.label}
+			{props.children}
 		</div>
 	</Button>;
 }

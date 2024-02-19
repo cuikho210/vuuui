@@ -45,44 +45,32 @@ const Actions = () => <>
 	<h2>Actions</h2>
 
 	<Space>
-		<ElevatedButton
-			label="ElevatedButton"
-		/>
+		<ElevatedButton>ElevatedButton</ElevatedButton>
 
 		<ElevatedButton
-			label="Light Mode"
 			icon={<RiSunLine />}
 			onClick={toThemeLight}
-		/>
+		>Light mode</ElevatedButton>
+
+		<FilledButton>FilledButton</FilledButton>
 
 		<FilledButton
-			label="FilledButton"
-		/>
-
-		<FilledButton
-			label="Dark Mode"
 			icon={<RiMoonLine />}
 			onClick={toThemeDark}
-		/>
+		>Dark mode</FilledButton>
+
+		<OutlinedButton>OutlinedButton</OutlinedButton>
 
 		<OutlinedButton
-			label="OutlinedButton"
-		/>
-
-		<OutlinedButton
-			label="Toggle Theme"
 			icon={<RiEthLine />}
 			onClick={toggleTheme}
-		/>
+		>Toggle theme</OutlinedButton>
+
+		<TextButton>TextButton</TextButton>
 
 		<TextButton
-			label="TextButton"
-		/>
-
-		<TextButton
-			label="with icon"
 			icon={<RiHome2Line />}
-		/>
+		>With icon</TextButton>
 
 		<IconButton
 			icon={<RiBubbleChartLine />}

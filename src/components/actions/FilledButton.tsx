@@ -3,10 +3,10 @@ import "./FilledButton.scss";
 
 interface FilledButtonProps {
 	icon?: JSX.Element,
-	label?: string,
 	className?: string,
 	disabled?: boolean,
 	title?: string,
+	children?: any,
 	onClick?(): void,
 }
 
@@ -25,7 +25,7 @@ const FilledButton = (props: FilledButtonProps) => {
 					{props.icon}
 				</span>
 			}
-			{props.label}
+			{props.children}
 		</div>
 	</Button>;
 }

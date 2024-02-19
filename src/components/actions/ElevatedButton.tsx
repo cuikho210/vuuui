@@ -4,10 +4,10 @@ import "./ElevatedButton.scss";
 
 interface ElevatedButtonProps {
 	icon?: JSX.Element,
-	label?: string,
 	className?: string,
 	disabled?: boolean,
 	title?: string,
+	children?: any,
 	onClick?(): void,
 }
 
@@ -25,7 +25,7 @@ const ElevatedButton = (props: ElevatedButtonProps) => {
 					{props.icon}
 				</span>
 			}
-			{props.label}
+			{props.children}
 		</div>
 	</Button>;
 }
