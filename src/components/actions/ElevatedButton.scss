@@ -5,6 +5,7 @@
 
 	background-color: rgba(var(--vuuui-color-primary--rgb), 0.1);
 	box-shadow: 0 4px 4px var(--vuuui-color-shadow);
+	transition-property: background-color, color;
 
 	&:hover {
 		background-color: rgba(var(--vuuui-color-primary--rgb), 0.4);
@@ -12,6 +13,6 @@
 	}
 
 	&:active {
-		box-shadow: 0 2px 4px var(--vuuui-color-shadow);
+		box-shadow: 0 3px 4px var(--vuuui-color-shadow);
 	}
 }
