@@ -1,0 +1,33 @@
+@import "./utils.scss";
+
+$color--light: (
+	color-bg: #ffffff,
+	color-text: #000000,
+	color-link: #00a1b6,
+);
+
+$color--dark: (
+	color-bg: #1f1f1f,
+	color-text: #ffffff,
+	color-link: #46ffe0,
+);
+
+$color: (
+	color-primary: #ff907f,
+);
+
+:root {
+    @include generate_colors($color--light);
+	@include generate_colors($color);
+
+	--vuuui-color-shadow: rgba(0, 0, 0, 0.04);
+	--vuuui-color-border: rgba(var(--vuuui-color-text--rgb), 0.07);
+
+	--vuuui-blur-length: 4px;
+	--vuuui-transition-duration: 300ms;
+	--vuuui-transition-duration--short: 150ms;
+}
+
+:root[data-theme="dark"] {
+    @include generate_colors($color--dark);
+}

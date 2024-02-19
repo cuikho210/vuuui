@@ -1,0 +1,31 @@
+@import "./Button.scss";
+
+.btn-elevated {
+	@extend .btn;
+
+	padding: 0 16px;
+	min-height: 36px;
+	border-radius: 16px;
+	background-color: rgba(var(--vuuui-color-primary--rgb), 0.1);
+	color: var(--vuuui-color-text);
+	box-shadow: 0 4px 4px var(--vuuui-color-shadow);
+	transition-property: background-color, color;
+	transition-duration: var(--vuuui-transition-duration--short);
+
+	&:hover {
+		background-color: rgba(var(--vuuui-color-primary--rgb), 0.4);
+	}
+
+	&:active {
+		box-shadow: 0 2px 4px var(--vuuui-color-shadow);
+	}
+
+	.body {
+		display: flex;
+		align-items: center;
+
+		.icon {
+			margin-right: 8px;
+		}
+	}
+}

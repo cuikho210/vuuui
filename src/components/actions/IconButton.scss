@@ -1,0 +1,19 @@
+@import "./Button.scss";
+
+.btn-icon {
+	@extend .btn;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 0;
+	background-color: transparent;
+	color: var(--vuuui-color-text);
+	padding: 8px;
+	transition-property: background, color;
+	transition-duration: var(--vuuui-transition-duration);
+
+	&:hover {
+		background-color: var(--vuuui-color-border);
+	}
+}

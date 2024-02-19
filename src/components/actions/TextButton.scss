@@ -1,0 +1,28 @@
+@import "./Button.scss";
+
+.btn-text {
+	@extend .btn;
+
+	padding: 0 16px;
+	min-height: 36px;
+	border-radius: 16px;
+	background-color: transparent;
+	color: var(--vuuui-color-text);
+	box-shadow: 0 2px 4px transparent;
+	transition-property: background-color, color, box-shadow;
+	transition-duration: var(--vuuui-transition-duration--short);
+
+	&:hover {
+		background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
+		box-shadow: 0 2px 4px var(--vuuui-color-shadow);
+	}
+
+	.body {
+		display: flex;
+		align-items: center;
+
+		.icon {
+			margin-right: 8px;
+		}
+	}
+}
