@@ -9,6 +9,7 @@ import {
 	RiSunLine,
 	RiMoonLine,
 	RiEthLine,
+	RiHome2Line,
 } from "@remixicon/react";
 
 function setThemeMode(mode: "light" | "dark") {
@@ -80,7 +81,7 @@ const Actions = () => <>
 
 		<TextButton
 			label="with icon"
-			icon={<RiBubbleChartLine />}
+			icon={<RiHome2Line />}
 		/>
 
 		<IconButton

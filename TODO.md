@@ -5,10 +5,6 @@
 
 ## Components
 
-### Navigation
-
-+ [ ] TabBar
-
 ### Actions
 
 + [x] Button
