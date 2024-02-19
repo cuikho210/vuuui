@@ -17,8 +17,8 @@
 ### Communication
 
 + [ ] Badge
-+ [ ] LinearProgressIndicator
 + [ ] SnackBar
++ [ ] Toast
 
 ### Containment
 

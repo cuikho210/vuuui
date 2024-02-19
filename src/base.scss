@@ -1,6 +1,12 @@
 @import "./utils.scss";
 
 $color--light: (
+	color-primary: #ff907f,
+	color-success: #00aa32,
+	color-info: #00b5b8,
+	color-warning: #dba800,
+	color-danger: #db4400,
+
 	color-bg: #ffffff,
 	color-text: #000000,
 	color-link: #00a1b6,
@@ -12,13 +18,8 @@ $color--dark: (
 	color-link: #46ffe0,
 );
 
-$color: (
-	color-primary: #ff907f,
-);
-
 :root {
     @include generate_colors($color--light);
-	@include generate_colors($color);
 
 	--vuuui-color-shadow: rgba(0, 0, 0, 0.04);
 	--vuuui-color-border: rgba(var(--vuuui-color-text--rgb), 0.07);
