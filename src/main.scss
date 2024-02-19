@@ -1,4 +1,4 @@
-
+@import '@fontsource/mali';
 
 html, body {
 	margin: 0;
@@ -9,4 +9,5 @@ html, body {
 	color: var(--vuuui-color-text);
 	transition-property: background-color, color;
 	transition-duration: var(--vuuui-transition-duration);
+	font-family: 'Mali', cursive;
 }
