@@ -1,4 +1,5 @@
 import Button from "./_Button";
+import { DuckSpinner } from "..";
 import type { JSX } from "react";
 import "./IconButton.scss";
 
@@ -12,6 +13,9 @@ interface IconButtonProps {
 }
 
 export const IconButton = (props: IconButtonProps) => {
+	let icon = props.icon;
+	if (props.loading) icon = <DuckSpinner />;
+
 	return <Button
 		defaultClassName="btn-icon"
 		className={props.className}
@@ -20,7 +24,7 @@ export const IconButton = (props: IconButtonProps) => {
 		loading={props.loading}
 		title={props.title}
 	>
-		{props.icon}
+		{icon}
 	</Button>;
 }
 
