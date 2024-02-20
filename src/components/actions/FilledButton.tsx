@@ -1,33 +1,17 @@
-import Button from "./Button";
+import TextButtonBase from "./_TextButtonBase";
+import type { TextButtonProps } from "./TextButton";
 import "./FilledButton.scss";
 
-interface FilledButtonProps {
-	icon?: JSX.Element,
-	className?: string,
-	disabled?: boolean,
-	title?: string,
-	children?: any,
-	onClick?(): void,
-}
-
-const FilledButton = (props: FilledButtonProps) => {
-
-	return <Button
+export const FilledButton = (props: TextButtonProps) => {
+	return <TextButtonBase
+		icon={props.icon}
 		defaultClassName="btn-filled"
 		className={props.className}
-		onClick={props.onClick}
 		disabled={props.disabled}
 		title={props.title}
-	>
-		<div className="body">
-			{ props.icon &&
-				<span className="icon">
-					{props.icon}
-				</span>
-			}
-			{props.children}
-		</div>
-	</Button>;
+		children={props.children}
+		onClick={props.onClick}
+	/>
 }
 
 export default FilledButton;

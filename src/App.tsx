@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-import ElevatedButton from "./components/actions/ElevatedButton";
-import FilledButton from "./components/actions/FilledButton";
-import OutlinedButton from "./components/actions/OutlinedButton";
-import TextButton from "./components/actions/TextButton";
-import IconButton from "./components/actions/IconButton";
+import {
+	ElevatedButton,
+	FilledButton,
+	OutlinedButton,
+	TextButton,
+	IconButton,
+} from ".";
 
 import {
 	RiBubbleChartLine,

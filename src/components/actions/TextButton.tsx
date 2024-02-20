@@ -1,7 +1,7 @@
-import Button from "./Button";
+import TextButtonBase from "./_TextButtonBase";
 import "./TextButton.scss";
 
-interface TextButtonProps {
+export interface TextButtonProps {
 	icon?: JSX.Element,
 	className?: string,
 	disabled?: boolean,
@@ -10,24 +10,16 @@ interface TextButtonProps {
 	onClick?(): void,
 }
 
-const TextButton = (props: TextButtonProps) => {
-
-	return <Button
+export const TextButton = (props: TextButtonProps) => {
+	return <TextButtonBase
+		icon={props.icon}
 		defaultClassName="btn-text"
 		className={props.className}
-		onClick={props.onClick}
 		disabled={props.disabled}
 		title={props.title}
-	>
-		<div className="body">
-			{ props.icon &&
-				<span className="icon">
-					{props.icon}
-				</span>
-			}
-			{props.children}
-		</div>
-	</Button>;
+		children={props.children}
+		onClick={props.onClick}
+	/>
 }
 
 export default TextButton;

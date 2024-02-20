@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./_Button";
 import type { JSX } from "react";
 import "./IconButton.scss";
 
@@ -11,7 +11,7 @@ interface IconButtonProps {
 	onClick?(): void,
 }
 
-const IconButton = (props: IconButtonProps) => {
+export const IconButton = (props: IconButtonProps) => {
 	return <Button
 		defaultClassName="btn-icon"
 		className={props.className}
