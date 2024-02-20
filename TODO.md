@@ -42,3 +42,7 @@
 + [ ] TextAreaInput
     + [ ] Markdown support
     + [ ] Vi binding support
+
+### Misc
+
++ [ ] Spinner

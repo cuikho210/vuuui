@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import ElevatedButton from "./components/actions/ElevatedButton";
 import FilledButton from "./components/actions/FilledButton";
 import OutlinedButton from "./components/actions/OutlinedButton";
@@ -41,43 +43,54 @@ const Space = (props: {children?: any}) => <div style={{
 	{props.children}
 </div>;
 
-const Actions = () => <>
-	<h2>Actions</h2>
+const Actions = () => {
+	const [disabled, setDisabled] = useState(false);
 
-	<Space>
-		<ElevatedButton>ElevatedButton</ElevatedButton>
+	return <>
+		<h2>Actions</h2>
 
-		<ElevatedButton
-			icon={<RiSunLine />}
-			onClick={toThemeLight}
-		>Light mode</ElevatedButton>
+		<Space>
+			<ElevatedButton onClick={() => setDisabled(!disabled)}>
+				Toggle disabled
+			</ElevatedButton>
 
-		<FilledButton>FilledButton</FilledButton>
+			<ElevatedButton
+				icon={<RiSunLine />}
+				onClick={toThemeLight}
+				disabled={disabled}
+			>Light mode</ElevatedButton>
 
-		<FilledButton
-			icon={<RiMoonLine />}
-			onClick={toThemeDark}
-		>Dark mode</FilledButton>
+			<FilledButton>FilledButton</FilledButton>
 
-		<OutlinedButton>OutlinedButton</OutlinedButton>
+			<FilledButton
+				icon={<RiMoonLine />}
+				onClick={toThemeDark}
+				disabled={disabled}
+			>Dark mode</FilledButton>
 
-		<OutlinedButton
-			icon={<RiEthLine />}
-			onClick={toggleTheme}
-		>Toggle theme</OutlinedButton>
+			<OutlinedButton>OutlinedButton</OutlinedButton>
 
-		<TextButton>TextButton</TextButton>
+			<OutlinedButton
+				icon={<RiEthLine />}
+				onClick={toggleTheme}
+				disabled={disabled}
+			>Toggle theme</OutlinedButton>
 
-		<TextButton
-			icon={<RiHome2Line />}
-		>With icon</TextButton>
+			<TextButton>TextButton</TextButton>
 
-		<IconButton
-			icon={<RiBubbleChartLine />}
-			title="IconButton"
-		/>
-	</Space>
-</>;
+			<TextButton
+				icon={<RiHome2Line />}
+				disabled={disabled}
+			>With icon</TextButton>
+
+			<IconButton
+				icon={<RiBubbleChartLine />}
+				disabled={disabled}
+				title="IconButton"
+			/>
+		</Space>
+	</>;
+}
 
 const App = () => {
 	return <main style={{

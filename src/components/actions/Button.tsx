@@ -3,22 +3,26 @@ interface ButtonProps {
 	defaultClassName: string,
 	className?: string,
 	disabled?: boolean,
+	loading?: boolean,
 	children?: any,
 	title?: string,
 	onClick?(): void,
 }
 
 const Button = (props: ButtonProps) => {
+	const disabled = props.disabled || props.loading;
+
 	let className = props.defaultClassName || "";
 	if (props.className) className += " " + props.className;
 
 	let onClick = props.onClick;
-	if (props.disabled) onClick = () => {};
+	if (disabled) onClick = () => {};
 	
 	return <button
 		className={className}
 		onClick={onClick}
 		title={props.title}
+		disabled={disabled}
 	> {props.children} </button>;
 }
 

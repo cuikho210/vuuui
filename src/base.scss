@@ -10,13 +10,13 @@ $color--light: (
 	color-bg: #ffffff,
 	color-text: #000000,
 	color-link: #00a1b6,
-);
+) !default;
 
 $color--dark: (
 	color-bg: #1f1f1f,
 	color-text: #ffffff,
 	color-link: #46ffe0,
-);
+) !default;
 
 :root {
     @include generate_colors($color--light);

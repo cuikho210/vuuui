@@ -11,7 +11,7 @@
 	transition-property: background-color, color, box-shadow;
 	transition-duration: var(--vuuui-transition-duration--short);
 
-	&:hover {
+	&:not(:disabled):hover {
 		background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
 		box-shadow: 0 2px 4px var(--vuuui-color-shadow);
 	}
