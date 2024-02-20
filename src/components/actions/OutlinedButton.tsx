@@ -8,6 +8,7 @@ export const OutlinedButton = (props: TextButtonProps) => {
 		defaultClassName="btn-outlined"
 		className={props.className}
 		disabled={props.disabled}
+		loading={props.loading}
 		title={props.title}
 		children={props.children}
 		onClick={props.onClick}

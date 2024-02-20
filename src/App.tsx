@@ -47,27 +47,33 @@ const Space = (props: {children?: any}) => <div style={{
 
 const Actions = () => {
 	const [disabled, setDisabled] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	return <>
 		<h2>Actions</h2>
 
 		<Space>
-			<ElevatedButton onClick={() => setDisabled(!disabled)}>
-				Toggle disabled
-			</ElevatedButton>
+			<ElevatedButton
+				onClick={() => setDisabled(!disabled)}
+				loading={loading}
+			> Toggle disabled </ElevatedButton>
 
 			<ElevatedButton
 				icon={<RiSunLine />}
 				onClick={toThemeLight}
 				disabled={disabled}
+				loading={loading}
 			>Light mode</ElevatedButton>
 
-			<FilledButton>FilledButton</FilledButton>
+			<FilledButton onClick={() => setLoading(!loading)}>
+				Toggle loading
+			</FilledButton>
 
 			<FilledButton
 				icon={<RiMoonLine />}
 				onClick={toThemeDark}
 				disabled={disabled}
+				loading={loading}
 			>Dark mode</FilledButton>
 
 			<OutlinedButton>OutlinedButton</OutlinedButton>
@@ -76,6 +82,7 @@ const Actions = () => {
 				icon={<RiEthLine />}
 				onClick={toggleTheme}
 				disabled={disabled}
+				loading={loading}
 			>Toggle theme</OutlinedButton>
 
 			<TextButton>TextButton</TextButton>
@@ -83,11 +90,13 @@ const Actions = () => {
 			<TextButton
 				icon={<RiHome2Line />}
 				disabled={disabled}
+				loading={loading}
 			>With icon</TextButton>
 
 			<IconButton
 				icon={<RiBubbleChartLine />}
 				disabled={disabled}
+				loading={loading}
 				title="IconButton"
 			/>
 		</Space>

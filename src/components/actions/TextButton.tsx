@@ -5,6 +5,7 @@ export interface TextButtonProps {
 	icon?: JSX.Element,
 	className?: string,
 	disabled?: boolean,
+	loading?: boolean,
 	title?: string,
 	children?: any,
 	onClick?(): void,
@@ -16,6 +17,7 @@ export const TextButton = (props: TextButtonProps) => {
 		defaultClassName="btn-text"
 		className={props.className}
 		disabled={props.disabled}
+		loading={props.loading}
 		title={props.title}
 		children={props.children}
 		onClick={props.onClick}

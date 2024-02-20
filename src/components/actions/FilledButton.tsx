@@ -8,6 +8,7 @@ export const FilledButton = (props: TextButtonProps) => {
 		defaultClassName="btn-filled"
 		className={props.className}
 		disabled={props.disabled}
+		loading={props.loading}
 		title={props.title}
 		children={props.children}
 		onClick={props.onClick}
