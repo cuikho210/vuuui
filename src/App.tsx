@@ -30,8 +30,8 @@ function toThemeDark() {
 
 function toggleTheme() {
 	const currentTheme = document.documentElement.getAttribute("data-theme");
-	if (currentTheme == "light") toThemeDark();
-	else toThemeLight();
+	if (currentTheme == "dark") toThemeLight();
+	else toThemeDark();
 }
 
 const Space = (props: {children?: any}) => <div style={{
@@ -51,6 +51,7 @@ const Actions = () => {
 
 	return <>
 		<h2>Actions</h2>
+		<h3>Buttons</h3>
 
 		<Space>
 			<ElevatedButton
@@ -103,11 +104,17 @@ const Actions = () => {
 	</>;
 }
 
+const Communication = () => <>
+	<h2>Communication</h2>
+	<h3>Badge</h3>
+</>;
+
 const App = () => {
 	return <main style={{
 		padding: '8px',
 	}}>
 		<Actions />
+		<Communication />
 	</main>;
 }
 
