@@ -17,7 +17,6 @@
 ### Communication
 
 + [x] Badge
-+ [ ] SnackBar
 + [ ] Toast
 
 ### Containment

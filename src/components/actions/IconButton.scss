@@ -14,6 +14,6 @@
 	transition-duration: var(--vuuui-transition-duration);
 
 	&:not(:disabled):hover {
-		background-color: var(--vuuui-color-border);
+		background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
 	}
 }
