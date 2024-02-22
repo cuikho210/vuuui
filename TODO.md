@@ -16,7 +16,7 @@
 
 ### Communication
 
-+ [ ] Badge
++ [x] Badge
 + [ ] SnackBar
 + [ ] Toast
 

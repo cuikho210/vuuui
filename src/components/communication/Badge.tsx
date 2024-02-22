@@ -1,9 +1,13 @@
 import "./Badge.scss";
 
-export const Badge = () => {
+export interface BadgeProps {
+	children?: any,
+}
+
+export const Badge = (props: BadgeProps) => {
 
 	return <div className="badge">
-
+		{props.children}
 	</div>;
 }
 

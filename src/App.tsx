@@ -6,6 +6,7 @@ import {
 	OutlinedButton,
 	TextButton,
 	IconButton,
+	Badge,
 } from ".";
 
 import {
@@ -14,6 +15,7 @@ import {
 	RiMoonLine,
 	RiEthLine,
 	RiHome2Line,
+	RiNotificationLine,
 } from "@remixicon/react";
 
 function setThemeMode(mode: "light" | "dark") {
@@ -39,8 +41,7 @@ const Space = (props: {children?: any}) => <div style={{
 	justifyContent: 'flex-start',
 	alignItems: 'center',
 	flexWrap: 'wrap',
-	columnGap: '8px',
-	rowGap: '16px',
+	gap: '16px',
 }}>
 	{props.children}
 </div>;
@@ -107,6 +108,19 @@ const Actions = () => {
 const Communication = () => <>
 	<h2>Communication</h2>
 	<h3>Badge</h3>
+
+	<Space>
+		<OutlinedButton>
+			on button
+			<Badge>Badge</Badge>
+		</OutlinedButton>
+		<br />
+
+		<IconButton
+			icon={<RiNotificationLine />}
+			badge={<Badge>9</Badge>}
+		/>
+	</Space>
 </>;
 
 const App = () => {

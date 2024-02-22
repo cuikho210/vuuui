@@ -5,6 +5,7 @@ import "./IconButton.scss";
 
 interface IconButtonProps {
 	icon: JSX.Element,
+	badge?: JSX.Element,
 	className?: string,
 	disabled?: boolean,
 	loading?: boolean,
@@ -25,6 +26,7 @@ export const IconButton = (props: IconButtonProps) => {
 		title={props.title}
 	>
 		{icon}
+		{props.badge}
 	</Button>;
 }
 
