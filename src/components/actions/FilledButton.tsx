@@ -5,7 +5,7 @@ import "./FilledButton.scss";
 export const FilledButton = (props: TextButtonProps) => {
 	return <TextButtonBase
 		icon={props.icon}
-		defaultClassName="btn-filled"
+		defaultClassName="vuuui-btn-filled"
 		className={props.className}
 		disabled={props.disabled}
 		loading={props.loading}

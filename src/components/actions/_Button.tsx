@@ -1,10 +1,11 @@
+import type { ReactNode } from "react";
 
 interface ButtonProps {
 	defaultClassName: string,
 	className?: string,
 	disabled?: boolean,
 	loading?: boolean,
-	children?: any,
+	children?: ReactNode,
 	title?: string,
 	onClick?(): void,
 }

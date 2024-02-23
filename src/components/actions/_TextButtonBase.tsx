@@ -1,5 +1,6 @@
 import Button from "./_Button";
 import { DuckSpinner } from "..";
+import type { ReactNode } from "react";
 import "./TextButton.scss";
 
 interface TextButtonBaseProps {
@@ -9,7 +10,7 @@ interface TextButtonBaseProps {
 	disabled?: boolean,
 	loading?: boolean,
 	title?: string,
-	children?: any,
+	children?: ReactNode,
 	onClick?(): void,
 }
 

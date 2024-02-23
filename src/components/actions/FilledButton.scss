@@ -1,7 +1,7 @@
 @import "./TextButton.scss";
 
-.btn-filled {
-	@extend .btn-text;
+.vuuui-btn-filled {
+	@extend .vuuui-btn-text;
 
 	background-color: rgba(var(--vuuui-color-primary--rgb), 0.8);
 	box-shadow: 0 2px 4px transparent;

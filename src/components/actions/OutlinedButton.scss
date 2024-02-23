@@ -1,7 +1,7 @@
 @import "./TextButton.scss";
 
-.btn-outlined {
-	@extend .btn-text;
+.vuuui-btn-outlined {
+	@extend .vuuui-btn-text;
 
 	background-color: transparent;
 	border: 1px solid rgba(var(--vuuui-color-primary--rgb), 0.4);

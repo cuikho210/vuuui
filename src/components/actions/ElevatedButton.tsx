@@ -5,7 +5,7 @@ import "./ElevatedButton.scss";
 export const ElevatedButton = (props: TextButtonProps) => {
 	return <TextButtonBase
 		icon={props.icon}
-		defaultClassName="btn-elevated"
+		defaultClassName="vuuui-btn-elevated"
 		className={props.className}
 		disabled={props.disabled}
 		loading={props.loading}

@@ -1,4 +1,4 @@
-.btn {
+.vuuui-btn {
 	position: relative;
 	display: inline-block;
 	padding: 0;
@@ -8,6 +8,7 @@
 	user-select: none;
 	box-sizing: border-box;
 	font-family: inherit;
+	font-size: inherit;
 
 	&:not(:disabled):active {
 		top: 1px;

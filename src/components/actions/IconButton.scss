@@ -1,7 +1,7 @@
 @import "./_Button.scss";
 
-.btn-icon {
-	@extend .btn;
+.vuuui-btn-icon {
+	@extend .vuuui-btn;
 	border-radius: 50%;
 	aspect-ratio: 1 / 1;
 	flex-grow: 0;

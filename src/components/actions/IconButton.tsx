@@ -18,7 +18,7 @@ export const IconButton = (props: IconButtonProps) => {
 	if (props.loading) icon = <DuckSpinner />;
 
 	return <Button
-		defaultClassName="btn-icon"
+		defaultClassName="vuuui-btn-icon"
 		className={props.className}
 		onClick={props.onClick}
 		disabled={props.disabled}

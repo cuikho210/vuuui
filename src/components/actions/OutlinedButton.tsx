@@ -5,7 +5,7 @@ import "./OutlinedButton.scss";
 export const OutlinedButton = (props: TextButtonProps) => {
 	return <TextButtonBase
 		icon={props.icon}
-		defaultClassName="btn-outlined"
+		defaultClassName="vuuui-btn-outlined"
 		className={props.className}
 		disabled={props.disabled}
 		loading={props.loading}

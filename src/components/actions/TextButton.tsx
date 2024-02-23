@@ -1,4 +1,5 @@
 import TextButtonBase from "./_TextButtonBase";
+import type { ReactNode } from "react";
 import "./TextButton.scss";
 
 export interface TextButtonProps {
@@ -7,14 +8,14 @@ export interface TextButtonProps {
 	disabled?: boolean,
 	loading?: boolean,
 	title?: string,
-	children?: any,
+	children?: ReactNode,
 	onClick?(): void,
 }
 
 export const TextButton = (props: TextButtonProps) => {
 	return <TextButtonBase
 		icon={props.icon}
-		defaultClassName="btn-text"
+		defaultClassName="vuuui-btn-text"
 		className={props.className}
 		disabled={props.disabled}
 		loading={props.loading}

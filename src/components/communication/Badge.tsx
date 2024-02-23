@@ -1,7 +1,8 @@
+import type { ReactNode } from "react";
 import "./Badge.scss";
 
 export interface BadgeProps {
-	children?: any,
+	children?: ReactNode,
 }
 
 export const Badge = (props: BadgeProps) => {
