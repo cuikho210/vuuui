@@ -6,7 +6,7 @@
 	background-color: rgba(var(--vuuui-color-primary--rgb), .7);
 	box-shadow: none;
 
-	&:not(:disabled):hover {
+	&:not(:disabled):hover, &[active="true"] {
 		background-color: var(--vuuui-color-primary);
 	}
 }

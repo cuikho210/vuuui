@@ -7,7 +7,7 @@
 	box-shadow: 0 2px 2px var(--vuuui-color-shadow);
 	transition-property: background-color, box-shadow, opacity;
 
-	&:not(:disabled):hover {
+	&:not(:disabled):hover, &[active="true"] {
 		background-color: rgba(var(--vuuui-color-primary--rgb), .4);
 		box-shadow: 0 2px 4px var(--vuuui-color-shadow--strong);
 	}

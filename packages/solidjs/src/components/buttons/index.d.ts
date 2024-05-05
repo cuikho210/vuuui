@@ -5,6 +5,7 @@ export interface ButtonBaseProps extends JSX.HTMLAttributes<HTMLButtonElement> {
 	defaultClassName?: string
 	loading?: boolean
 	disabled?: boolean
+	active?: boolean
 }
 export type ButtonBaseComponent = Component<ButtonBaseProps>
 

@@ -8,7 +8,7 @@
 	transition-property: background-color;
 	transition-duration: var(--vuuui-transition-duration--short);
 
-	&:not(:disabled):hover {
+	&:not(:disabled):hover, &[active="true"] {
 		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
 	}
 }

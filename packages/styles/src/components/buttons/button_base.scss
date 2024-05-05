@@ -9,6 +9,7 @@
 	border: none;
 	user-select: none;
 	font-size: inherit;
+	color: inherit;
 	transition-duration: var(--vuuui-transition-duration--short);
 	transition-property: opacity;
 
@@ -16,8 +17,12 @@
 		top: 1px;
 	}
 
-	&:disabled {
+	&:not([active="true"]):disabled {
 		opacity: .7;
+		color: rgba(var(--vuuui-color-text--rgb), .4);
+	}
+
+	&:disabled {
 		cursor: default;
 	}
 }

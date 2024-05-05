@@ -23,7 +23,7 @@
 		align-items: center;
 	}
 
-	&:not(:disabled):hover {
+	&:not(:disabled, [active]):hover, &[active] {
 		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
 	}
 }

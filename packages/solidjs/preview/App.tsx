@@ -9,10 +9,12 @@ import {
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
 	RiToggleLine, RiLoaderLine,
+	RiFlowerLine,
 } from 'solidjs-remixicon';
 
 const [disabled, setDisabled] = createSignal(true);
 const [loading, setLoading] = createSignal(true);
+const [active, setActive] = createSignal(true);
 
 const Spinner = <section>
 	<h2>Spinner</h2><br />
@@ -30,6 +32,7 @@ const Buttons = <section>
 	<Spacer>
 		<ElevatedButton>Normal</ElevatedButton>
 		<ElevatedButton disabled={disabled()}>Disabled</ElevatedButton>
+		<ElevatedButton active={active()} disabled>Active</ElevatedButton>
 		<ElevatedButton icon={<RiHeartLine />}>Icon</ElevatedButton>
 		<ElevatedButton loading={loading()}>Loading</ElevatedButton>
 	</Spacer><br />
@@ -37,6 +40,7 @@ const Buttons = <section>
 	<Spacer>
 		<FilledButton>Normal</FilledButton>
 		<FilledButton disabled={disabled()}>Disabled</FilledButton>
+		<FilledButton active={active()} disabled>Active</FilledButton>
 		<FilledButton icon={<RiHeart2Line />}>Icon</FilledButton>
 		<FilledButton loading={loading()}>Loading</FilledButton>
 	</Spacer><br />
@@ -44,6 +48,7 @@ const Buttons = <section>
 	<Spacer>
 		<TextButton>Normal</TextButton>
 		<TextButton disabled={disabled()}>Disabled</TextButton>
+		<TextButton active={active()} disabled>Active</TextButton>
 		<TextButton icon={<RiHeart3Line />}>Icon</TextButton>
 		<TextButton loading={loading()}>Loading</TextButton>
 	</Spacer><br />
@@ -51,6 +56,7 @@ const Buttons = <section>
 	<Spacer>
 		<OutlinedButton>Normal</OutlinedButton>
 		<OutlinedButton disabled={disabled()}>Disabled</OutlinedButton>
+		<OutlinedButton active={active()} disabled>Active</OutlinedButton>
 		<OutlinedButton icon={<RiHeartsLine />}>Icon</OutlinedButton>
 		<OutlinedButton loading={loading()}>Loading</OutlinedButton>
 	</Spacer><br />
@@ -64,7 +70,13 @@ const Buttons = <section>
 		<IconButton
 			onClick={() => setLoading(!loading())}
 			title='Toggle loading'
+			disabled={disabled()}
 		><RiLoaderLine size="2rem" /></IconButton>
+
+		<IconButton
+			onClick={() => setActive(!active())}
+			title='Toggle active'
+		><RiFlowerLine size="2rem" /></IconButton>
 
 		<IconButton disabled={disabled()}><RiHeart2Line size="2rem" /></IconButton>
 		<IconButton loading={loading()}><RiHeart3Line size="2rem" /></IconButton>

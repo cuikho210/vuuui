@@ -13,8 +13,8 @@ $theme--default: (
 ) !default;
 
 $colors: (
-	color-shadow: rgba(0, 0, 0, 0.07),
-	color-shadow--strong: rgba(0, 0, 0, 0.1),
+	color-shadow: rgba(0, 0, 0, 0.1),
+	color-shadow--strong: rgba(0, 0, 0, 0.16),
 	color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
 ) !default;
 
