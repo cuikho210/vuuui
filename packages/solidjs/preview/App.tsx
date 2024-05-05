@@ -76,6 +76,7 @@ const Buttons = <section>
 		<IconButton
 			onClick={() => setActive(!active())}
 			title='Toggle active'
+			active={active()}
 		><RiFlowerLine size="2rem" /></IconButton>
 
 		<IconButton disabled={disabled()}><RiHeart2Line size="2rem" /></IconButton>
