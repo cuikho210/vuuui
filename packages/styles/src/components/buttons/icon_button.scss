@@ -1,0 +1,29 @@
+@import './button_base.scss';
+
+.vuuui-icon-button {
+	@extend .vuuui-button-base;
+
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 1;
+	background-color: transparent;
+	padding: var(--vuuui-padding--half);
+	transition-property: background-color, opacity;
+
+	.vuuui-spinner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&:not(:disabled):hover {
+		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
+	}
+}

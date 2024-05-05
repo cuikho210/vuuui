@@ -1,0 +1,12 @@
+@import "./elevated_button.scss";
+
+.vuuui-filled-button {
+	@extend .vuuui-elevated-button;
+
+	background-color: rgba(var(--vuuui-color-primary--rgb), .7);
+	box-shadow: none;
+
+	&:not(:disabled):hover {
+		background-color: var(--vuuui-color-primary);
+	}
+}

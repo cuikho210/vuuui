@@ -1,0 +1,30 @@
+{
+  "name": "@vuuui/solidjs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@vuuui/styles": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.26",
+    "remixicon": "^4.2.0",
+    "sass": "^1.71.1",
+    "solid-js": "^1.8.17",
+    "solidjs-remixicon": "^1.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-solid": "^2.10.1"
+  }
+}

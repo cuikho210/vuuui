@@ -1,0 +1,38 @@
+@import "./utils.scss";
+
+$theme--default: (
+	color-primary: #ff907f,
+	color-success: #00aa32,
+	color-info: #00b5b8,
+	color-warning: #dba800,
+	color-danger: #db4400,
+
+	color-bg: #ffffff,
+	color-text: #000000,
+	color-link: #00a1b6,
+) !default;
+
+$colors: (
+	color-shadow: rgba(0, 0, 0, 0.07),
+	color-shadow--strong: rgba(0, 0, 0, 0.1),
+	color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
+) !default;
+
+$spacing: (
+	padding: 1rem,
+	padding--half: .5rem,
+) !default;
+
+$misc: (
+	radius: 16px,
+	blur-length: 4px,
+	transition-duration: 300ms,
+	transition-duration--short: 150ms,
+) !default;
+
+:root {
+    @include generate_colors($theme--default);
+	@include with_prefix($colors);
+	@include with_prefix($spacing);
+	@include with_prefix($misc);
+}

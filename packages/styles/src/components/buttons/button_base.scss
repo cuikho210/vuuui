@@ -1,0 +1,23 @@
+@import '../../base.scss';
+
+.vuuui-button-base {
+	@extend .vuuui-base;
+
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	border: none;
+	user-select: none;
+	font-size: inherit;
+	transition-duration: var(--vuuui-transition-duration--short);
+	transition-property: opacity;
+
+	&:not(:disabled):active {
+		top: 1px;
+	}
+
+	&:disabled {
+		opacity: .7;
+		cursor: default;
+	}
+}

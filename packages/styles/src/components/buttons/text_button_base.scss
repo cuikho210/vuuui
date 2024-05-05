@@ -1,0 +1,33 @@
+@import './button_base.scss';
+
+.vuuui-text-button-base {
+	@extend .vuuui-button-base;
+
+	border-radius: var(--vuuui-radius);
+
+	.vuuui-body {
+		display: flex;
+		align-items: center;
+		gap: var(--vuuui-padding--half);
+		padding: 0 var(--vuuui-padding);
+
+		.vuuui-content {
+			padding: var(--vuuui-padding--half) 0;
+		}
+
+		.vuuui-icon {
+			line-height: 1;
+		}
+	}
+
+	.vuuui-spinner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

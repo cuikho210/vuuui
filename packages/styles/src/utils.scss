@@ -1,0 +1,23 @@
+@function convertHexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+@mixin generate_colors($colors) {
+    // Colors, RGB Colors
+    @each $color, $value in $colors {
+        @if str-slice(#{$value}, 1, 1) == "#" {
+            --vuuui-#{$color}: #{$value};
+            --vuuui-#{$color}--rgb: #{convertHexToRGB($value)};
+        } @else {
+            --vuuui-#{$color}: var(--#{$value});
+            --vuuui-#{$color}--rgb: var(--#{$value}--rgb);
+        }
+    }
+}
+
+@mixin with_prefix($vars) {
+    // Colors, RGB Colors
+    @each $var, $value in $vars {
+		--vuuui-#{$var}: #{$value};
+    }
+}

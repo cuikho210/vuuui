@@ -1,0 +1,13 @@
+@import "./text_button_base.scss";
+
+.vuuui-text-button {
+	@extend .vuuui-text-button-base;
+
+	background-color: transparent;
+	transition-property: background-color;
+	transition-duration: var(--vuuui-transition-duration--short);
+
+	&:not(:disabled):hover {
+		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
+	}
+}

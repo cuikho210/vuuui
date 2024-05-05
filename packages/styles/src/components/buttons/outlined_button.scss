@@ -1,0 +1,14 @@
+@import "./text_button_base.scss";
+
+.vuuui-outlined-button {
+	@extend .vuuui-text-button-base;
+
+	background-color: transparent;
+	border: 1px solid rgba(var(--vuuui-color-primary--rgb), .4);
+	transition-property: background-color;
+	transition-duration: var(--vuuui-transition-duration--short);
+
+	&:not(:disabled):hover {
+		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
+	}
+}

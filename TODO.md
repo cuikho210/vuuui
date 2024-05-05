@@ -5,42 +5,49 @@
 
 ## Components
 
-### Actions
+### Containment
 
-+ [x] Button
-    + [x] Elevated
-    + [x] Filled
-    + [x] Outlined
-    + [x] Text
-    + [x] Icon
++ [x] Container
++ [x] Spacer
++ [ ] Menu
+
+### Buttons
+
++ [x] Elevated
++ [x] Filled
++ [x] Outlined
++ [x] Text
++ [x] Icon
 
 ### Communication
 
-+ [x] Badge
++ [ ] Badge
 + [ ] Toast
 
-### Containment
+### Overlay
 
-+ [ ] AlertDialog
-+ [ ] Divider
++ [ ] Dialog
++ [ ] Popup
 
-### Selection
+### Inputs
 
++ [ ] TextInput
++ [ ] ColorInput
++ [ ] FileInput
 + [ ] Checkbox
-+ [ ] Chip
-+ [ ] DatePicker
-+ [ ] Menu
 + [ ] Radio
 + [ ] Slider
 + [ ] Switch
-+ [ ] TimePicker
-
-### Text inputs
-
-+ [ ] TextInput
 + [ ] TextAreaInput
     + [ ] Markdown support
     + [ ] Vi binding support
+
+### Navigation
+
++ [ ] NavigationBar
++ [ ] NavigationDrawer
++ [ ] AppBar
++ [ ] TabBar
 
 ### Misc
 
