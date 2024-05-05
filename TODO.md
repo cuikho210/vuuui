@@ -10,6 +10,7 @@
 + [x] Container
 + [x] Spacer
 + [ ] Menu
++ [ ] Card
 
 ### Buttons
 
@@ -31,7 +32,7 @@
 
 ### Inputs
 
-+ [ ] TextInput
++ [x] TextInput
 + [ ] ColorInput
 + [ ] FileInput
 + [ ] Checkbox

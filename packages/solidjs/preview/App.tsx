@@ -4,17 +4,26 @@ import {
 	Container, Spacer,
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
+	TextInput,
 } from "../src"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
 	RiToggleLine, RiLoaderLine,
-	RiFlowerLine,
+	RiFlowerLine, RiSketching,
 } from 'solidjs-remixicon';
 
 const [disabled, setDisabled] = createSignal(true);
 const [loading, setLoading] = createSignal(true);
 const [active, setActive] = createSignal(true);
+
+const Inputs = <section>
+	<h2>Inputs</h2><br />
+
+	<Spacer>
+		<TextInput placeholder='Text input' icon={<RiSketching />} />
+	</Spacer>
+</section>
 
 const Spinner = <section>
 	<h2>Spinner</h2><br />
@@ -88,7 +97,8 @@ export const App = () => <Container md>
 	<h1>VuuUI</h1><br />
 
 	{Spinner} <br />
-	{Buttons}
+	{Buttons} <br />
+	{Inputs} <br />
 </Container>
 
 export default App
