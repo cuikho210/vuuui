@@ -1,6 +1,6 @@
 import { createMemo } from "solid-js"
 import type { JSX } from "solid-js"
-import type { SpacerComponent } from './index.d'
+import type { SpacerComponent } from './'
 import "@vuuui/styles/components/buttons/elevated_button.scss"
 import '@vuuui/styles/components/layout/spacer.scss'
 

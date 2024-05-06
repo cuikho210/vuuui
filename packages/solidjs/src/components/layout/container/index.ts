@@ -1,2 +1,2 @@
+export * from './types.d'
 export * from './Container'
-export * from './index.d'

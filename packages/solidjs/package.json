@@ -1,30 +1,43 @@
 {
   "name": "@vuuui/solidjs",
-  "private": true,
-  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "cuikho210",
+    "email": "tonykms210@gmail.com",
+    "url": "https://github.com/cuikho210"
+  },
+  "private": false,
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -p ./tsconfig-build.json && vite build",
     "preview": "vite preview"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "@vuuui/styles": "*",
-    "remixicon": "^4.2.0",
-    "solid-js": "^1.8.17",
-    "solidjs-remixicon": "^1.1.1"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "sideEffects": [
+	"**/*.css"
+  ],
+  "dependencies": {
+    "solidjs-remixicon": "^1.1.2",
+    "@vuuui/styles": "*"
   },
   "devDependencies": {
+    "solid-js": "^1.8.17",
     "@types/node": "^20.11.26",
+    "autoprefixer": "^10.4.19",
+    "glob": "^10.3.12",
+    "postcss": "^8.4.38",
     "sass": "^1.71.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-lib-inject-css": "^2.0.1",
     "vite-plugin-solid": "^2.10.1"
   }
 }

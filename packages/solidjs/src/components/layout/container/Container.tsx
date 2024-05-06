@@ -1,5 +1,5 @@
 import { createMemo } from 'solid-js'
-import type { ContainerComponent } from './index.d'
+import type { ContainerComponent } from '.'
 import '@vuuui/styles/components/layout/container.scss'
 
 export const Container: ContainerComponent = (props) => {

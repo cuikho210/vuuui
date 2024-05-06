@@ -1,4 +1,4 @@
-export * from './index.d'
+export * from './types.d'
 export * from './ElevatedButton'
 export * from './FilledButton'
 export * from './TextButton'

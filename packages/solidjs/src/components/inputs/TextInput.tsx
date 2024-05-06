@@ -1,5 +1,5 @@
 import type { TextInputComponent } from '.'
-import '@vuuui/styles/components/inputs/text_input.scss';
+import '@vuuui/styles/components/inputs/text_input.scss'
 
 export const TextInput: TextInputComponent = (props) => {
 	return <div class='vuuui-text-input'>

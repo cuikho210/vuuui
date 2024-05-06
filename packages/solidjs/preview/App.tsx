@@ -6,7 +6,7 @@ import {
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput,
 	Dialog,
-} from "../src"
+} from "../"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,

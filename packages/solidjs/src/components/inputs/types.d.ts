@@ -1,4 +1,4 @@
-import { JSX, Component } from "solid-js";
+import { JSX, Component } from "solid-js"
 
 // TextInput
 export interface TextInputProps extends JSX.InputHTMLAttributes<HTMLInputElement> {

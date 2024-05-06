@@ -1,4 +1,4 @@
-import { JSX, Component } from "solid-js";
+import { JSX, Component } from "solid-js"
 
 // ButtonBase
 export interface ButtonBaseProps extends JSX.HTMLAttributes<HTMLButtonElement> {
