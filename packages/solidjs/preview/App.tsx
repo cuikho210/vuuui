@@ -5,17 +5,39 @@ import {
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput,
+	Dialog,
 } from "../src"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
 	RiToggleLine, RiLoaderLine,
 	RiFlowerLine, RiSketching,
+	RiEmotionHappyLine,
 } from 'solidjs-remixicon';
 
 const [disabled, setDisabled] = createSignal(true);
 const [loading, setLoading] = createSignal(true);
 const [active, setActive] = createSignal(true);
+const [dialogOpen, setDialogOpen] = createSignal(false);
+
+const Overlay = <section>
+	<h2>Overlay</h2><br />
+
+	<Spacer>
+		<ElevatedButton
+			icon={<RiEmotionHappyLine />}
+			onClick={() => setDialogOpen(true)}
+		>Open dialog</ElevatedButton>
+
+		<Dialog
+			open={dialogOpen()}
+			close={() => setDialogOpen(false)}
+			backdropClose
+			icon={<RiHeartLine />}
+			title='This is a very very very very very very very very loooong title'
+		>Ahihi Test dialog</Dialog>
+	</Spacer>
+</section>
 
 const Inputs = <section>
 	<h2>Inputs</h2><br />
@@ -99,6 +121,7 @@ export const App = () => <Container md>
 	{Spinner} <br />
 	{Buttons} <br />
 	{Inputs} <br />
+	{Overlay} <br />
 </Container>
 
 export default App
