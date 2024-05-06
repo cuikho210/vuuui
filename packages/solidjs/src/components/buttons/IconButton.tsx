@@ -16,7 +16,7 @@ export const IconButton: IconButtonComponent = (props) => {
 	const className = createMemo(() => 'vuuui-icon-button ' + (props.class || ''))
 	const spinnerEl = <div class='vuuui-spinner'><DuckSpinner /></div>
 
-	return <ButtonBase class={className()} {...props}>
+	return <ButtonBase {...props} class={className()}>
 		<div class="vuuui-body" style={bodyStyle()}>
 			{props.children}
 		</div>

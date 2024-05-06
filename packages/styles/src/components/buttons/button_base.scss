@@ -10,6 +10,8 @@
 	user-select: none;
 	font-size: inherit;
 	color: inherit;
+	width: fit-content;
+	height: fit-content;
 	transition-duration: var(--vuuui-transition-duration--short);
 	transition-property: opacity;
 
