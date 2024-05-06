@@ -31,15 +31,15 @@
 			+ .vuuui-icon {
 				color: var(--vuuui-color-primary);
 			}
+		}
 
-			&:not(:placeholder-shown) ~ .vuuui-placeholder {
-				visibility: visible;
-				opacity: 1;
-				top: 0;
-				right: var(--vuuui-padding);
-				translate: 0;
-				font-size: smaller;
-			}
+		&:not(:placeholder-shown) ~ .vuuui-placeholder {
+			visibility: visible;
+			opacity: 1;
+			top: 0;
+			right: var(--vuuui-padding);
+			translate: 0;
+			font-size: smaller;
 		}
 	}
 
