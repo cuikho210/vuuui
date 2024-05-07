@@ -18,6 +18,7 @@ export const Dialog: DialogComponent = props => {
 
 	return <dialog
 		{...props}
+		title=""
 		class={className()}
 	>
 		<div class='vuuui-backdrop' onClick={backdropClose}></div>
