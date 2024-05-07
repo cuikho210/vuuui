@@ -6,7 +6,7 @@ import {
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput,
 	Dialog,
-} from "../"
+} from "../src"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
@@ -35,7 +35,7 @@ const Overlay = <section>
 			backdropClose
 			icon={<RiHeartLine />}
 			title='This is a very very very very very very very very loooong title'
-		>Ahihi Test dialog</Dialog>
+		> Test dialog ahihi </Dialog>
 	</Spacer>
 </section>
 
