@@ -24,7 +24,20 @@
     "**/*.css"
   ],
   "dependencies": {
+    "@tiptap/core": "^2.3.1",
+    "@tiptap/extension-image": "^2.3.1",
+    "@tiptap/extension-link": "^2.3.1",
+    "@tiptap/extension-table": "^2.3.1",
+    "@tiptap/extension-table-cell": "^2.3.1",
+    "@tiptap/extension-table-header": "^2.3.1",
+    "@tiptap/extension-table-row": "^2.3.1",
+    "@tiptap/extension-task-item": "^2.3.1",
+    "@tiptap/extension-task-list": "^2.3.1",
+    "@tiptap/extension-underline": "^2.3.1",
+    "@tiptap/pm": "^2.3.1",
+    "@tiptap/starter-kit": "^2.3.1",
     "@vuuui/styles": "^0.1.0",
+    "solid-tiptap": "^0.7.0",
     "solidjs-remixicon": "^1.1.2"
   },
   "devDependencies": {

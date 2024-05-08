@@ -27,7 +27,7 @@
 
 ### Overlay
 
-+ [ ] Dialog
++ [x] Dialog
 + [ ] Popup
 
 ### Inputs
@@ -39,7 +39,7 @@
 + [ ] Radio
 + [ ] Slider
 + [ ] Switch
-+ [ ] TextAreaInput
++ [ ] WYSIWYGEditor
     + [ ] Markdown support
     + [ ] Vi binding support
 

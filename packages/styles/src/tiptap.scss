@@ -1,0 +1,9 @@
+@import './base.scss';
+
+.tiptap {
+	@extend .vuuui-base;
+
+	padding: var(--vuuui-padding);
+	overflow: auto;
+	font-size: inherit;
+}

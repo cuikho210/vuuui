@@ -6,6 +6,7 @@ import {
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput,
 	Dialog,
+	WYSIWYGEditor,
 } from "../src"
 
 import {
@@ -44,6 +45,7 @@ const Inputs = <section>
 
 	<Spacer>
 		<TextInput placeholder='Text input' icon={<RiSketching />} />
+		<WYSIWYGEditor />
 	</Spacer>
 </section>
 
