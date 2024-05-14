@@ -1,4 +1,4 @@
-import { createMemo } from 'solid-js'
+import { createEffect, createMemo } from 'solid-js'
 
 import { createTiptapEditor, useEditorHTML } from 'solid-tiptap'
 import StarterKit from '@tiptap/starter-kit'
@@ -35,7 +35,7 @@ import type { WYSIWYGEditorComponent } from './types'
 import '@vuuui/styles/components/inputs/wysiwyg_editor.scss'
 import '@vuuui/styles/tiptap.scss'
 
-const MainMenu = <div class='vuuui-main-menu'>
+const MainMenu = () => <div class='vuuui-main-menu'>
 	<IconButton
 	><RiBold /></IconButton>
 
@@ -122,11 +122,19 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				Link.configure({ protocols: ['mailto', 'tel'], openOnClick: false }),
 				Image.configure({ inline: true }),
 			],
+			content: props.initContent,
 		}))
+
+		if (!editor) return console.error('[WYSIWYGEditor] Cannot create editor')
+
+		const html = useEditorHTML(editor)
+		createEffect(() => {
+			if (props.onModel) props.onModel(html() || '')
+		})
 	}
 
-	return <div {...props} class={className()}>
-		{MainMenu}
+	return <div {...props} class={className()} onChange={undefined}>
+		<MainMenu />
 		<div ref={onRef} />
 	</div>
 }
