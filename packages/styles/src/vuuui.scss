@@ -16,16 +16,19 @@ $colors: (
 	color-shadow: rgba(0, 0, 0, 0.1),
 	color-shadow--strong: rgba(0, 0, 0, 0.16),
 	color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
+	color-wrapper: rgba(var(--vuuui-color-text--rgb), 0.024),
 ) !default;
 
 $spacing: (
 	padding: 1rem,
 	padding--medium: .7rem,
 	padding--half: .5rem,
+	padding--small: .3rem,
 ) !default;
 
 $misc: (
 	radius: 16px,
+	radius--half: 8px,
 	blur-length: 4px,
 	transition-duration: 300ms,
 	transition-duration--short: 150ms,

@@ -6,4 +6,112 @@
 	padding: var(--vuuui-padding);
 	overflow: auto;
 	font-size: inherit;
+
+	h1 { font-size: xx-large }
+	h2 { font-size: x-large }
+	h3 { font-size: larger }
+
+	code {
+		font-size: inherit;
+		background-color: var(--vuuui-color-wrapper);
+		padding: var(--vuuui-padding--small);
+		border-radius: var(--vuuui-radius--half);
+	}
+
+	pre {
+		padding: var(--vuuui-padding);
+		margin: var(--vuuui-padding--half) auto;
+		border-radius: var(--vuuui-radius);
+		background-color: var(--vuuui-color-wrapper);
+
+		code {
+			background-color: transparent;
+			padding: unset;
+			border-radius: unset;
+		}
+	}
+
+	blockquote {
+		padding: var(--vuuui-padding);
+		margin: var(--vuuui-padding--half) auto;
+		border-top-right-radius: var(--vuuui-radius);
+		border-bottom-right-radius: var(--vuuui-radius);
+		background-color: var(--vuuui-color-wrapper);
+		border-left: 3px solid var(--vuuui-color-primary);
+	}
+
+	ul {
+		list-style-type: none;
+		
+		li {
+			p::before {
+				content: "+  ";
+				color: var(--vuuui-color-primary);
+			}
+		}
+
+		&[data-type="taskList"] {
+			li {
+				display: flex;
+				align-items: flex-start;
+				gap: var(--vuuui-padding--half);
+
+				label {
+					span {
+						$size: 1.4rem;
+
+						position: relative;
+						display: inline-block;
+						width: $size;
+						height: $size;
+						border-radius: var(--vuuui-radius--half);
+						border: 1px solid var(--vuuui-color-primary);
+						cursor: pointer;
+						overflow: hidden;
+
+						&::before {
+							content: "✔";
+							position: absolute;
+							top: 0; left: 0; right: 0; bottom: 0;
+							color: var(--vuuui-color-text);
+							background-color: var(--vuuui-color-primary);
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							visibility: hidden;
+						}
+					}
+
+					input {
+						display: none;
+
+						&:checked + span::before {
+							visibility: visible;
+						}
+					}
+				}
+				
+				div, p {
+					display: inline-block;
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	ol {
+		counter-reset: item;
+		list-style-type: none;
+
+		li {
+			p::before {
+				content: counter(item) ". ";
+				counter-increment: item;
+				color: var(--vuuui-color-primary);
+			}
+		}
+	}
 }
