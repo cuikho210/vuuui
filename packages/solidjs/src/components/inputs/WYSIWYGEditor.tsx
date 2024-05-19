@@ -185,6 +185,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				><RiImageLine /></IconButton>
 
 				<IconButton
+					onClick={() => editor()?.chain().focus().setHorizontalRule().run()}
 				><RiSeparator /></IconButton>
 
 				<IconButton

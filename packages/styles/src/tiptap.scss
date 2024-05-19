@@ -11,6 +11,11 @@
 	h2 { font-size: x-large }
 	h3 { font-size: larger }
 
+	hr {
+		border: none;
+		border-bottom: 1px solid var(--vuuui-color-border);
+	}
+
 	code {
 		font-size: inherit;
 		background-color: var(--vuuui-color-wrapper);
