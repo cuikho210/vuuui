@@ -19,7 +19,7 @@ import {
 const Overlay = () => {
 	const [dialogOpen, setDialogOpen] = createSignal(false);
 
-	<section>
+	return <section>
 		<h2>Overlay</h2><br />
 
 		<Spacer>
