@@ -17,7 +17,7 @@ import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
 
-import { IconButton } from '../'
+import { IconButton } from '../..'
 import {
 	RiBold, RiItalic,
 	RiStrikethrough, RiUnderline,

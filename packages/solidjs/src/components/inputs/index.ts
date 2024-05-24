@@ -1,3 +1,3 @@
 export * from './types.d'
 export * from './TextInput'
-export * from './WYSIWYGEditor'
+export * from './wysiwyg_editor'

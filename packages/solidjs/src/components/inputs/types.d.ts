@@ -9,9 +9,3 @@ export interface TextInputProps extends JSX.InputHTMLAttributes<HTMLInputElement
 }
 export type TextInputComponent = Component<TextInputProps>
 
-// WYSIWYGEditor
-export interface WYSIWYGEditorProps extends JSX.HTMLAttributes<HTMLDivElement> {
-	onModel?(html: string)
-	initContent?: string
-}
-export type WYSIWYGEditorComponent = Component<WYSIWYGEditorProps>
