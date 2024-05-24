@@ -22,6 +22,10 @@
 	&[open] {
 		opacity: 1;
 		visibility: visible;
+
+		& > .vuuui-body {
+			top: 50%;
+		}
 	}
 
 	& > .vuuui-backdrop {
@@ -37,7 +41,7 @@
 		display: block;
 		background-color: var(--vuuui-color-bg);
 		box-shadow: 0 4px 1rem var(--vuuui-color-shadow);
-		top: 50%;
+		top: 55%;
 		translate: 0 -50%;
 		width: 700px;
 		max-width: 100%;
