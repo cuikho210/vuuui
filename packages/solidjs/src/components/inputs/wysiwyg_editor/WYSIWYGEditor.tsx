@@ -16,6 +16,7 @@ import TableHeader from '@tiptap/extension-table-header'
 import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
+import { WYSIWYGEditorTableMenu } from './WYSIWYGEditorTableMenu'
 
 import { IconButton } from '../..'
 import {
@@ -61,8 +62,13 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 	const [bulletList, setBulletList] = createSignal(false)
 	const [orderedList, setOrderedList] = createSignal(false)
 	const [taskList, setTaskList] = createSignal(false)
+
 	const [undo, setUndo] = createSignal(false)
 	const [redo, setRedo] = createSignal(false)
+
+	const [tableActive, setTableActive] = createSignal(false)
+	const [canMergeCell, setCanMergeCell] = createSignal(false)
+	const [canSplitCell, setCanSplitCell] = createSignal(false)
 
 	const onRef = (ref: HTMLDivElement) => {
 		editor = createTiptapEditor(() => ({
@@ -77,6 +83,9 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				Image.configure({ inline: true }),
 			],
 			content: props.initContent,
+			onSelectionUpdate(props) {
+				setTableActive(props.editor.isActive('table'))
+			},
 		}))
 
 		setEditorCreated(true)
@@ -99,13 +108,16 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 		bindActiveState(editor, setBulletList, 'bulletList')
 		bindActiveState(editor, setOrderedList, 'orderedList')
 		bindActiveState(editor, setTaskList, 'taskList')
+
 		bindUndoState(editor, setUndo)
 		bindRedoState(editor, setRedo)
+		bindCanMergeCellState(editor, setCanMergeCell)
+		bindCanSplitCellState(editor, setCanSplitCell)
 	}
 
 	return <div {...props} class={className()} >
 		<Show when={editorCreated()}>
-			<div class='vuuui-main-menu'>
+			<div class='vuuui-editor-main-menu'>
 				<IconButton
 					active={bold()}
 					onClick={() => editor()?.chain().focus().toggleBold().run()}
@@ -180,6 +192,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<div class='vuuui-divider' />
 
 				<IconButton
+					onClick={() => editor()?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
 				><RiTableLine /></IconButton>
 
 				<IconButton
@@ -207,6 +220,13 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 					onClick={() => editor()?.commands.redo()}
 				><RiArrowGoForwardLine /></IconButton>
 			</div>
+
+			<WYSIWYGEditorTableMenu
+				editor={editor}
+				visible={tableActive()}
+				canMergeCell={canMergeCell()}
+				canSplitCell={canSplitCell()}
+			/>
 		</Show>
 
 		<div ref={onRef} />
@@ -236,5 +256,21 @@ function bindRedoState(
 	setter: Setter<boolean>,
 ) {
 	const state = createEditorTransaction(editor, editor => editor?.can().redo())
+	createEffect(() => setter(state() ?? false))
+}
+
+function bindCanMergeCellState(
+	editor: Accessor<Editor | undefined>,
+	setter: Setter<boolean>,
+) {
+	const state = createEditorTransaction(editor, editor => editor?.can().mergeCells())
+	createEffect(() => setter(state() ?? false))
+}
+
+function bindCanSplitCellState(
+	editor: Accessor<Editor | undefined>,
+	setter: Setter<boolean>,
+) {
+	const state = createEditorTransaction(editor, editor => editor?.can().splitCell())
 	createEffect(() => setter(state() ?? false))
 }

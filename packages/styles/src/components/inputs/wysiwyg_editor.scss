@@ -22,7 +22,7 @@
 		border-color: rgba(var(--vuuui-color-primary--rgb), .7);
 	}
 
-	> .vuuui-main-menu {
+	> .vuuui-editor-main-menu {
 		position: relative;
 		display: flex;
 		width: 100%;
@@ -39,6 +39,21 @@
 			min-width: 1px;
 			min-height: 40px;
 			border-right: 1px solid var(--vuuui-color-border);
+		}
+	}
+
+	> .vuuui-editor-sub-menu {
+		@extend .vuuui-editor-main-menu;
+
+		border-radius: 0;
+		height: 0;
+		visibility: hidden;
+		transition-duration: var(--vuuui-transition-duration--short);
+		transition-property: height, visibility;
+
+		&[data-visible="true"] {
+			visibility: visible;
+			height: 40px;
 		}
 	}
 }
