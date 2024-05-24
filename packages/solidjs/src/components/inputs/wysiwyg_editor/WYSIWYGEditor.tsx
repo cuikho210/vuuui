@@ -61,6 +61,8 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 	const [bulletList, setBulletList] = createSignal(false)
 	const [orderedList, setOrderedList] = createSignal(false)
 	const [taskList, setTaskList] = createSignal(false)
+	const [undo, setUndo] = createSignal(false)
+	const [redo, setRedo] = createSignal(false)
 
 	const onRef = (ref: HTMLDivElement) => {
 		editor = createTiptapEditor(() => ({
@@ -97,6 +99,8 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 		bindActiveState(editor, setBulletList, 'bulletList')
 		bindActiveState(editor, setOrderedList, 'orderedList')
 		bindActiveState(editor, setTaskList, 'taskList')
+		bindUndoState(editor, setUndo)
+		bindRedoState(editor, setRedo)
 	}
 
 	return <div {...props} class={className()} >
@@ -194,9 +198,13 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<div class='vuuui-divider' />
 
 				<IconButton
+					disabled={!undo()}
+					onClick={() => editor()?.commands.undo()}
 				><RiArrowGoBackLine /></IconButton>
 
 				<IconButton
+					disabled={!redo()}
+					onClick={() => editor()?.commands.redo()}
 				><RiArrowGoForwardLine /></IconButton>
 			</div>
 		</Show>
@@ -213,4 +221,20 @@ function bindActiveState(
 ) {
 	const isActive = createEditorTransaction(editor, editor => editor?.isActive(key, options))
 	createEffect(() => setter(isActive() ?? false))
+}
+
+function bindUndoState(
+	editor: Accessor<Editor | undefined>,
+	setter: Setter<boolean>,
+) {
+	const state = createEditorTransaction(editor, editor => editor?.can().undo())
+	createEffect(() => setter(state() ?? false))
+}
+
+function bindRedoState(
+	editor: Accessor<Editor | undefined>,
+	setter: Setter<boolean>,
+) {
+	const state = createEditorTransaction(editor, editor => editor?.can().redo())
+	createEffect(() => setter(state() ?? false))
 }
