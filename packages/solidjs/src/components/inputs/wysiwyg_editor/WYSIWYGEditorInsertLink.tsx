@@ -1,6 +1,6 @@
 import { createSignal, createEffect } from 'solid-js'
 import { RiCheckLine, RiLink } from 'solidjs-remixicon'
-import { Dialog, Spacer, TextInput, ElevatedButton } from '../..'
+import { Dialog, Spacer, TextInput, TextButton } from '../..'
 import type { WYSIWYGEditorInsertLinkComponent } from './types'
 
 export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props => {
@@ -14,25 +14,31 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 	})
 
 	const setLink = () => {
+		const value = url().trim();
 		const editor = props.editor()
-		if (!url() || !editor) return
+		if (!value || !editor) return
 		
 		editor
 			.chain()
 			.focus()
 			.extendMarkRange('link')
-			.setLink({ href: url() })
+			.setLink({ href: value, target: '_blank' })
 			.run()
 
 		setOpen(false)
 	}
 
+	const SetLinkButton = <TextButton
+		icon={<RiCheckLine />}
+		onClick={setLink}
+	>Set</TextButton>
+
 	return <Dialog
 		backdropClose
 		open={open()}
 		close={() => setOpen(false)}
-		icon={<RiLink />}
 		title='Insert link'
+		action={SetLinkButton}
 	>
 		<Spacer justify='flex-end'>
 			<TextInput
@@ -40,11 +46,6 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 				placeholder='URL'
 				model={[url, setUrl]}
 			/>
-
-			<ElevatedButton
-				icon={<RiCheckLine />}
-				onClick={setLink}
-			>Set</ElevatedButton>
 		</Spacer>
 	</Dialog>
 }

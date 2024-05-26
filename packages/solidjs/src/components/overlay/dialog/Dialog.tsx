@@ -20,19 +20,21 @@ export const Dialog: DialogComponent = props => {
 		{...props}
 		title=""
 		class={className()}
+		tabindex='-1'
 	>
 		<div class='vuuui-backdrop' onClick={backdropClose}></div>
 		<Container class='vuuui-body'>
 			<div class='vuuui-title'>
-				<div class='vuuui-left'>
-					{props.icon}
-					<span class='vuuui-title-content'> {props.title} </span>
-				</div>
-
 				<IconButton
 					class='vuuui-btn'
 					onClick={props.close}
 				><RiCloseLine /></IconButton>
+
+				<span class='vuuui-title-content'> {props.title} </span>
+
+				<div class='vuuui-title-action'>
+					{props.action}
+				</div>
 			</div>
 			<div class='vuuui-content'>
 				{props.children}

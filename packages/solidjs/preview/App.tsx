@@ -32,7 +32,6 @@ const Overlay = () => {
 				open={dialogOpen()}
 				close={() => setDialogOpen(false)}
 				backdropClose
-				icon={<RiHeartLine />}
 				title='This is a very very very very very very very very loooong title'
 			> Test dialog ahihi </Dialog>
 		</Spacer>

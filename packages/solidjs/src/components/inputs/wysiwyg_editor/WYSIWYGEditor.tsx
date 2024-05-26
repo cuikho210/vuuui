@@ -131,26 +131,31 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<IconButton
 					active={bold()}
 					onClick={() => editor()?.chain().focus().toggleBold().run()}
+					title='Bold'
 				><RiBold /></IconButton>
 
 				<IconButton
 					active={italic()}
 					onClick={() => editor()?.chain().focus().toggleItalic().run()}
+					title='Italic'
 				><RiItalic /></IconButton>
 
 				<IconButton
 					active={strikeline()}
 					onClick={() => editor()?.chain().focus().toggleStrike().run()}
+					title='Strikeline'
 				><RiStrikethrough /></IconButton>
 
 				<IconButton
 					active={underline()}
 					onClick={() => editor()?.chain().focus().toggleUnderline().run()}
+					title='Underline'
 				><RiUnderline /></IconButton>
 
 				<IconButton
 					active={inlineCode()}
 					onClick={() => editor()?.chain().focus().toggleCode().run()}
+					title='Inline code'
 				><RiCodeLine /></IconButton>
 
 				<div class='vuuui-divider' />
@@ -158,16 +163,19 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<IconButton
 					active={heading1()}
 					onClick={() => editor()?.chain().focus().toggleHeading({level: 1}).run()}
+					title='Heading 1'
 				><RiH1 /></IconButton>
 
 				<IconButton
 					active={heading2()}
 					onClick={() => editor()?.chain().focus().toggleHeading({level: 2}).run()}
+					title='Heading 2'
 				><RiH2 /></IconButton>
 
 				<IconButton
 					active={heading3()}
 					onClick={() => editor()?.chain().focus().toggleHeading({level: 3}).run()}
+					title='Heading 3'
 				><RiH3 /></IconButton>
 
 				<div class='vuuui-divider' />
@@ -175,11 +183,13 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<IconButton
 					active={blockquote()}
 					onClick={() => editor()?.chain().focus().toggleBlockquote().run()}
+					title='Blockquote'
 				><RiDoubleQuotesR /></IconButton>
 
 				<IconButton
 					active={codeBlock()}
 					onClick={() => editor()?.chain().focus().toggleCodeBlock().run()}
+					title='Code block'
 				><RiCodeBoxLine /></IconButton>
 
 				<div class='vuuui-divider' />
@@ -187,46 +197,51 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<IconButton
 					active={bulletList()}
 					onClick={() => editor()?.chain().focus().toggleBulletList().run()}
+					title='Insert list'
 				><RiListUnordered /></IconButton>
 
 				<IconButton
 					active={orderedList()}
 					onClick={() => editor()?.chain().focus().toggleOrderedList().run()}
+					title='Insert ordered list'
 				><RiListOrdered /></IconButton>
 
 				<IconButton
 					active={taskList()}
 					onClick={() => editor()?.chain().focus().toggleTaskList().run()}
+					title='Insert check list'
 				><RiListCheck3 /></IconButton>
 
 				<div class='vuuui-divider' />
 
 				<IconButton
 					onClick={() => editor()?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
+					title='Insert table'
 				><RiTableLine /></IconButton>
 
-				<Show when={link()}>
-					<IconButton
-						active
-						onClick={() => editor()?.chain().focus().extendMarkRange("link").unsetLink().run()}
-					><RiLinkUnlink /></IconButton>
-				</Show>
-
-				<Show when={!link()}>
-					<IconButton
-						disabled={isSelectionEmpty()}
-						onClick={() => setInsertLinkOpen(true)}
-					><RiLink /></IconButton>
-				</Show>
+				<IconButton
+					disabled={isSelectionEmpty() && !link()}
+					onClick={() => setInsertLinkOpen(true)}
+					title='Link'
+				><RiLink /></IconButton>
 
 				<IconButton
+					disabled={!link()}
+					onClick={() => editor()?.chain().focus().extendMarkRange("link").unsetLink().run()}
+					title='Unlink'
+				><RiLinkUnlink /></IconButton>
+
+				<IconButton
+					title='Insert image'
 				><RiImageLine /></IconButton>
 
 				<IconButton
 					onClick={() => editor()?.chain().focus().setHorizontalRule().run()}
+					title='Insert divider'
 				><RiSeparator /></IconButton>
 
 				<IconButton
+					title='Insert emoji'
 				><RiEmotionLine /></IconButton>
 
 				<div class='vuuui-divider' />
@@ -234,11 +249,13 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				<IconButton
 					disabled={!undo()}
 					onClick={() => editor()?.commands.undo()}
+					title='Undo'
 				><RiArrowGoBackLine /></IconButton>
 
 				<IconButton
 					disabled={!redo()}
 					onClick={() => editor()?.commands.redo()}
+					title='Redo'
 				><RiArrowGoForwardLine /></IconButton>
 			</div>
 
