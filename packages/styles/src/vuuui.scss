@@ -1,15 +1,17 @@
 @import "./utils.scss";
 
 $theme--default: (
-  color-primary--d1: #c25b4e,
-  color-primary: #ff907f,
-  color-primary--l1: #ffe5dc,
-  color-primary--l2: #fff6f3,
+  color-primary--text: #570000,
+  color-primary--dark: #ff907f,
+  color-primary: #ffc5b3,
+  color-primary--light: #ffe5dc,
+  color-primary--lighter: #fff6f3,
 
-  color-alt--d1: #b06abc,
-  color-alt: #d6abde,
-  color-alt--l1: #ffe7ff,
-  color-alt--l2: #fff6ff,
+  color-alt--text: #481523,
+  color-alt--dark: #c48591,
+  color-alt: #f1afbb,
+  color-alt--light: #ffe3ec,
+  color-alt--lighter: #fff3f7,
 
   color-success: #00aa32,
   color-info: #00b5b8,

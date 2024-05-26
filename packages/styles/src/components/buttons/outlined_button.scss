@@ -1,18 +1,12 @@
-@import "./text_button_base.scss";
+@import "./text_button.scss";
 
 .vuuui-outlined-button {
-	@extend .vuuui-text-button-base;
+  @extend .vuuui-text-button;
 
-	background-color: transparent;
-	border: 1px solid rgba(var(--vuuui-color-primary--rgb), .4);
-	transition-property: background-color;
-	transition-duration: var(--vuuui-transition-duration--short);
+  border: 1px solid var(--vuuui-color-primary--light);
+  transition-property: background-color, border-color;
 
-	&:not(:disabled, [active="true"]):hover {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
-	}
-
-	&[active="true"] {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .47);
-	}
+  &:not(:disabled):hover, &[active="true"] {
+    border: 1px solid var(--vuuui-color-primary);
+  }
 }

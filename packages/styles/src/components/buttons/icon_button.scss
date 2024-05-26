@@ -1,33 +1,34 @@
 @import './button_base.scss';
 
 .vuuui-icon-button {
-	@extend .vuuui-button-base;
+  @extend .vuuui-button-base;
 
-	border-radius: 50%;
-	aspect-ratio: 1/1;
-	flex-grow: 0;
-	flex-shrink: 0;
-	line-height: 1;
-	background-color: transparent;
-	padding: var(--vuuui-padding--half);
-	transition-property: background-color, opacity;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  line-height: 1;
+  background-color: transparent;
+  padding: var(--vuuui-padding--half);
+  transition-property: background-color, opacity, color;
 
-	.vuuui-spinner {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+  .vuuui-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-	&:not(:disabled, [active="true"]):hover {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .2);
-	}
+  &:not(:disabled, [active="true"]):hover {
+    background-color: var(--vuuui-color-primary--light);
+  }
 
-	&[active="true"] {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .47);
-	}
+  &[active="true"] {
+    background-color: var(--vuuui-color-alt--light);
+    color: var(--vuuui-color-primary--text);
+  }
 }

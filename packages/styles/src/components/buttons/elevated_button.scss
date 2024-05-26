@@ -1,23 +1,23 @@
 @import "./text_button_base.scss";
 
 .vuuui-elevated-button {
-	@extend .vuuui-text-button-base;
+  @extend .vuuui-text-button-base;
 
-	background-color: rgba(var(--vuuui-color-primary--rgb), .1);
-	box-shadow: 0 2px 2px var(--vuuui-color-shadow);
-	transition-property: background-color, box-shadow, opacity;
+  background-color: var(--vuuui-color-primary--lighter);
+  box-shadow: 0 2px 2px var(--vuuui-color-shadow);
+  transition-property: background-color, box-shadow, opacity;
 
-	&:not(:disabled, [active="true"]):hover {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .4);
-		box-shadow: 0 2px 4px var(--vuuui-color-shadow--strong);
-	}
+  &:not(:disabled, [active="true"]):hover {
+    background-color: var(--vuuui-color-primary--light);
+    box-shadow: 0 2px 4px var(--vuuui-color-shadow--strong);
+  }
 
-	&[active="true"] {
-		background-color: rgba(var(--vuuui-color-primary--rgb), .7);
-		box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
-	}
+  &[active="true"] {
+    background-color: var(--vuuui-color-alt--light);
+    box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
+  }
 
-	&:not(:disabled):active {
-		box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
-	}
+  &:not(:disabled):active {
+    box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
+  }
 }

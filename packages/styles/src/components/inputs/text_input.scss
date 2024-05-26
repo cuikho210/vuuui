@@ -3,71 +3,71 @@
 @import '../../vuuui.scss';
 
 .vuuui-text-input {
-	@extend .vuuui-base;
-	$icon-width: 3rem;
-	$color-text-placeholder: rgba(var(--vuuui-color-text--rgb), .4);
+  @extend .vuuui-base;
+  $icon-width: 3rem;
+  $color-text-placeholder: rgba(var(--vuuui-color-text--rgb), .4);
 
-	position: relative;
-	display: block;
-	width: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
 
-	input {
-		width: 100%;
-		padding: var(--vuuui-padding--medium) var(--vuuui-padding);
-		padding-left: $icon-width;
-		font-size: inherit;
-		font-family: inherit;
-		border-radius: var(--vuuui-radius);
-		border: none;
-		background-color: rgba(var(--vuuui-color-primary--rgb), .04);
-		border: 1px solid rgba(var(--vuuui-color-primary--rgb), .2);
-		transition-property: border-color;
-		transition-duration: var(--vuuui-transition-duration);
+  input {
+    width: 100%;
+    padding: var(--vuuui-padding--medium) var(--vuuui-padding);
+    padding-left: $icon-width;
+    font-size: inherit;
+    font-family: inherit;
+    border-radius: var(--vuuui-radius);
+    border: none;
+    background-color: transparent;
+    border: 1px solid var(--vuuui-color-border);
+    transition-property: border-color;
+    transition-duration: var(--vuuui-transition-duration);
 
-		&:focus {
-			outline: none;
-			border: 1px solid rgba(var(--vuuui-color-primary--rgb), .7);
+    &:focus {
+      outline: none;
+      border: 1px solid var(--vuuui-color-primary);
 
-			+ .vuuui-icon {
-				color: var(--vuuui-color-primary);
-			}
-		}
+      + .vuuui-icon {
+          color: var(--vuuui-color-primary--dark);
+      }
+    }
 
-		&:not(:placeholder-shown) ~ .vuuui-placeholder {
-			visibility: visible;
-			opacity: 1;
-			top: 0;
-			right: var(--vuuui-padding);
-			translate: 0;
-			font-size: smaller;
-		}
-	}
+    &:not(:placeholder-shown) ~ .vuuui-placeholder {
+      visibility: visible;
+      opacity: 1;
+      top: 0;
+      right: var(--vuuui-padding);
+      translate: 0;
+      font-size: smaller;
+    }
+  }
 
-	.vuuui-icon {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: $icon-width;
-		height: 100%;
-		pointer-events: none;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition-property: color;
-		transition-duration: var(--vuuui-transition-duration);
-	}
+  .vuuui-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $icon-width;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: color;
+    transition-duration: var(--vuuui-transition-duration);
+  }
 
-	.vuuui-placeholder {
-		position: absolute;
-		top: var(--vuuui-padding--medium);
-		right: calc(100% - $icon-width);
-		translate: 100%;
-		pointer-events: none;
-		font-size: inherit;
-		color: $color-text-placeholder;
-		visibility: hidden;
-		opacity: 0;
-		transition-property: visibility, opacity, top, right, translate, font-size;
-		transition-duration: var(--vuuui-transition-duration);
-	}
+  .vuuui-placeholder {
+    position: absolute;
+    top: var(--vuuui-padding--medium);
+    right: calc(100% - $icon-width);
+    translate: 100%;
+    pointer-events: none;
+    font-size: inherit;
+    color: $color-text-placeholder;
+    visibility: hidden;
+    opacity: 0;
+    transition-property: visibility, opacity, top, right, translate, font-size;
+    transition-duration: var(--vuuui-transition-duration);
+  }
 }

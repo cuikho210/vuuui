@@ -16,3 +16,10 @@ export interface WYSIWYGEditorTableMenuProps {
 	canSplitCell?: boolean
 }
 export type WYSIWYGEditorTableMenuComponent = Component<WYSIWYGEditorTableMenuProps>
+
+// WYSIWYGEditorInsertLink
+export interface WYSIWYGEditorInsertLinkProps {
+	editor: Accessor<Editor | undefined>
+	visible?: boolean
+}
+export type WYSIWYGEditorInsertLinkComponent = Component<WYSIWYGEditorInsertLinkProps>

@@ -146,20 +146,22 @@ const Colors = () => <section>
 		<div>
 			<small><i>Primary</i></small>
 			<Spacer wrap='nowrap'>
-				<Color color='var(--vuuui-color-primary--d1)' />
+				<Color color='var(--vuuui-color-primary--text)' />
+				<Color color='var(--vuuui-color-primary--dark)' />
 				<Color color='var(--vuuui-color-primary)' />
-				<Color color='var(--vuuui-color-primary--l1)' />
-				<Color color='var(--vuuui-color-primary--l2)' />
+				<Color color='var(--vuuui-color-primary--light)' />
+				<Color color='var(--vuuui-color-primary--lighter)' />
 			</Spacer>
 		</div>
 
 		<div>
 			<small><i>Alternative</i></small>
 			<Spacer wrap='nowrap'>
-				<Color color='var(--vuuui-color-alt--d1)' />
+				<Color color='var(--vuuui-color-alt--text)' />
+				<Color color='var(--vuuui-color-alt--dark)' />
 				<Color color='var(--vuuui-color-alt)' />
-				<Color color='var(--vuuui-color-alt--l1)' />
-				<Color color='var(--vuuui-color-alt--l2)' />
+				<Color color='var(--vuuui-color-alt--light)' />
+				<Color color='var(--vuuui-color-alt--lighter)' />
 			</Spacer>
 		</div>
 	</Spacer>
