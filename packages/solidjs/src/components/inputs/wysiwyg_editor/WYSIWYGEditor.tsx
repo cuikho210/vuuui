@@ -36,6 +36,7 @@ import {
 	RiEmotionLine,
 	RiArrowGoBackLine,
 	RiArrowGoForwardLine,
+	RiLinkUnlink,
 } from 'solidjs-remixicon'
 
 import type { Accessor, Setter } from 'solid-js'
@@ -65,6 +66,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 	const [orderedList, setOrderedList] = createSignal(false)
 	const [taskList, setTaskList] = createSignal(false)
 	const [link, setLink] = createSignal(false)
+	const [isSelectionEmpty, setIsSelectionEmpty] = createSignal(false)
 
 	const [undo, setUndo] = createSignal(false)
 	const [redo, setRedo] = createSignal(false)
@@ -117,6 +119,8 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 
 		bindUndoState(editor, setUndo)
 		bindRedoState(editor, setRedo)
+		bindSelectionState(editor, setIsSelectionEmpty)
+
 		bindCanMergeCellState(editor, setCanMergeCell)
 		bindCanSplitCellState(editor, setCanSplitCell)
 	}
@@ -201,10 +205,19 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 					onClick={() => editor()?.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run()}
 				><RiTableLine /></IconButton>
 
-				<IconButton
-					active={link()}
-					onClick={() => setInsertLinkOpen(true)}
-				><RiLink /></IconButton>
+				<Show when={link()}>
+					<IconButton
+						active
+						onClick={() => editor()?.chain().focus().extendMarkRange("link").unsetLink().run()}
+					><RiLinkUnlink /></IconButton>
+				</Show>
+
+				<Show when={!link()}>
+					<IconButton
+						disabled={isSelectionEmpty()}
+						onClick={() => setInsertLinkOpen(true)}
+					><RiLink /></IconButton>
+				</Show>
 
 				<IconButton
 				><RiImageLine /></IconButton>
@@ -285,5 +298,13 @@ function bindCanSplitCellState(
 	setter: Setter<boolean>,
 ) {
 	const state = createEditorTransaction(editor, editor => editor?.can().splitCell())
+	createEffect(() => setter(state() ?? false))
+}
+
+function bindSelectionState(
+	editor: Accessor<Editor | undefined>,
+	setter: Setter<boolean>,
+) {
+	const state = createEditorTransaction(editor, editor => editor?.state.selection.empty)
 	createEffect(() => setter(state() ?? false))
 }

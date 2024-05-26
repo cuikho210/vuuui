@@ -1,6 +1,6 @@
 import { createSignal, createEffect } from 'solid-js'
-import { RiCheckLine, RiCloseLine, RiLink } from 'solidjs-remixicon'
-import { Dialog, Spacer, TextInput, ElevatedButton, TextButton } from '../..';
+import { RiCheckLine, RiLink } from 'solidjs-remixicon'
+import { Dialog, Spacer, TextInput, ElevatedButton } from '../..'
 import type { WYSIWYGEditorInsertLinkComponent } from './types'
 
 export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props => {
@@ -27,20 +27,6 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 		setOpen(false)
 	}
 
-	const unsetLink = () => {
-		const editor = props.editor()
-		if (!editor) return
-		
-		editor
-			.chain()
-			.focus()
-			.extendMarkRange("link")
-			.unsetLink()
-			.run()
-
-		setOpen(false)
-	}
-
 	return <Dialog
 		backdropClose
 		open={open()}
@@ -59,11 +45,6 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 				icon={<RiCheckLine />}
 				onClick={setLink}
 			>Set</ElevatedButton>
-
-			<TextButton
-				icon={<RiCloseLine />}
-				onClick={unsetLink}
-			>Unset</TextButton>
 		</Spacer>
 	</Dialog>
 }
