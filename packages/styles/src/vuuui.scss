@@ -13,14 +13,17 @@ $theme--default: (
   color-alt--light: #ffe3ec,
   color-alt--lighter: #fff3f7,
 
-  color-success: #00aa32,
-  color-info: #00b5b8,
-  color-warning: #dba800,
-  color-danger: #db4400,
+  color-text: #000000,
+  color-text-info: #1a3baa,
+  color-text-success: #438d75,
+  color-text-warning: #c18500,
+  color-text-danger: #98000b,
 
   color-bg: #ffffff,
-  color-text: #000000,
-  color-link: #00a1b6,
+  color-bg-info: #faf8ff,
+  color-bg-success: #e8fef5,
+  color-bg-warning: #fff8ec,
+  color-bg-danger: #fff4ef,
 ) !default;
 
 $colors: (

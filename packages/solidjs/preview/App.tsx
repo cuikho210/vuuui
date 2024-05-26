@@ -164,6 +164,28 @@ const Colors = () => <section>
 				<Color color='var(--vuuui-color-alt--lighter)' />
 			</Spacer>
 		</div>
+
+		<div>
+			<small><i>Text</i></small>
+			<Spacer wrap='nowrap'>
+				<Color color='var(--vuuui-color-text)' />
+				<Color color='var(--vuuui-color-text-info)' />
+				<Color color='var(--vuuui-color-text-success)' />
+				<Color color='var(--vuuui-color-text-warning)' />
+				<Color color='var(--vuuui-color-text-danger)' />
+			</Spacer>
+		</div>
+
+		<div>
+			<small><i>Background</i></small>
+			<Spacer wrap='nowrap'>
+				<Color color='var(--vuuui-color-bg)' />
+				<Color color='var(--vuuui-color-bg-info)' />
+				<Color color='var(--vuuui-color-bg-success)' />
+				<Color color='var(--vuuui-color-bg-warning)' />
+				<Color color='var(--vuuui-color-bg-danger)' />
+			</Spacer>
+		</div>
 	</Spacer>
 </section>
 
