@@ -27,6 +27,20 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 		setOpen(false)
 	}
 
+	const unsetLink = () => {
+		const editor = props.editor()
+		if (!editor) return
+		
+		editor
+			.chain()
+			.focus()
+			.extendMarkRange("link")
+			.unsetLink()
+			.run()
+
+		setOpen(false)
+	}
+
 	return <Dialog
 		backdropClose
 		open={open()}
@@ -48,8 +62,8 @@ export const WYSIWYGEditorInsertLink: WYSIWYGEditorInsertLinkComponent = props =
 
 			<TextButton
 				icon={<RiCloseLine />}
-				onClick={() => setOpen(false)}
-			>Cancel</TextButton>
+				onClick={unsetLink}
+			>Unset</TextButton>
 		</Spacer>
 	</Dialog>
 }

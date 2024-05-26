@@ -50,6 +50,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 
 	let editor: Accessor<Editor | undefined> = () => undefined
 
+	// Active status
 	const [bold, setBold] = createSignal(false)
 	const [italic, setItalic] = createSignal(false)
 	const [strikeline, setStrikeline] = createSignal(false)
@@ -63,6 +64,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 	const [bulletList, setBulletList] = createSignal(false)
 	const [orderedList, setOrderedList] = createSignal(false)
 	const [taskList, setTaskList] = createSignal(false)
+	const [link, setLink] = createSignal(false)
 
 	const [undo, setUndo] = createSignal(false)
 	const [redo, setRedo] = createSignal(false)
@@ -111,6 +113,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 		bindActiveState(editor, setBulletList, 'bulletList')
 		bindActiveState(editor, setOrderedList, 'orderedList')
 		bindActiveState(editor, setTaskList, 'taskList')
+		bindActiveState(editor, setLink, 'link')
 
 		bindUndoState(editor, setUndo)
 		bindRedoState(editor, setRedo)
@@ -199,6 +202,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				><RiTableLine /></IconButton>
 
 				<IconButton
+					active={link()}
 					onClick={() => setInsertLinkOpen(true)}
 				><RiLink /></IconButton>
 
