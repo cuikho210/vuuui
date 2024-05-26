@@ -27,6 +27,7 @@ $colors: (
   color-shadow: rgba(0, 0, 0, 0.1),
   color-shadow--strong: rgba(0, 0, 0, 0.16),
   color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
+  color-border--strong: rgba(var(--vuuui-color-text--rgb), 0.1),
   color-wrapper: rgba(var(--vuuui-color-text--rgb), 0.024),
 ) !default;
 
