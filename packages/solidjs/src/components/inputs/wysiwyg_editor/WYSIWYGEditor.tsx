@@ -17,6 +17,7 @@ import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
 import { WYSIWYGEditorTableMenu } from './WYSIWYGEditorTableMenu'
+import { WYSIWYGEditorInsertLink } from './WYSIWYGEditorInsertLink'
 
 import { IconButton } from '../..'
 import {
@@ -69,6 +70,8 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 	const [tableActive, setTableActive] = createSignal(false)
 	const [canMergeCell, setCanMergeCell] = createSignal(false)
 	const [canSplitCell, setCanSplitCell] = createSignal(false)
+
+	const [insertLinkOpen, setInsertLinkOpen] = createSignal(false)
 
 	const onRef = (ref: HTMLDivElement) => {
 		editor = createTiptapEditor(() => ({
@@ -196,6 +199,7 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				><RiTableLine /></IconButton>
 
 				<IconButton
+					onClick={() => setInsertLinkOpen(true)}
 				><RiLink /></IconButton>
 
 				<IconButton
@@ -226,6 +230,11 @@ export const WYSIWYGEditor: WYSIWYGEditorComponent = props => {
 				visible={tableActive()}
 				canMergeCell={canMergeCell()}
 				canSplitCell={canSplitCell()}
+			/>
+
+			<WYSIWYGEditorInsertLink
+				editor={editor}
+				modal={[insertLinkOpen, setInsertLinkOpen]}
 			/>
 		</Show>
 

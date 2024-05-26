@@ -1,5 +1,5 @@
 import { Editor } from "@tiptap/core"
-import { Component, JSX, Accessor } from "solid-js"
+import { Component, JSX, Accessor, Signal } from "solid-js"
 
 // WYSIWYGEditor
 export interface WYSIWYGEditorProps extends JSX.HTMLAttributes<HTMLDivElement> {
@@ -20,6 +20,6 @@ export type WYSIWYGEditorTableMenuComponent = Component<WYSIWYGEditorTableMenuPr
 // WYSIWYGEditorInsertLink
 export interface WYSIWYGEditorInsertLinkProps {
 	editor: Accessor<Editor | undefined>
-	visible?: boolean
+	modal: Signal<boolean>
 }
 export type WYSIWYGEditorInsertLinkComponent = Component<WYSIWYGEditorInsertLinkProps>
