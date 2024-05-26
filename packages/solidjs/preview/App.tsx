@@ -40,24 +40,16 @@ const Overlay = () => {
 }
 
 const Inputs = () => {
-	const inputSignal = createSignal('Ahihi')
-	const [wysiwygValue, setWysiwygValue] = createSignal('Ahuhu')
-
 	return <section>
 		<h2>Inputs</h2><br />
-
-		<p>{inputSignal[0]()}</p>
-		<p>{wysiwygValue()}</p>
-		<br />
 
 		<Spacer>
 			<TextInput
 				placeholder='Text input'
 				icon={<RiSketching />}
-				model={inputSignal}
 			/>
 
-			<WYSIWYGEditor onModel={html => setWysiwygValue(html)} />
+			<WYSIWYGEditor />
 		</Spacer>
 	</section>
 }
@@ -136,9 +128,47 @@ const Spinner = () => <section>
 	</Spacer>
 </section>
 
+const Color = (props: {color: string}) => {
+	const size = '4rem';
+
+	return <div style={{
+		'background-color': props.color,
+		'border-radius': 'var(--vuuui-radius)',
+		width: size,
+		height: size,
+	}}></div>
+}
+
+const Colors = () => <section>
+	<h2>Colors</h2><br />
+
+	<Spacer>
+		<div>
+			<small><i>Primary</i></small>
+			<Spacer wrap='nowrap'>
+				<Color color='var(--vuuui-color-primary--d1)' />
+				<Color color='var(--vuuui-color-primary)' />
+				<Color color='var(--vuuui-color-primary--l1)' />
+				<Color color='var(--vuuui-color-primary--l2)' />
+			</Spacer>
+		</div>
+
+		<div>
+			<small><i>Alternative</i></small>
+			<Spacer wrap='nowrap'>
+				<Color color='var(--vuuui-color-alt--d1)' />
+				<Color color='var(--vuuui-color-alt)' />
+				<Color color='var(--vuuui-color-alt--l1)' />
+				<Color color='var(--vuuui-color-alt--l2)' />
+			</Spacer>
+		</div>
+	</Spacer>
+</section>
+
 export const App = () => <Container md>
 	<h1>VuuUI</h1><br />
 
+	<Colors /> <br />
 	<Spinner /> <br />
 	<Buttons /> <br />
 	<Inputs /> <br />
