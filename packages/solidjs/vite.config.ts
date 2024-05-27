@@ -13,6 +13,7 @@ export default defineConfig({
 		libInjectCss(),
 		dts({
 			tsconfigPath: resolve(__dirname, './tsconfig-build.json'),
+			copyDtsFiles: true,
 		}),
 	],
 	css: {

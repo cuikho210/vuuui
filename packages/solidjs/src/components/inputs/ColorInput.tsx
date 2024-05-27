@@ -1,3 +1,4 @@
+// @ts-ignore
 import { model } from '../../directives'
 import type { TextInputComponent } from '.'
 import '@vuuui/styles/components/inputs/color_input.scss'

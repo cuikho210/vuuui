@@ -50,7 +50,7 @@ const Inputs = () => {
 			/>
 
 			<ColorInput
-				placeholder='Color input asdlf asdlfk asdlfja sldfkja sdflkjas dflkajsdf laksdjfalsd f'
+				placeholder='Color input'
 				icon={<RiPaletteLine />}
 			/>
 

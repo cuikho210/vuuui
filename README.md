@@ -38,7 +38,7 @@ My UI library
 #### Inputs
 
 + [x] TextInput
-+ [ ] ColorInput
++ [x] ColorInput
 + [ ] FileInput
 + [ ] Checkbox
 + [ ] Radio
