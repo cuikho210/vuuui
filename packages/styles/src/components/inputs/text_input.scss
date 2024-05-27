@@ -39,7 +39,11 @@
       top: 0;
       right: var(--vuuui-padding);
       translate: 0;
-      font-size: smaller;
+    }
+
+    &::placeholder {
+      color: $color-text-placeholder;
+      opacity: 1;
     }
   }
 
@@ -63,11 +67,11 @@
     right: calc(100% - $icon-width);
     translate: 100%;
     pointer-events: none;
-    font-size: inherit;
+    font-size: smaller;
     color: $color-text-placeholder;
     visibility: hidden;
     opacity: 0;
-    transition-property: visibility, opacity, top, right, translate, font-size;
+    transition-property: visibility, opacity, top, right, translate;
     transition-duration: var(--vuuui-transition-duration);
   }
 }

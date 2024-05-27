@@ -4,7 +4,7 @@ import {
 	Container, Spacer,
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
-	TextInput,
+	TextInput, ColorInput,
 	Dialog,
 	WYSIWYGEditor,
 } from "../src"
@@ -14,6 +14,7 @@ import {
 	RiToggleLine, RiLoaderLine,
 	RiFlowerLine, RiSketching,
 	RiEmotionHappyLine,
+	RiPaletteLine,
 } from 'solidjs-remixicon';
 
 const Overlay = () => {
@@ -46,6 +47,11 @@ const Inputs = () => {
 			<TextInput
 				placeholder='Text input'
 				icon={<RiSketching />}
+			/>
+
+			<ColorInput
+				placeholder='Color input asdlf asdlfk asdlfja sldfkja sdflkjas dflkajsdf laksdjfalsd f'
+				icon={<RiPaletteLine />}
 			/>
 
 			<WYSIWYGEditor />

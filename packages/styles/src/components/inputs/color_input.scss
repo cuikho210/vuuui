@@ -1,0 +1,51 @@
+@import '../../base.scss';
+
+.vuuui-color-input {
+  @extend .vuuui-base;
+  $icon-width: 3rem;
+  $color-text-placeholder: rgba(var(--vuuui-color-text--rgb), .4);
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--vuuui-padding--medium) 0;
+  border-radius: var(--vuuui-radius);
+  border: 1px solid var(--vuuui-color-border);
+
+  ::-moz-color-swatch {
+    border: none;
+  }
+
+  > input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: var(--vuuui-radius);
+  }
+
+  .vuuui-icon {
+    width: $icon-width;
+    height: 100%;
+    line-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .vuuui-placeholder {
+    color: $color-text-placeholder;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    margin-right: 4rem;
+    padding-right: var(--vuuui-padding--half);
+  }
+}

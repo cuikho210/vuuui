@@ -1,18 +1,23 @@
-## Accessibility
+# VuuUI
+My UI library
+
+## TODO
+
+### Accessibility
 
 + [ ] ARIA attributes for components
 + [ ] Keyboard navigation support
 
-## Components
+### Components
 
-### Containment
+#### Containment
 
 + [x] Container
 + [x] Spacer
 + [ ] Menu
 + [ ] Card
 
-### Buttons
+#### Buttons
 
 + [x] Elevated
 + [x] Filled
@@ -20,17 +25,17 @@
 + [x] Text
 + [x] Icon
 
-### Communication
+#### Communication
 
 + [ ] Badge
 + [ ] Toast
 
-### Overlay
+#### Overlay
 
 + [x] Dialog
 + [ ] Popup
 
-### Inputs
+#### Inputs
 
 + [x] TextInput
 + [ ] ColorInput
@@ -40,16 +45,16 @@
 + [ ] Slider
 + [ ] Switch
 + [ ] WYSIWYGEditor
-    + [ ] Markdown support
+    + [x] Markdown support
     + [ ] Vi binding support
 
-### Navigation
+#### Navigation
 
 + [ ] NavigationBar
 + [ ] NavigationDrawer
 + [ ] AppBar
 + [ ] TabBar
 
-### Misc
+#### Misc
 
 + [x] Spinner
