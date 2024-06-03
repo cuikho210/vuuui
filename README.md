@@ -44,9 +44,6 @@ My UI library
 + [ ] Radio
 + [ ] Slider
 + [ ] Switch
-+ [ ] WYSIWYGEditor
-    + [x] Markdown support
-    + [ ] Vi binding support
 
 #### Navigation
 

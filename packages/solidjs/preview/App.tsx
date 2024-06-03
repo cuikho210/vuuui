@@ -6,7 +6,6 @@ import {
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput, ColorInput,
 	Dialog,
-	WYSIWYGEditor,
 } from "../src"
 
 import {
@@ -53,8 +52,6 @@ const Inputs = () => {
 				placeholder='Color input'
 				icon={<RiPaletteLine />}
 			/>
-
-			<WYSIWYGEditor />
 		</Spacer>
 	</section>
 }
