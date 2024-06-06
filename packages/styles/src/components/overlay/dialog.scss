@@ -59,30 +59,29 @@
       border-bottom: 1px solid var(--vuuui-color-border);
       background-color: var(--vuuui-color-bg);
       overflow: hidden;
+      min-height: 2.4rem;
 
-      .vuuui-title-content {
-        white-space: nowrap;
-        text-overflow: ellipsis;
+      & > .vuuui-title-left {
+        display: flex;
+        align-items: center;
         overflow: hidden;
-        margin: auto var(--vuuui-padding--half);
-        text-align: center;
-      }
 
-      & > .vuuui-btn {
-        border-radius: 0;
-        padding: var(--vuuui-padding--half) var(--vuuui-padding);
-        aspect-ratio: unset;
-
-        &:active {
-          top: 0;
+        & > .vuuui-title-content {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          text-align: center;
         }
       }
 
-      & > .vuuui-title-action {
-        min-width: 3.5rem;
+      .vuuui-button-slot {
+        flex-shrink: 0;
+        min-width: var(--vuuui-padding);
 
-        *:active {
-          top: 0;
+        button {
+          &:active {
+            top: 0 !important;
+          }
         }
       }
     }

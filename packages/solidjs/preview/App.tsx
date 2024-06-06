@@ -14,6 +14,7 @@ import {
 	RiFlowerLine, RiSketching,
 	RiEmotionHappyLine,
 	RiPaletteLine,
+	RiCloseLine,
 } from 'solidjs-remixicon';
 
 const Overlay = () => {
@@ -29,10 +30,14 @@ const Overlay = () => {
 			>Open dialog</ElevatedButton>
 
 			<Dialog
-				open={dialogOpen()}
-				close={() => setDialogOpen(false)}
+				model={[dialogOpen, setDialogOpen]}
 				backdropClose
 				title='This is a very very very very very very very very loooong title'
+				closeButton={
+					<TextButton onClick={() => setDialogOpen(false)}>
+						<RiCloseLine />
+					</TextButton>
+				}
 			> Test dialog ahihi </Dialog>
 		</Spacer>
 	</section>
