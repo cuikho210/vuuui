@@ -1,3 +1,4 @@
 export * from './types.d'
 export * from './TextInput'
 export * from './ColorInput'
+export * from './FileInput'

@@ -9,3 +9,7 @@ export interface TextInputProps extends JSX.InputHTMLAttributes<HTMLInputElement
 }
 export type TextInputComponent = Component<TextInputProps>
 
+export interface FileInputProps extends TextInputProps {
+	model?: Signal<FileList | null>
+}
+export type FileInputComponent = Component<FileInputProps>

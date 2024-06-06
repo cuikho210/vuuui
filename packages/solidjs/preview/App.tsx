@@ -4,7 +4,7 @@ import {
 	Container, Spacer,
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
-	TextInput, ColorInput,
+	TextInput, ColorInput, FileInput,
 	Dialog,
 } from "../src"
 
@@ -15,6 +15,7 @@ import {
 	RiEmotionHappyLine,
 	RiPaletteLine,
 	RiCloseLine,
+	RiFileLine,
 } from 'solidjs-remixicon';
 
 const Overlay = () => {
@@ -44,6 +45,8 @@ const Overlay = () => {
 }
 
 const Inputs = () => {
+	const [files, setFiles] = createSignal<FileList | null>(null)
+
 	return <section>
 		<h2>Inputs</h2><br />
 
@@ -56,6 +59,12 @@ const Inputs = () => {
 			<ColorInput
 				placeholder='Color input'
 				icon={<RiPaletteLine />}
+			/>
+
+			<FileInput
+				model={[files, setFiles]}
+				placeholder={files()?.item(0)?.name || 'File input'}
+				icon={<RiFileLine />}
 			/>
 		</Spacer>
 	</section>
