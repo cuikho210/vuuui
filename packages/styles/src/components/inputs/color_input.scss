@@ -14,11 +14,8 @@
   border-radius: var(--vuuui-radius);
   border: 1px solid var(--vuuui-color-border);
 
-  ::-moz-color-swatch {
-    border: none;
-  }
-
   > input {
+    appearance: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -27,6 +24,19 @@
     border: none;
     outline: none;
     border-radius: var(--vuuui-radius);
+
+    &::-moz-color-swatch {
+      border: none;
+    }
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: var(--vuuui-radius);
+    }
   }
 
   .vuuui-icon {
