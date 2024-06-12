@@ -5,17 +5,14 @@ import {
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput, ColorInput, FileInput,
+	Checkbox,
 	Dialog,
 } from "../src"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
-	RiToggleLine, RiLoaderLine,
-	RiFlowerLine, RiSketching,
-	RiEmotionHappyLine,
-	RiPaletteLine,
-	RiCloseLine,
-	RiFileLine,
+	RiToggleLine, RiLoaderLine, RiFlowerLine, RiSketching,
+	RiEmotionHappyLine, RiPaletteLine, RiCloseLine, RiFileLine,
 } from 'solidjs-remixicon';
 
 const Overlay = () => {
@@ -50,6 +47,7 @@ const Inputs = () => {
 	return <section>
 		<h2>Inputs</h2><br />
 
+		<p>Common</p><br />
 		<Spacer>
 			<TextInput
 				placeholder='Text input'
@@ -66,7 +64,11 @@ const Inputs = () => {
 				placeholder={files()?.item(0)?.name || 'File input'}
 				icon={<RiFileLine />}
 			/>
-		</Spacer>
+		</Spacer><br />
+
+		<p>Checkbox</p><br />
+		<Checkbox placeholder='Ahihi' />
+		<Checkbox placeholder='Ahaha' />
 	</section>
 }
 

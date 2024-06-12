@@ -9,7 +9,14 @@ export interface TextInputProps extends JSX.InputHTMLAttributes<HTMLInputElement
 }
 export type TextInputComponent = Component<TextInputProps>
 
+// FileInput
 export interface FileInputProps extends TextInputProps {
 	model?: Signal<FileList | null>
 }
 export type FileInputComponent = Component<FileInputProps>
+
+// Checkbox
+export interface CheckboxProps extends Omit<TextInputProps, 'icon'> {
+	model?: Signal<boolean>
+}
+export type CheckboxComponent = Component<CheckboxProps>

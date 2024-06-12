@@ -1,0 +1,64 @@
+@import '../../base.scss';
+
+.vuuui-checkbox {
+  @extend .vuuui-base;
+  $icon-width: 3rem;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  padding: var(--vuuui-padding--small) 0;
+  padding-right: var(--vuuui-padding);
+  border-radius: var(--vuuui-radius--half);
+
+  &:hover {
+    background-color: var(--vuuui-color-primary--lighter);
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      & + .vuuui-icon {
+        .vuuui-checkmark {
+          background-color: var(--vuuui-color-bg-success);
+
+          span {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+
+  .vuuui-icon {
+    width: $icon-width;
+    height: 100%;
+    line-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    .vuuui-checkmark {
+      $size: 1.4rem;
+
+      width: $size;
+      height: $size;
+      border: 1px solid var(--vuuui-color-primary--dark);
+      border-radius: var(--vuuui-radius--half);
+      transition-property: background-color;
+      transition-duration: var(--vuuui-transition-duration--short);
+      text-align: center;
+
+      span {
+        display: none;
+        line-height: $size;
+        color: var(--vuuui-color-text-success)
+      }
+    }
+  }
+}
