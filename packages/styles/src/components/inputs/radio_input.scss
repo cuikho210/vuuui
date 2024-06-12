@@ -1,0 +1,21 @@
+@import './checkbox_input.scss';
+
+.vuuui-radio {
+  @extend .vuuui-checkbox;
+  
+  input {
+    &:checked {
+      & + .vuuui-icon {
+        .vuuui-checkmark {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .vuuui-icon {
+    .vuuui-checkmark {
+      border: none;
+    }
+  }
+}

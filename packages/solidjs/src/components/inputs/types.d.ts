@@ -20,3 +20,7 @@ export interface CheckboxProps extends Omit<TextInputProps, 'icon'> {
 	model?: Signal<boolean>
 }
 export type CheckboxComponent = Component<CheckboxProps>
+
+// Radio
+export interface RadioProps extends JSX.InputHTMLAttributes<HTMLInputElement> {}
+export type RadioComponent = Component<RadioProps>

@@ -5,7 +5,7 @@ import {
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput, ColorInput, FileInput,
-	Checkbox,
+	Checkbox, Radio,
 	Dialog,
 } from "../src"
 
@@ -69,6 +69,12 @@ const Inputs = () => {
 		<p>Checkbox</p><br />
 		<Checkbox placeholder='Ahihi' />
 		<Checkbox placeholder='Ahaha' />
+		<br />
+		
+		<p>Radio</p><br />
+		<Radio placeholder='Ahihi' name='test-radio' />
+		<Radio placeholder='Ahaha' name='test-radio' />
+		<br />
 	</section>
 }
 
