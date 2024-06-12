@@ -40,7 +40,7 @@ My UI library
 + [x] TextInput
 + [x] ColorInput
 + [x] FileInput
-+ [ ] Checkbox
++ [x] Checkbox
 + [ ] Radio
 + [ ] Slider
 + [ ] Switch
