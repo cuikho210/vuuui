@@ -43,6 +43,10 @@ My UI library
 + [x] Checkbox
 + [x] Radio
 + [ ] Slider
+    + [ ] Basic slider
+    + [ ] Select range
+    + [ ] Divide by step
+    + [ ] Vertical orientation
 + [ ] Switch
 
 #### Navigation
