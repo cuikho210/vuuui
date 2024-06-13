@@ -13,6 +13,7 @@
   padding: var(--vuuui-padding--small) 0;
   padding-right: var(--vuuui-padding);
   border-radius: var(--vuuui-radius--half);
+  transition-property: background-color;
 
   &:hover {
     background-color: var(--vuuui-color-primary--lighter);
