@@ -1,0 +1,73 @@
+@import '../../base.scss';
+
+.vuuui-slider-wrapper {
+  @extend .vuuui-base;
+  position: relative;
+  padding: 0 var(--vuuui-padding);
+
+  .vuuui-slider {
+    $bar-size: var(--vuuui-padding--half);
+    $knob-size: 1.4rem;
+
+    position: relative;
+    width: 100%;
+    height: $bar-size;
+    background-color: var(--vuuui-color-primary--lighter);
+    border-radius: var(--vuuui-radius--half);
+    cursor: pointer;
+
+    .vuuui-slider-filler {
+      width: 0;
+      height: 100%;
+      background-color: var(--vuuui-color-primary);
+      border-radius: var(--vuuui-radius--half);
+    }
+
+    .vuuui-slider-knob {
+      position: absolute;
+      top: 0;
+      left: 0;
+      translate: -50% calc(-50% + $bar-size / 2);
+
+      .vuuui-knob-body {
+        position: relative;
+        display: block;
+        width: $knob-size;
+        height: $knob-size;
+
+        .vuuui-knob-main {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--vuuui-color-primary);
+          border-radius: 50%;
+        }
+
+        .vuuui-knob-outline {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background-color: rgba(var(--vuuui-color-primary--rgb), .2);
+          border-radius: 50%;
+          transition-duration: var(--vuuui-transition-duration--short);
+          transition-property: top, left, width, height, opacity;
+        }
+      }
+
+      .vuuui-knob-body:hover, .vuuui-active {
+        .vuuui-knob-outline {
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

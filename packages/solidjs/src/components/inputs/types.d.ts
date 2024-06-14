@@ -24,3 +24,12 @@ export type CheckboxComponent = Component<CheckboxProps>
 // Radio
 export interface RadioProps extends JSX.InputHTMLAttributes<HTMLInputElement> {}
 export type RadioComponent = Component<RadioProps>
+
+// Slider
+export interface SliderProps extends JSX.HTMLAttributes<HTMLDivElement> {
+	model?: Signal<number>
+	min?: number | string
+	max?: number | string
+	step?: number | string
+}
+export type SliderComponent = Component<SliderProps>

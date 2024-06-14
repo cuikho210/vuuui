@@ -5,7 +5,7 @@ import {
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput, ColorInput, FileInput,
-	Checkbox, Radio,
+	Checkbox, Radio, Slider,
 	Dialog,
 } from "../src"
 
@@ -43,6 +43,7 @@ const Overlay = () => {
 
 const Inputs = () => {
 	const [files, setFiles] = createSignal<FileList | null>(null)
+	const [sliderValue, setSliderValue] = createSignal(20)
 
 	return <section>
 		<h2>Inputs</h2><br />
@@ -74,6 +75,11 @@ const Inputs = () => {
 		<p>Radio</p><br />
 		<Radio placeholder='Ahihi' name='test-radio' />
 		<Radio placeholder='Ahaha' name='test-radio' />
+		<br />
+
+		<p>Slider {sliderValue()}</p><br />
+		<Slider min='15' max='50' model={[sliderValue, setSliderValue]} /><br />
+		<Slider min='15' max='100' model={[sliderValue, setSliderValue]} />
 		<br />
 	</section>
 }
