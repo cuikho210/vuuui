@@ -5,7 +5,7 @@ import {
 	DuckSpinner,
 	ElevatedButton, FilledButton, TextButton, OutlinedButton, IconButton,
 	TextInput, ColorInput, FileInput,
-	Checkbox, Radio, Slider,
+	Checkbox, Radio, Slider, Switch,
 	Dialog,
 } from "../src"
 
@@ -80,6 +80,11 @@ const Inputs = () => {
 		<p>Slider {sliderValue()}</p><br />
 		<Slider min='15' max='50' model={[sliderValue, setSliderValue]} /><br />
 		<Slider min='15' max='100' model={[sliderValue, setSliderValue]} />
+		<br />
+
+		<p>Switch</p><br />
+		<Switch placeholder='Sasa' />
+		<Switch placeholder='Lily' />
 		<br />
 	</section>
 }

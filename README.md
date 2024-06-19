@@ -47,7 +47,7 @@ My UI library
     + [ ] Select range
     + [ ] Divide by step
     + [ ] Vertical orientation
-+ [ ] Switch
++ [x] Switch
 
 #### Navigation
 

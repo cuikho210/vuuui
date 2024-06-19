@@ -1,0 +1,60 @@
+@import '../../base.scss';
+
+.vuuui-switch {
+  @extend .vuuui-base;
+  $gap: var(--vuuui-padding--half);
+  $icon-width: calc(3rem - $gap);
+  $dot-size: 1.2rem;
+
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  padding: var(--vuuui-padding--small) 0;
+  padding-right: var(--vuuui-padding);
+  border-radius: var(--vuuui-radius--half);
+  transition-property: background-color;
+  gap: $gap;
+
+  input {
+    display: none;
+
+    &:checked {
+      & + .vuuui-switch-button {
+        background-color: var(--vuuui-color-primary--light);
+
+        .vuuui-switch-dot {
+          background-color: var(--vuuui-color-primary--dark);
+          left: 100%;
+          translate: -100% -50%;
+        }
+      }
+    }
+  }
+
+  .vuuui-switch-button {
+    position: relative;
+    width: $icon-width;
+    height: $dot-size;
+    background-color: var(--vuuui-color-primary--lighter);
+    border: 1px solid var(--vuuui-color-primary--light);
+    border-radius: var(--vuuui-radius);
+    transition-duration: var(--vuuui-transition-duration--short);
+    transition-property: background-color;
+
+    .vuuui-switch-dot {
+      position: absolute;
+      width: $dot-size;
+      height: $dot-size;
+      left: 0;
+      top: 50%;
+      background-color: var(--vuuui-color-primary);
+      border-radius: 50%;
+      translate: 0 -50%;
+      transition-duration: var(--vuuui-transition-duration--short);
+      transition-property: background-color, left, translate;
+    }
+  }
+}
