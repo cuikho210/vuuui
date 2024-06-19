@@ -1,0 +1,23 @@
+@import '../../../base.scss';
+@import '../../../vuuui.scss';
+
+.vuuui-navigation-bar {
+  @extend .vuuui-base;
+
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--vuuui-color-primary--lighter);
+  width: 100%;
+  height: auto;
+  border-top-left-radius: var(--vuuui-radius);
+  border-top-right-radius: var(--vuuui-radius);
+
+  @media screen and (min-width: map-get($break-point, break-xs)) {
+    flex-direction: column;
+    height: 100%;
+    width: 4.7rem;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: var(--vuuui-radius);
+  }
+}

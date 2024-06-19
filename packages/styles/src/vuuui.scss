@@ -50,9 +50,16 @@ $misc: (
   transition-duration--short: 150ms,
 ) !default;
 
+$break-point: (
+  break-xs: 540px,
+  break-sm: 960px,
+  break-md: 1320px,
+) !default;
+
 :root {
   @include generate_colors($theme--default);
   @include with_prefix($colors);
   @include with_prefix($spacing);
   @include with_prefix($misc);
+  @include with_prefix($break-point);
 }

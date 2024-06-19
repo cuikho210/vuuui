@@ -1,0 +1,40 @@
+@import "../../buttons/button_base.scss";
+
+.vuuui-navigation-bar-button {
+  @extend .vuuui-button-base;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--vuuui-padding--tiny);
+  padding: var(--vuuui-padding--half) 0;
+  font-size: small;
+  background-color: transparent;
+
+  &:not(:disabled):active {
+    top: 0;
+  }
+
+  &:hover {
+    & > .vuuui-icon {
+      background-color: var(--vuuui-color-primary--light);
+    }
+  }
+
+  &[active='true'] {
+    & > .vuuui-icon {
+      color: var(--vuuui-color-primary--text);
+      background-color: var(--vuuui-color-primary);
+    }
+  }
+
+  & > .vuuui-icon {
+    background-color: var(--vuuui-color-primary--lighter);
+    padding: var(--vuuui-padding--tiny) var(--vuuui-padding);
+    border-radius: var(--vuuui-radius);
+    transition-duration: var(--vuuui-transition-duration--short);
+    transition-property: color, background-color;
+  }
+}

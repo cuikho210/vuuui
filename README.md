@@ -51,7 +51,7 @@ My UI library
 
 #### Navigation
 
-+ [ ] NavigationBar
++ [x] NavigationBar
 + [ ] NavigationDrawer
 + [ ] AppBar
 + [ ] TabBar

@@ -7,13 +7,54 @@ import {
 	TextInput, ColorInput, FileInput,
 	Checkbox, Radio, Slider, Switch,
 	Dialog,
+	NavigationBar, NavigationBarButton,
 } from "../src"
 
 import {
 	RiHeartLine, RiHeart2Line, RiHeart3Line, RiHeartsLine,
 	RiToggleLine, RiLoaderLine, RiFlowerLine, RiSketching,
 	RiEmotionHappyLine, RiPaletteLine, RiCloseLine, RiFileLine,
+	RiHomeLine, RiBookLine, RiGroupLine, RiSettingsLine,
+	RiHomeFill, RiSettingsFill, RiGroupFill, RiBookFill,
 } from 'solidjs-remixicon';
+
+const Navigation = () => {
+	const [index, setIndex] = createSignal(0)
+
+	return <section>
+		<h2>Navigation</h2><br />
+
+		<NavigationBar>
+			<NavigationBarButton
+				icon={<RiHomeLine />}
+				iconActive={<RiHomeFill />}
+				active={index() == 0}
+				onclick={() => setIndex(0)}
+			>Trang Chủ</NavigationBarButton>
+
+			<NavigationBarButton
+				icon={<RiBookLine />}
+				iconActive={<RiBookFill />}
+				active={index() == 1}
+				onclick={() => setIndex(1)}
+			>Học Tập</NavigationBarButton>
+
+			<NavigationBarButton
+				icon={<RiGroupLine />}
+				iconActive={<RiGroupFill />}
+				active={index() == 2}
+				onclick={() => setIndex(2)}
+			>Trò Chuyện</NavigationBarButton>
+
+			<NavigationBarButton
+				icon={<RiSettingsLine />}
+				iconActive={<RiSettingsFill />}
+				active={index() == 3}
+				onclick={() => setIndex(3)}
+			>Cài Đặt</NavigationBarButton>
+		</NavigationBar>
+	</section>
+}
 
 const Overlay = () => {
 	const [dialogOpen, setDialogOpen] = createSignal(false);
@@ -232,6 +273,7 @@ export const App = () => <Container md>
 	<Buttons /> <br />
 	<Inputs /> <br />
 	<Overlay /> <br />
+	<Navigation /> <br />
 </Container>
 
 export default App
