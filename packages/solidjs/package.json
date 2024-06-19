@@ -24,7 +24,7 @@
     "**/*.css"
   ],
   "dependencies": {
-    "@vuuui/styles": "^0.1.0"
+    "@vuuui/styles": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.11.26",
