@@ -12,6 +12,7 @@
   padding: var(--vuuui-padding--half) 0;
   font-size: small;
   background-color: transparent;
+  color: var(--vuuui-color-text);
 
   &:not(:disabled):active {
     top: 0;

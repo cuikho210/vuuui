@@ -15,6 +15,7 @@
 
   @media screen and (min-width: map-get($break-point, break-xs)) {
     flex-direction: column;
+    justify-content: flex-start;
     height: 100%;
     width: min-content;
     padding: 0 var(--vuuui-padding--half);
