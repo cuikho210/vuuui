@@ -9,3 +9,10 @@ export interface NavigationBarButtonProps extends JSX.HTMLAttributes<HTMLButtonE
 	iconActive?: JSX.Element
 }
 export type NavigationBarButtonComponent = Component<NavigationBarButtonProps>
+
+export interface AppBarProps extends JSX.HTMLAttributes<HTMLElement> {
+  leading?: JSX.Element
+  title?: string
+  actions?: JSX.Element[]
+}
+export type AppBarComponent = Component<AppBarProps>

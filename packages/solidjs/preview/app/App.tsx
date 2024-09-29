@@ -1,10 +1,15 @@
 import { For } from 'solid-js'
 import {
+  RiArrowLeftSLine,
 	RiCollageFill, RiCollageLine, RiCupFill, RiCupLine,
+	RiEyeLine,
+	RiHeartLine,
 	RiHomeFill, RiHomeLine,
+  RiSettingsLine,
+  RiShieldUserLine,
 } from 'solidjs-remixicon'
 import { useNavigate } from '@solidjs/router'
-import { NavigationBar, NavigationBarButton } from '../../src'
+import { NavigationBar, NavigationBarButton, AppBar, IconButton } from '../../src'
 import { Routes } from '../Routes'
 import { layoutStore } from '../stores/layout.store'
 import './App.scss'
@@ -47,12 +52,26 @@ const Navigates = () => {
 
 const Layout = (props: { children: any }) => {
 	return <main class='section-app'>
-		<div class='app-bar'>
+		<div class='app-navigation'>
 			<Navigates />
 		</div>
 
-		<div class='app-body'>
-			{props.children}
+		<div class='app-main'>
+      <div class='app-bar'>
+        <AppBar
+          leading={<IconButton><RiArrowLeftSLine /></IconButton>}
+          title='Ahihi'
+          actions={[
+            <IconButton><RiHeartLine /></IconButton>,
+            <IconButton><RiShieldUserLine /></IconButton>,
+            <IconButton><RiSettingsLine /></IconButton>,
+          ]}
+        />
+      </div>
+
+  		<div class='app-body'>
+  			{props.children}
+			</div>
 		</div>
 	</main>
 }

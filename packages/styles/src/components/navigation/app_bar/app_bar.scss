@@ -1,0 +1,41 @@
+@import '../../../base.scss';
+@import '../../../vuuui.scss';
+
+.vuuui-app-bar {
+    @extend .vuuui-base;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--vuuui-color-bg);
+    gap: var(--vuuui-padding--half);
+    padding: 0 var(--vuuui-padding--half);
+    box-shadow: 0 var(--vuuui-padding--tiny) var(--vuuui-padding--half) var(--vuuui-color-shadow--soft);
+    min-height: var(--vuuui-padding--x3);
+
+    .vuuui-app-bar-section-left {
+        display: flex;
+        align-items: center;
+        gap: var(--vuuui-padding--half);
+        overflow-x: hidden;
+
+        .vuuui-app-bar-leading {
+        }
+
+        .vuuui-app-bar-title {
+            flex: 1;
+            overflow-x: hidden;
+            overflow-x: clip;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+
+    .vuuui-app-bar-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--vuuui-padding--small);
+    }
+}
