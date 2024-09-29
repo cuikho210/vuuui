@@ -38,6 +38,7 @@
     "vite-plugin-dts": "^3.7.3",
     "vite-plugin-lib-inject-css": "^2.0.1",
     "vite-plugin-solid": "^2.10.1",
-    "solidjs-remixicon": "^1.1.2"
+    "solidjs-remixicon": "^1.1.2",
+    "@solidjs/router": "^0.13.6"
   }
 }
