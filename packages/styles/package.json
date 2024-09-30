@@ -1,14 +1,14 @@
 {
-	"name": "@vuuui/styles",
-	"license": "MIT",
-	"author": {
-		"name": "cuikho210",
-		"email": "tonykms210@gmail.com",
-		"url": "https://github.com/cuikho210"
-	},
-	"private": false,
-	"version": "0.1.2",
-	"exports": {
-		"./*": "./src/*"
-	}
+    "name": "@vuuui/styles",
+    "license": "MIT",
+    "author": {
+        "name": "cuikho210",
+        "email": "tonykms210@gmail.com",
+        "url": "https://github.com/cuikho210"
+    },
+    "private": false,
+    "version": "0.1.2",
+    "exports": {
+        "./*": "./src/*"
+    }
 }

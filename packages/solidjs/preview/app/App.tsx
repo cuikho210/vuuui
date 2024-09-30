@@ -2,7 +2,6 @@ import { For } from 'solid-js'
 import {
   RiArrowLeftSLine,
 	RiCollageFill, RiCollageLine, RiCupFill, RiCupLine,
-	RiEyeLine,
 	RiHeartLine,
 	RiHomeFill, RiHomeLine,
   RiSettingsLine,

@@ -1,5 +1,5 @@
-@import '../../../base.scss';
-@import '../../../vuuui.scss';
+@import '../../base.scss';
+@import '../../vuuui.scss';
 
 .vuuui-app-bar {
     @extend .vuuui-base;
@@ -18,7 +18,7 @@
         display: flex;
         align-items: center;
         gap: var(--vuuui-padding--half);
-        overflow-x: hidden;
+        overflow: hidden;
 
         .vuuui-app-bar-leading {
         }

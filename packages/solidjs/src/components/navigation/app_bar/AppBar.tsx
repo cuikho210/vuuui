@@ -1,6 +1,6 @@
-import { createMemo } from "solid-js";
-import { AppBarComponent } from "..";
-import "@vuuui/styles/components/navigation/app_bar/app_bar.scss"
+import { createMemo } from "solid-js"
+import { AppBarComponent } from ".."
+import "@vuuui/styles/components/navigation/app_bar.scss"
 
 export const AppBar: AppBarComponent = (props) => {
   const className = createMemo(() => {
