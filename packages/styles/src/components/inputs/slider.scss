@@ -21,6 +21,8 @@
       height: 100%;
       background-color: var(--vuuui-color-primary);
       border-radius: var(--vuuui-radius--half);
+      transition-property: width;
+      transition-duration: var(--vuuui-transition-duration--short);
     }
 
     .vuuui-slider-knob {
@@ -28,6 +30,8 @@
       top: 0;
       left: 0;
       translate: -50% calc(-50% + $bar-size / 2);
+      transition-property: left;
+      transition-duration: var(--vuuui-transition-duration--short);
 
       .vuuui-knob-body {
         position: relative;

@@ -1,11 +1,11 @@
 {
-  "name": "vuuui",
-  "version": "1.0.0",
-  "repository": "git@github.com:cuikho210/vuuui.git",
-  "author": "cuikho210 <tonykms210@gmail.com>",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-	  "packages/*"
-  ]
+	"name": "vuuui",
+	"version": "1.0.0",
+	"repository": "git@github.com:cuikho210/vuuui.git",
+	"author": "cuikho210 <tonykms210@gmail.com>",
+	"license": "MIT",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	]
 }
