@@ -8,13 +8,20 @@ import { Overlay } from './Overlay'
 import { Spinner } from './Spinner'
 
 export const Components = () => {
-	setLayoutStore('activeNavbar', 1)
+  setLayoutStore('activeNavbar', 1)
 
-	return <Container md>
-  	<Colors /><br />
-  	<Spinner /><br />
-  	<Buttons /><br />
-  	<Inputs /><br />
-  	<Overlay /><br />
-	</Container>
+  return (
+    <Container md>
+      <Colors />
+      <br />
+      <Spinner />
+      <br />
+      <Buttons />
+      <br />
+      <Inputs />
+      <br />
+      <Overlay />
+      <br />
+    </Container>
+  )
 }

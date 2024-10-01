@@ -27,18 +27,20 @@
     "@vuuui/styles": "workspace:*"
   },
   "devDependencies": {
+    "@solidjs/router": "^0.13.6",
     "@types/node": "^20.11.26",
     "autoprefixer": "^10.4.19",
     "glob": "^10.3.12",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "prettier-plugin-css-order": "^2.1.2",
     "sass": "^1.71.1",
     "solid-js": "^1.8.17",
+    "solidjs-remixicon": "^1.1.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
     "vite-plugin-lib-inject-css": "^2.0.1",
-    "vite-plugin-solid": "^2.10.1",
-    "solidjs-remixicon": "^1.1.2",
-    "@solidjs/router": "^0.13.6"
+    "vite-plugin-solid": "^2.10.1"
   }
 }
