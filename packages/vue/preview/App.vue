@@ -13,6 +13,9 @@ import {
 } from '@remixicon/vue'
 import { NavigationBarButton, NavigationBar, AppBar, IconButton } from '../src'
 import { RouterView } from 'vue-router'
+import { useLayoutStore } from './layout.store'
+
+const layout = useLayoutStore()
 
 const links = [
   {
@@ -43,7 +46,7 @@ const links = [
         <NavigationBarButton
           v-for="(link, i) in links"
           :key="i"
-          :active="false"
+          :active="layout.activeNavbar == i"
           @click="$router.push(link.path)"
         >
           <template #icon>

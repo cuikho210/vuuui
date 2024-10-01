@@ -11,7 +11,8 @@
   "peerDependencies": {
     "vue": "^3.4.21",
     "@vuuui/styles": "workspace:*",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "pinia": "^2.2.4"
   },
   "devDependencies": {
     "@remixicon/vue": "^4.2.0",
