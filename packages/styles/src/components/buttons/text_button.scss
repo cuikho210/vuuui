@@ -1,17 +1,17 @@
-@import "./text_button_base.scss";
+@import './text_button_base.scss';
 
 .vuuui-text-button {
   @extend .vuuui-text-button-base;
+  transition-duration: var(--vuuui-transition-duration--short);
+  transition-property: background-color;
 
   background-color: transparent;
-  transition-property: background-color;
-  transition-duration: var(--vuuui-transition-duration--short);
 
-  &:not(:disabled, [active="true"]):hover {
+  &:not(:disabled, [active='true']):hover {
     background-color: var(--vuuui-color-primary--light);
   }
 
-  &[active="true"] {
+  &[active='true'] {
     background-color: var(--vuuui-color-alt--light);
   }
 }

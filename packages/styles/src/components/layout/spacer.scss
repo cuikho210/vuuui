@@ -1,12 +1,12 @@
 @import '../../base.scss';
 
 .vuuui-spacer {
-	@extend .vuuui-base;
+  @extend .vuuui-base;
+  display: flex;
 
-	position: relative;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	gap: var(--vuuui-padding--half);
-	flex-wrap: wrap;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--vuuui-padding--half);
 }

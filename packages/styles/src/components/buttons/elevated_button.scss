@@ -1,20 +1,20 @@
-@import "./text_button_base.scss";
+@import './text_button_base.scss';
 
 .vuuui-elevated-button {
   @extend .vuuui-text-button-base;
+  transition-property: background-color, box-shadow, opacity;
+  box-shadow: 0 2px 2px var(--vuuui-color-shadow);
 
   background-color: var(--vuuui-color-primary--lighter);
-  box-shadow: 0 2px 2px var(--vuuui-color-shadow);
-  transition-property: background-color, box-shadow, opacity;
 
-  &:not(:disabled, [active="true"]):hover {
-    background-color: var(--vuuui-color-primary--light);
+  &:not(:disabled, [active='true']):hover {
     box-shadow: 0 2px 4px var(--vuuui-color-shadow--strong);
+    background-color: var(--vuuui-color-primary--light);
   }
 
-  &[active="true"] {
-    background-color: var(--vuuui-color-alt--light);
+  &[active='true'] {
     box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
+    background-color: var(--vuuui-color-alt--light);
   }
 
   &:not(:disabled):active {

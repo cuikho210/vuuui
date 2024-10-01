@@ -3,17 +3,17 @@
 .vuuui-checkbox {
   @extend .vuuui-base;
   $icon-width: 3rem;
+  display: flex;
 
   position: relative;
-  display: flex;
   justify-content: flex-start;
   align-items: center;
+  transition-property: background-color;
   cursor: pointer;
-  width: 100%;
+  border-radius: var(--vuuui-radius--half);
   padding: var(--vuuui-padding--small) 0;
   padding-right: var(--vuuui-padding);
-  border-radius: var(--vuuui-radius--half);
-  transition-property: background-color;
+  width: 100%;
 
   &:hover {
     background-color: var(--vuuui-color-primary--lighter);
@@ -36,29 +36,29 @@
   }
 
   .vuuui-icon {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: $icon-width;
     height: 100%;
     line-height: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
 
     .vuuui-checkmark {
       $size: 1.4rem;
+      transition-duration: var(--vuuui-transition-duration--short);
+      transition-property: background-color;
+      border: 1px solid var(--vuuui-color-primary--dark);
+      border-radius: var(--vuuui-radius--half);
 
       width: $size;
       height: $size;
-      border: 1px solid var(--vuuui-color-primary--dark);
-      border-radius: var(--vuuui-radius--half);
-      transition-property: background-color;
-      transition-duration: var(--vuuui-transition-duration--short);
       text-align: center;
 
       span {
         display: none;
+        color: var(--vuuui-color-text-success);
         line-height: $size;
-        color: var(--vuuui-color-text-success)
       }
     }
   }

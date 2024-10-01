@@ -1,4 +1,4 @@
-@import "../../base.scss";
+@import '../../base.scss';
 
 .vuuui-slider-wrapper {
   @extend .vuuui-base;
@@ -10,19 +10,19 @@
     $knob-size: 1.4rem;
 
     position: relative;
+    cursor: pointer;
+    border-radius: var(--vuuui-radius--half);
+    background-color: var(--vuuui-color-primary--lighter);
     width: 100%;
     height: $bar-size;
-    background-color: var(--vuuui-color-primary--lighter);
-    border-radius: var(--vuuui-radius--half);
-    cursor: pointer;
 
     .vuuui-slider-filler {
+      transition-duration: var(--vuuui-transition-duration--short);
+      transition-property: width;
+      border-radius: var(--vuuui-radius--half);
+      background-color: var(--vuuui-color-primary);
       width: 0;
       height: 100%;
-      background-color: var(--vuuui-color-primary);
-      border-radius: var(--vuuui-radius--half);
-      transition-property: width;
-      transition-duration: var(--vuuui-transition-duration--short);
     }
 
     .vuuui-slider-knob {
@@ -30,12 +30,12 @@
       top: 0;
       left: 0;
       translate: -50% calc(-50% + $bar-size / 2);
-      transition-property: left;
       transition-duration: var(--vuuui-transition-duration--short);
+      transition-property: left;
 
       .vuuui-knob-body {
-        position: relative;
         display: block;
+        position: relative;
         width: $knob-size;
         height: $knob-size;
 
@@ -43,23 +43,23 @@
           position: absolute;
           top: 0;
           left: 0;
+          border-radius: 50%;
+          background-color: var(--vuuui-color-primary);
           width: 100%;
           height: 100%;
-          background-color: var(--vuuui-color-primary);
-          border-radius: 50%;
         }
 
         .vuuui-knob-outline {
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
           opacity: 0;
-          background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
-          border-radius: 50%;
           transition-duration: var(--vuuui-transition-duration--short);
           transition-property: top, left, width, height, opacity;
+          border-radius: 50%;
+          background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
+          width: 100%;
+          height: 100%;
         }
       }
 
@@ -68,9 +68,9 @@
         .vuuui-knob-outline {
           top: -50%;
           left: -50%;
+          opacity: 1;
           width: 200%;
           height: 200%;
-          opacity: 1;
         }
       }
     }

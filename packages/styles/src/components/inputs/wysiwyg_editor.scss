@@ -1,59 +1,59 @@
 @import '../../base.scss';
 
 .vuuui-wysiwyg-editor {
-	@extend .vuuui-base;
+  @extend .vuuui-base;
 
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	.ProseMirror {
-		width: 100%;
-		min-height: 300px;
-		max-height: 80vh;
-		overflow-y: auto;
-		outline: none;
-		border: 1px solid var(--vuuui-color-border);
-		border-bottom-left-radius: var(--vuuui-radius);
-		border-bottom-right-radius: var(--vuuui-radius);
-		transition-property: border-color;
-	}
+  .ProseMirror {
+    transition-property: border-color;
+    outline: none;
+    border: 1px solid var(--vuuui-color-border);
+    border-bottom-right-radius: var(--vuuui-radius);
+    border-bottom-left-radius: var(--vuuui-radius);
+    width: 100%;
+    min-height: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
 
-	.ProseMirror-focused {
-		border-color: rgba(var(--vuuui-color-primary--rgb), .7);
-	}
+  .ProseMirror-focused {
+    border-color: rgba(var(--vuuui-color-primary--rgb), 0.7);
+  }
 
-	> .vuuui-editor-main-menu {
-		position: relative;
-		display: flex;
-		width: 100%;
-		overflow-x: auto;
-		overflow-y: hidden;
-		border: 1px solid var(--vuuui-color-border);
-		border-bottom: none;
-		border-top-left-radius: var(--vuuui-radius);
-		border-top-right-radius: var(--vuuui-radius);
+  > .vuuui-editor-main-menu {
+    display: flex;
+    position: relative;
+    border: 1px solid var(--vuuui-color-border);
+    border-bottom: none;
+    border-top-right-radius: var(--vuuui-radius);
+    border-top-left-radius: var(--vuuui-radius);
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 
-		> .vuuui-divider {
-			display: inline-block;
-			height: 100%;
-			min-width: 1px;
-			min-height: 40px;
-			border-right: 1px solid var(--vuuui-color-border);
-		}
-	}
+    > .vuuui-divider {
+      display: inline-block;
+      border-right: 1px solid var(--vuuui-color-border);
+      min-width: 1px;
+      height: 100%;
+      min-height: 40px;
+    }
+  }
 
-	> .vuuui-editor-sub-menu {
-		@extend .vuuui-editor-main-menu;
+  > .vuuui-editor-sub-menu {
+    @extend .vuuui-editor-main-menu;
+    visibility: hidden;
+    transition-duration: var(--vuuui-transition-duration--short);
+    transition-property: height, visibility;
 
-		border-radius: 0;
-		height: 0;
-		visibility: hidden;
-		transition-duration: var(--vuuui-transition-duration--short);
-		transition-property: height, visibility;
+    border-radius: 0;
+    height: 0;
 
-		&[data-visible="true"] {
-			visibility: visible;
-			height: 40px;
-		}
-	}
+    &[data-visible='true'] {
+      visibility: visible;
+      height: 40px;
+    }
+  }
 }

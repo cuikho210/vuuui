@@ -1,87 +1,86 @@
-
 .vuuui-duck-spinner {
-	.vuuui-line {
-		fill: none;
-		stroke: var(--vuuui-color-text);
-		stroke-width: 1.2;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-dasharray: none;
-		transition-property: stroke;
-		transition-duration: var(--vuuui-transition-duration);
-	}
+  .vuuui-line {
+    fill: none;
+    stroke: var(--vuuui-color-text);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: none;
+    transition-duration: var(--vuuui-transition-duration);
+    transition-property: stroke;
+  }
 
-	.vuuui-spinner {
-		transform-origin: center;
-		scale: 1.1;
+  .vuuui-spinner {
+    transform-origin: center;
+    scale: 1.1;
 
-		& > * {
-			animation-name: vuuui-spin;
-			animation-duration: 3s;
-			animation-iteration-count: infinite;
-			animation-timing-function: linear;
-			transform-origin: center;
-			opacity: .64;
-		}
-		
-		.vuuui-circle-1 {
-			opacity: .32;
-			animation-direction: reverse;
-			scale: .85;
-		}
+    & > * {
+      transform-origin: center;
+      opacity: 0.64;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-name: vuuui-spin;
+    }
 
-		@keyframes vuuui-spin {
-			from {
-				rotate: 0;
-			}
-			to {
-				rotate: 359deg;
-			}
-		}
-	}
+    .vuuui-circle-1 {
+      scale: 0.85;
+      opacity: 0.32;
+      animation-direction: reverse;
+    }
 
-	.vuuui-duck {
-		animation-name: vuuui-slay;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-timing-function: ease;
-		transform-origin: center;
-		scale: 1.2;
+    @keyframes vuuui-spin {
+      from {
+        rotate: 0;
+      }
+      to {
+        rotate: 359deg;
+      }
+    }
+  }
 
-		@keyframes vuuui-slay {
-			0% {
-				rotate: -24deg;
-			}
-			50% {
-				rotate: 24deg;
-			}
-			100% {
-				rotate: -24deg;
-			}
-		}
+  .vuuui-duck {
+    transform-origin: center;
+    scale: 1.2;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-name: vuuui-slay;
 
-		.vuuui-body {
-			stroke-width: 1.5;
-		}
+    @keyframes vuuui-slay {
+      0% {
+        rotate: -24deg;
+      }
+      50% {
+        rotate: 24deg;
+      }
+      100% {
+        rotate: -24deg;
+      }
+    }
 
-		.vuuui-eye {
-			stroke-width: 1;
-		}
-	}
+    .vuuui-body {
+      stroke-width: 1.5;
+    }
+
+    .vuuui-eye {
+      stroke-width: 1;
+    }
+  }
 }
 
 .vuuui-thin {
-	.vuuui-line {
-		stroke-width: .5;
-	}
+  .vuuui-line {
+    stroke-width: 0.5;
+  }
 
-	.vuuui-duck {
-		.vuuui-body {
-			stroke-width: 1;
-		}
+  .vuuui-duck {
+    .vuuui-body {
+      stroke-width: 1;
+    }
 
-		.vuuui-eye {
-			stroke-width: .8;
-		}
-	}
+    .vuuui-eye {
+      stroke-width: 0.8;
+    }
+  }
 }

@@ -1,41 +1,41 @@
-@import "../../buttons/button_base.scss";
+@import '../../buttons/button_base.scss';
 
 .vuuui-navigation-bar-button {
-    @extend .vuuui-button-base;
+  @extend .vuuui-button-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--vuuui-padding--tiny);
+  background-color: transparent;
+  padding: var(--vuuui-padding--half) 0;
 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: var(--vuuui-padding--tiny);
-    padding: var(--vuuui-padding--half) 0;
-    font-size: small;
-    background-color: transparent;
-    color: var(--vuuui-color-text);
+  width: 100%;
+  color: var(--vuuui-color-text);
+  font-size: small;
 
-    &:not(:disabled):active {
-        top: 0;
-    }
+  &:not(:disabled):active {
+    top: 0;
+  }
 
-    &:hover {
-        & > .vuuui-icon {
-            background-color: var(--vuuui-color-primary--light);
-        }
-    }
-
-    &[active='true'] {
-        & > .vuuui-icon {
-            color: var(--vuuui-color-primary--text);
-            background-color: var(--vuuui-color-primary);
-        }
-    }
-
+  &:hover {
     & > .vuuui-icon {
-        background-color: var(--vuuui-color-primary--lighter);
-        padding: var(--vuuui-padding--tiny) var(--vuuui-padding);
-        border-radius: var(--vuuui-radius);
-        transition-duration: var(--vuuui-transition-duration--short);
-        transition-property: color, background-color;
+      background-color: var(--vuuui-color-primary--light);
     }
+  }
+
+  &[active='true'] {
+    & > .vuuui-icon {
+      background-color: var(--vuuui-color-primary);
+      color: var(--vuuui-color-primary--text);
+    }
+  }
+
+  & > .vuuui-icon {
+    transition-duration: var(--vuuui-transition-duration--short);
+    transition-property: color, background-color;
+    border-radius: var(--vuuui-radius);
+    background-color: var(--vuuui-color-primary--lighter);
+    padding: var(--vuuui-padding--tiny) var(--vuuui-padding);
+  }
 }

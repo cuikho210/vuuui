@@ -2,7 +2,7 @@
 
 .vuuui-radio {
   @extend .vuuui-checkbox;
-  
+
   input {
     &:checked {
       & + .vuuui-icon {

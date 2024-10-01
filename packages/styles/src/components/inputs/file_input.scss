@@ -3,37 +3,37 @@
 .vuuui-file-input {
   @extend .vuuui-base;
   $icon-width: 3rem;
-  $color-text-placeholder: rgba(var(--vuuui-color-text--rgb), .4);
+  $color-text-placeholder: rgba(var(--vuuui-color-text--rgb), 0.4);
+  display: flex;
 
   position: relative;
-  width: 100%;
-  display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: var(--vuuui-padding--medium) 0;
-  border-radius: var(--vuuui-radius);
   border: 1px solid var(--vuuui-color-border);
+  border-radius: var(--vuuui-radius);
+  padding: var(--vuuui-padding--medium) 0;
+  width: 100%;
 
   input {
     display: none;
   }
 
   .vuuui-icon {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: $icon-width;
     height: 100%;
     line-height: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
   }
 
   .vuuui-placeholder {
-    color: $color-text-placeholder;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 100%;
-    text-overflow: ellipsis;
     padding-right: var(--vuuui-padding);
+    max-width: 100%;
+    overflow: hidden;
+    color: $color-text-placeholder;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

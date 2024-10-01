@@ -1,69 +1,69 @@
-@import "./utils.scss";
+@import './utils.scss';
 
 $theme--default: (
-    color-primary--text: #570000,
-    color-primary--dark: #ff907f,
-    color-primary: #ffc5b3,
-    color-primary--light: #ffe5dc,
-    color-primary--lighter: #fff6f3,
+  color-primary--text: #570000,
+  color-primary--dark: #ff907f,
+  color-primary: #ffc5b3,
+  color-primary--light: #ffe5dc,
+  color-primary--lighter: #fff6f3,
 
-    color-alt--text: #481523,
-    color-alt--dark: #c48591,
-    color-alt: #f1afbb,
-    color-alt--light: #ffe3ec,
-    color-alt--lighter: #fff3f7,
+  color-alt--text: #481523,
+  color-alt--dark: #c48591,
+  color-alt: #f1afbb,
+  color-alt--light: #ffe3ec,
+  color-alt--lighter: #fff3f7,
 
-    color-text: #000000,
-    color-text-info: #1a3baa,
-    color-text-success: #438d75,
-    color-text-warning: #c18500,
-    color-text-danger: #98000b,
+  color-text: #000000,
+  color-text-info: #1a3baa,
+  color-text-success: #438d75,
+  color-text-warning: #c18500,
+  color-text-danger: #98000b,
 
-    color-bg: #ffffff,
-    color-bg-info: #faf8ff,
-    color-bg-success: #e8fef5,
-    color-bg-warning: #fff8ec,
-    color-bg-danger: #fff4ef,
+  color-bg: #ffffff,
+  color-bg-info: #faf8ff,
+  color-bg-success: #e8fef5,
+  color-bg-warning: #fff8ec,
+  color-bg-danger: #fff4ef,
 ) !default;
 
 $colors: (
-    color-shadow--soft: rgba(0, 0, 0, 0.05),
-    color-shadow: rgba(0, 0, 0, 0.1),
-    color-shadow--strong: rgba(0, 0, 0, 0.16),
-    color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
-    color-border--strong: rgba(var(--vuuui-color-text--rgb), 0.1),
-    color-wrapper: rgba(var(--vuuui-color-text--rgb), 0.024),
+  color-shadow--soft: rgba(0, 0, 0, 0.05),
+  color-shadow: rgba(0, 0, 0, 0.1),
+  color-shadow--strong: rgba(0, 0, 0, 0.16),
+  color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
+  color-border--strong: rgba(var(--vuuui-color-text--rgb), 0.1),
+  color-wrapper: rgba(var(--vuuui-color-text--rgb), 0.024),
 ) !default;
 
 $spacing: (
-    padding--x3: 3rem,
-    padding--x2: 2rem,
-    padding: 1rem,
-    padding--medium: .7rem,
-    padding--md: .7rem,
-    padding--half: .5rem,
-    padding--small: .3rem,
-    padding--tiny: .1rem,
+  padding--x3: 3rem,
+  padding--x2: 2rem,
+  padding: 1rem,
+  padding--medium: 0.7rem,
+  padding--md: 0.7rem,
+  padding--half: 0.5rem,
+  padding--small: 0.3rem,
+  padding--tiny: 0.1rem,
 ) !default;
 
 $misc: (
-    radius: 16px,
-    radius--half: 8px,
-    blur-length: 4px,
-    transition-duration: 300ms,
-    transition-duration--short: 150ms,
+  radius: 16px,
+  radius--half: 8px,
+  blur-length: 4px,
+  transition-duration: 300ms,
+  transition-duration--short: 150ms,
 ) !default;
 
 $break-point: (
-    break-xs: 540px,
-    break-sm: 960px,
-    break-md: 1320px,
+  break-xs: 540px,
+  break-sm: 960px,
+  break-md: 1320px,
 ) !default;
 
 :root {
-    @include generate_colors($theme--default);
-    @include with_prefix($colors);
-    @include with_prefix($spacing);
-    @include with_prefix($misc);
-    @include with_prefix($break-point);
+  @include generate_colors($theme--default);
+  @include with_prefix($colors);
+  @include with_prefix($spacing);
+  @include with_prefix($misc);
+  @include with_prefix($break-point);
 }

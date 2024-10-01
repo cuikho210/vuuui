@@ -2,32 +2,32 @@
 
 .vuuui-icon-button {
   @extend .vuuui-button-base;
-
-  border-radius: 50%;
-  aspect-ratio: 1/1;
   flex-grow: 0;
   flex-shrink: 0;
-  line-height: 1;
-  background-color: transparent;
-  padding: var(--vuuui-padding--half);
   transition-property: background-color, opacity, color;
 
+  border-radius: 50%;
+  background-color: transparent;
+  padding: var(--vuuui-padding--half);
+  aspect-ratio: 1/1;
+  line-height: 1;
+
   .vuuui-spinner {
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
-  &:not(:disabled, [active="true"]):hover {
+  &:not(:disabled, [active='true']):hover {
     background-color: var(--vuuui-color-primary--light);
   }
 
-  &[active="true"] {
+  &[active='true'] {
     background-color: var(--vuuui-color-alt--light);
     color: var(--vuuui-color-primary--text);
   }

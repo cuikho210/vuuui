@@ -1,12 +1,13 @@
-@import "./text_button.scss";
+@import './text_button.scss';
 
 .vuuui-outlined-button {
   @extend .vuuui-text-button;
-
-  border: 1px solid var(--vuuui-color-primary--light);
   transition-property: background-color, border-color;
 
-  &:not(:disabled):hover, &[active="true"] {
+  border: 1px solid var(--vuuui-color-primary--light);
+
+  &:not(:disabled):hover,
+  &[active='true'] {
     border: 1px solid var(--vuuui-color-primary);
   }
 }

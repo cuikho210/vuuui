@@ -1,16 +1,15 @@
 @use 'sass:color';
 
 @function convertHexToRGB($hex) {
-  @return
-    color.channel($hex, "red", $space: rgb),
-    color.channel($hex, "green", $space: rgb),
-    color.channel($hex, "blue", $space: rgb);
+  @return color.channel($hex, 'red', $space: rgb),
+    color.channel($hex, 'green', $space: rgb),
+    color.channel($hex, 'blue', $space: rgb);
 }
 
 @mixin generate_colors($colors) {
   // Colors, RGB Colors
   @each $color, $value in $colors {
-    @if str-slice(#{$value}, 1, 1) == "#" {
+    @if str-slice(#{$value}, 1, 1) == '#' {
       --vuuui-#{$color}: #{$value};
       --vuuui-#{$color}--rgb: #{convertHexToRGB($value)};
     } @else {

@@ -1,16 +1,16 @@
-@import "./elevated_button.scss";
+@import './elevated_button.scss';
 
 .vuuui-filled-button {
   @extend .vuuui-elevated-button;
-
-  background-color: var(--vuuui-color-primary);
   box-shadow: none;
 
-  &:not(:disabled, [active="true"]):hover {
+  background-color: var(--vuuui-color-primary);
+
+  &:not(:disabled, [active='true']):hover {
     background-color: var(--vuuui-color-primary--dark);
   }
 
-  &[active="true"] {
+  &[active='true'] {
     background-color: var(--vuuui-color-alt);
   }
 }
