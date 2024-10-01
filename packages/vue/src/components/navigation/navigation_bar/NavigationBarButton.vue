@@ -9,7 +9,7 @@ defineProps<NavigationBarButtonProps>()
 </script>
 
 <template>
-  <button class="vuuui-navigation-bar-button">
+  <button class="vuuui-navigation-bar-button" :active="active">
     <div class="vuuui-icon">
       <slot v-if="active" name="iconActive" />
       <slot v-else name="icon" />
