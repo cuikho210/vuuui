@@ -1,93 +1,90 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import {
+  RiHomeLine,
+  RiHomeFill,
+  RiCollageLine,
+  RiCollageFill,
+  RiCupLine,
+  RiCupFill,
+  RiArrowLeftSLine,
   RiHeartLine,
-  RiFileLine,
-  RiPaletteLine,
-  RiCloseLine,
+  RiShieldUserLine,
+  RiSettingsLine,
 } from '@remixicon/vue'
-import {
-  Container,
-  Spacer,
-  TextInput,
-  FileInput,
-  ColorInput,
-  Checkbox,
-  Radio,
-  Slider,
-  Switch,
-  Dialog,
-  IconButton,
-} from '../src'
+import { NavigationBarButton, NavigationBar, AppBar, IconButton } from '../src'
+import { RouterView } from 'vue-router'
 
-const file = ref<File | undefined>(undefined)
-const checked = ref(true)
-const switched = ref(true)
-const sliderValue = ref(11)
-const isDialogOpen = ref(false)
+const links = [
+  {
+    icon: RiHomeLine,
+    iconActive: RiHomeFill,
+    label: 'Home',
+    path: '/',
+  },
+  {
+    icon: RiCollageLine,
+    iconActive: RiCollageFill,
+    label: 'Components',
+    path: '/components',
+  },
+  {
+    icon: RiCupLine,
+    iconActive: RiCupFill,
+    label: 'About',
+    path: '/about',
+  },
+]
 </script>
 
 <template>
-  <Container>
-    <Spacer direction="column">
-      <Checkbox placeholder="display file input" v-model="checked" />
+  <main class="section-app">
+    <div class="app-navigation">
+      <NavigationBar>
+        <NavigationBarButton
+          v-for="(link, i) in links"
+          :key="i"
+          :active="false"
+          @click="$router.push(link.path)"
+        >
+          <template #icon>
+            <component :is="link.icon" />
+          </template>
 
-      <Switch v-model="switched" placeholder="Display color input" />
-      <Switch v-model="isDialogOpen" placeholder="Open dialog" />
+          <template #iconActive>
+            <component :is="link.iconActive" />
+          </template>
 
-      <Radio name="radio" placeholder="ahihi radio 1" />
-      <Radio name="radio" placeholder="ahihi radio 2" />
-      <Radio name="radio" placeholder="ahihi radio 3" />
-
-      <TextInput placeholder="ahihi text" required><RiHeartLine /></TextInput>
-
-      <FileInput v-if="checked" placeholder="ahihi file" required v-model="file"
-        ><RiFileLine
-      /></FileInput>
-
-      <ColorInput placeholder="ahihi color" required v-if="switched"
-        ><RiPaletteLine
-      /></ColorInput>
-    </Spacer>
-    <br />
-
-    <div>
-      {{ sliderValue }}
-
-      <Slider :min="0" :max="25" v-model="sliderValue" />
-      <br />
-
-      <Slider :min="8" :max="32" v-model="sliderValue" />
+          <template #default>
+            {{ link.label }}
+          </template>
+        </NavigationBarButton>
+      </NavigationBar>
     </div>
-    <br />
 
-    <div>
-      <Dialog v-model="isDialogOpen" backdrop-close>
-        <template #btnAction>
-          <IconButton>
-            <RiHeartLine />
-          </IconButton>
-        </template>
+    <div class="app-main">
+      <div class="app-bar">
+        <AppBar>
+          <template #leading>
+            <IconButton>
+              <RiArrowLeftSLine />
+            </IconButton>
+          </template>
 
-        <template #btnClose>
-          <IconButton @click="isDialogOpen = false">
-            <RiCloseLine />
-          </IconButton>
-        </template>
+          <template #title> Ahihi </template>
 
-        <template #title>Ahihi do ngoc~~!</template>
+          <template #actions>
+            <IconButton> <RiHeartLine /> </IconButton>
+            <IconButton> <RiShieldUserLine /> </IconButton>
+            <IconButton> <RiSettingsLine /> </IconButton>
+          </template>
+        </AppBar>
+      </div>
 
-        <template #default>
-          <p>Roses are red,</p>
-          <p>Violets are blue,</p>
-          <p>This dialog is neat,</p>
-          <p>And so are you!</p>
-          <p style="text-align: right"><i>Author: Claude sonnet from zed</i></p>
-        </template>
-      </Dialog>
+      <div class="app-body">
+        <RouterView />
+      </div>
     </div>
-    <br />
-  </Container>
+  </main>
 </template>
 
 <style scoped lang="scss">
