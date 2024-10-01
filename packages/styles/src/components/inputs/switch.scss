@@ -28,7 +28,7 @@
         .vuuui-switch-dot {
           left: 100%;
           translate: -100% -50%;
-          background-color: var(--vuuui-color-primary--dark);
+          background-color: var(--vuuui-color-primary--darker);
         }
       }
     }
@@ -38,9 +38,9 @@
     position: relative;
     transition-duration: var(--vuuui-transition-duration--short);
     transition-property: background-color;
-    border: 1px solid var(--vuuui-color-primary--light);
+    border: 1px solid var(--vuuui-color-primary);
     border-radius: var(--vuuui-radius);
-    background-color: var(--vuuui-color-primary--lighter);
+    background-color: var(--vuuui-color-bg);
     width: $icon-width;
     height: $dot-size;
 
