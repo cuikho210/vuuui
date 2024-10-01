@@ -3,5 +3,3 @@ export interface ButtonBaseProps {
   disabled?: boolean
   active?: boolean
 }
-
-export type IconButtonProps = Omit<ButtonBaseProps, 'defaultClassName'>

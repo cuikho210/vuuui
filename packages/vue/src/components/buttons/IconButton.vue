@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import ButtonBase from './ButtonBase.vue'
 import { DuckSpinner } from '../misc'
-import type { IconButtonProps } from './types.d'
+import type { ButtonBaseProps } from './types.d'
 import '@vuuui/styles/components/buttons/icon_button.scss'
 
-defineProps<IconButtonProps>()
+defineProps<ButtonBaseProps>()
 </script>
 
 <template>
