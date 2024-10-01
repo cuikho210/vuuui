@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src"],
+  "exclude": ["preview/**/*.ts", "preview/**/*.tsx", "preview/**/*.vue"]
+}
