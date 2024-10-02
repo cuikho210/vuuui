@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import '@vuuui/styles/components/layout/container.scss'
 
 interface ContainerProps {
