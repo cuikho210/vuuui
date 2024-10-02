@@ -1,22 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import '@vuuui/styles/components/misc/spinner/duck_spinner.scss'
 
 const props = defineProps<{
   thin?: boolean
   size?: number
 }>()
-
-const className = computed(() => {
-  let className = 'vuuui-duck-spinner'
-  if (props.thin) className += ' vuuui-thin'
-  return className
-})
 </script>
 
 <template>
   <svg
-    :class="className"
+    :class="{ 'vuuui-duck-spinner': true, 'vuuui-thin': thin }"
     :width="props.size || 24"
     :height="props.size || 24"
     viewBox="0 0 33.866664 33.866664"

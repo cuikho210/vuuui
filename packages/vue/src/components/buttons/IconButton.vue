@@ -9,11 +9,14 @@ defineProps<ButtonBaseProps>()
 
 <template>
   <ButtonBase v-bind="$props" class="vuuui-icon-button">
-    <div class="vuuui-body" v-show="!loading">
+    <div
+      class="vuuui-body"
+      :style="{ visibility: loading ? 'hidden' : 'initial' }"
+    >
       <slot></slot>
     </div>
 
-    <div v-show="loading" class="vuuui-spinner">
+    <div v-if="loading" class="vuuui-spinner">
       <DuckSpinner />
     </div>
   </ButtonBase>

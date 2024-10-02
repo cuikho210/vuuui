@@ -9,7 +9,10 @@ defineProps<ButtonBaseProps>()
 
 <template>
   <ButtonBase v-bind="$props">
-    <div class="vuuui-body" v-show="!loading">
+    <div
+      class="vuuui-body"
+      :style="{ visibility: loading ? 'hidden' : 'initial' }"
+    >
       <span v-if="$slots.icon" class="vuuui-icon">
         <slot name="icon" />
       </span>
@@ -19,7 +22,7 @@ defineProps<ButtonBaseProps>()
       </span>
     </div>
 
-    <div v-show="loading" class="vuuui-spinner">
+    <div v-if="loading" class="vuuui-spinner">
       <DuckSpinner />
     </div>
   </ButtonBase>
