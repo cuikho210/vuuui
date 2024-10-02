@@ -73,7 +73,7 @@ const links = [
             </IconButton>
           </template>
 
-          <template #title> Ahihi </template>
+          <template #title> {{ layout.appTitle }} </template>
 
           <template #actions>
             <IconButton> <RiHeartLine /> </IconButton>
