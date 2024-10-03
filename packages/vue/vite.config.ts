@@ -5,13 +5,11 @@ import { extname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    libInjectCss(),
     dts({
       tsconfigPath: resolve(__dirname, './tsconfig-build.json'),
       copyDtsFiles: true,
@@ -19,7 +17,7 @@ export default defineConfig({
   ],
   css: {
     postcss: {
-      plugins: [autoprefixer({})],
+      plugins: [autoprefixer({}) as any],
     },
   },
   build: {

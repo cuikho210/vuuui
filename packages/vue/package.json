@@ -20,11 +20,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
-  "sideEffects": [
-    "**/*.css"
-  ],
   "peerDependencies": {
-    "@vuuui/styles": "*",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -45,6 +41,7 @@
     "vite-plugin-lib-inject-css": "^2.1.1",
     "vue-tsc": "^2.0.6",
     "vue-router": "^4.4.5",
-    "pinia": "^2.2.4"
+    "pinia": "^2.2.4",
+    "@vuuui/styles": "*"
   }
 }
