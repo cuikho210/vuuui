@@ -1,7 +1,31 @@
+:root {
+  --navbar-desktop-width: 6rem;
+  --navbar-mobile-height: 5rem;
+  --appbar-height: 3rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: var(--vuuui-padding--half);
+  height: var(--vuuui-padding--half);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--vuuui-radius--half);
+  background-color: var(--vuuui-color-primary--light);
+
+  &:hover {
+    background-color: var(--vuuui-color-primary);
+  }
 }
 
 body {

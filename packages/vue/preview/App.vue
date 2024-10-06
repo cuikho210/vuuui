@@ -40,89 +40,108 @@ const links = [
 </script>
 
 <template>
-  <main class="section-app">
-    <div class="app-navigation">
-      <NavigationBar>
-        <NavigationBarButton
-          v-for="(link, i) in links"
-          :key="i"
-          :active="layout.activeNavbar == i"
-          @click="$router.push(link.path)"
-        >
-          <template #icon>
-            <component :is="link.icon" />
-          </template>
+  <div class="app-navigation">
+    <NavigationBar class="vuuui-navbar">
+      <NavigationBarButton
+        v-for="(link, i) in links"
+        :key="i"
+        :active="layout.activeNavbar == i"
+        @click="$router.push(link.path)"
+      >
+        <template #icon>
+          <component :is="link.icon" />
+        </template>
 
-          <template #iconActive>
-            <component :is="link.iconActive" />
-          </template>
+        <template #iconActive>
+          <component :is="link.iconActive" />
+        </template>
 
-          <template #default>
-            {{ link.label }}
-          </template>
-        </NavigationBarButton>
-      </NavigationBar>
-    </div>
+        <template #default>
+          {{ link.label }}
+        </template>
+      </NavigationBarButton>
+    </NavigationBar>
+  </div>
 
-    <div class="app-main">
-      <div class="app-bar">
-        <AppBar>
-          <template #leading>
-            <IconButton>
-              <RiArrowLeftSLine />
-            </IconButton>
-          </template>
+  <div class="app-bar">
+    <AppBar class="vuuui-appbar">
+      <template #leading>
+        <IconButton>
+          <RiArrowLeftSLine />
+        </IconButton>
+      </template>
 
-          <template #title> {{ layout.appTitle }} </template>
+      <template #title> {{ layout.appTitle }} </template>
 
-          <template #actions>
-            <IconButton> <RiHeartLine /> </IconButton>
-            <IconButton> <RiShieldUserLine /> </IconButton>
-            <IconButton> <RiSettingsLine /> </IconButton>
-          </template>
-        </AppBar>
-      </div>
+      <template #actions>
+        <IconButton> <RiHeartLine /> </IconButton>
+        <IconButton> <RiShieldUserLine /> </IconButton>
+        <IconButton> <RiSettingsLine /> </IconButton>
+      </template>
+    </AppBar>
+  </div>
 
-      <div class="app-body">
-        <RouterView />
-      </div>
-    </div>
-  </main>
+  <div class="app-body">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped lang="scss">
 @import '@vuuui/styles/vuuui.scss';
 
-.section-app {
-  display: flex;
+.app-navigation {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+.app-bar {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
-  flex-direction: column-reverse;
+  z-index: 51;
   width: 100%;
-  height: 100%;
+}
 
-  @media screen and (min-width: map-get($break-point, break-xs)) {
-    flex-direction: row;
-  }
+.app-body {
+  margin-top: var(--appbar-height);
+  margin-bottom: var(--navbar-mobile-height);
+}
 
+.vuuui-navbar {
+  height: var(--navbar-mobile-height);
+}
+
+.vuuui-appbar {
+  height: var(--appbar-height);
+}
+
+@media screen and (min-width: map-get($break-point, break-xs)) {
   .app-navigation {
-    flex: 0;
+    width: auto;
+    height: 100%;
   }
 
-  .app-main {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
+  .app-body {
+    margin-bottom: 0;
+  }
 
-    .app-bar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+  .app-body,
+  .app-bar {
+    margin-left: var(--navbar-desktop-width);
+  }
+
+  .app-bar {
+    width: calc(100% - var(--navbar-desktop-width));
+  }
+
+  .vuuui-navbar {
+    width: var(--navbar-desktop-width);
+    height: 100%;
   }
 }
 </style>

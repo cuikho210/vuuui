@@ -9,7 +9,8 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--vuuui-padding--half);
-  background-color: var(--vuuui-color-bg);
+  backdrop-filter: blur(var(--vuuui-blur-length--x2));
+  background-color: rgba(var(--vuuui-color-bg--rgb), 0.88);
   padding: 0 var(--vuuui-padding--half);
   min-height: var(--vuuui-padding--x3);
 
