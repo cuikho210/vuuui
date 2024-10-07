@@ -1,0 +1,12 @@
+@import '../../base.scss';
+
+.vuuui-avatar {
+  @extend .vuuui-base;
+
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--vuuui-color-bg-info);
+  aspect-ratio: 1;
+  object-fit: cover;
+}

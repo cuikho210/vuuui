@@ -6,6 +6,7 @@ import Spinner from './Spinner.vue'
 import Buttons from './Buttons.vue'
 import Inputs from './Inputs.vue'
 import Overlay from './Overlay.vue'
+import Avatar from './Avatar.vue'
 
 const layout = useLayoutStore()
 layout.setActiveNavbar(1)
@@ -16,6 +17,7 @@ layout.setAppTitle('Components')
   <Container sm>
     <Colors /><br />
     <Spinner /><br />
+    <Avatar /><br />
     <Buttons /><br />
     <Inputs /><br />
     <Overlay /><br />
