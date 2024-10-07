@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Spacer } from '../../../src'
+import { Spacer, Card } from '../../../src'
 import Color from './Color.vue'
 </script>
 
 <template>
-  <section>
+  <Card xs>
     <h2>Colors</h2>
     <br />
 
-    <Spacer>
+    <Spacer justify="center">
       <div>
         <small>
           <i>Primary</i>
@@ -61,5 +61,5 @@ import Color from './Color.vue'
         </Spacer>
       </div>
     </Spacer>
-  </section>
+  </Card>
 </template>

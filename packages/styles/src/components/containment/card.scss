@@ -1,0 +1,7 @@
+@import './container';
+
+.vuuui-card {
+  @extend .vuuui-container;
+  box-shadow: 0 var(--vuuui-padding--sm) var(--vuuui-padding)
+    var(--vuuui-color-shadow--soft);
+}

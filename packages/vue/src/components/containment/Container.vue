@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@vuuui/styles/components/layout/container.scss'
+import '@vuuui/styles/components/containment/container.scss'
 
 interface ContainerProps {
   xs?: boolean

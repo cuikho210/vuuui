@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '@vuuui/styles/components/layout/spacer.scss'
+import '@vuuui/styles/components/containment/spacer.scss'
 import type { Property } from 'csstype'
 
 interface SpacerProps {

@@ -13,7 +13,7 @@ layout.setAppTitle('Components')
 </script>
 
 <template>
-  <Container md>
+  <Container sm>
     <Colors /><br />
     <Spinner /><br />
     <Buttons /><br />
