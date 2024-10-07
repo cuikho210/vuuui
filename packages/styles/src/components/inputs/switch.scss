@@ -4,9 +4,9 @@
   @extend .vuuui-base;
   $gap: var(--vuuui-padding--half);
   $icon-width: calc(3rem - $gap);
-  $dot-size: 1.2rem;
-  display: flex;
+  $dot-size: 1.4rem;
 
+  display: flex;
   position: relative;
   justify-content: flex-start;
   align-items: center;
@@ -18,17 +18,21 @@
   padding-right: var(--vuuui-padding);
   width: 100%;
 
+  &:hover {
+    background-color: var(--vuuui-color-primary--lighter);
+  }
+
   input {
     display: none;
 
     &:checked {
       & + .vuuui-switch-button {
-        background-color: var(--vuuui-color-primary--light);
+        background-color: var(--vuuui-color-primary--darker);
 
         .vuuui-switch-dot {
           left: 100%;
           translate: -100% -50%;
-          background-color: var(--vuuui-color-primary--darker);
+          background-color: var(--vuuui-color-primary--light);
         }
       }
     }
@@ -38,7 +42,7 @@
     position: relative;
     transition-duration: var(--vuuui-transition-duration--short);
     transition-property: background-color;
-    border: 1px solid var(--vuuui-color-primary);
+    outline: 1px solid var(--vuuui-color-primary--dark);
     border-radius: var(--vuuui-radius);
     background-color: var(--vuuui-color-bg);
     width: $icon-width;
@@ -52,7 +56,7 @@
       transition-duration: var(--vuuui-transition-duration--short);
       transition-property: background-color, left, translate;
       border-radius: 50%;
-      background-color: var(--vuuui-color-primary);
+      background-color: var(--vuuui-color-primary--dark);
       width: $dot-size;
       height: $dot-size;
     }
