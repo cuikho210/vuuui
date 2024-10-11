@@ -9,8 +9,8 @@ defineProps<ButtonBaseProps>()
 
 <template>
   <TextButtonBase v-bind="$props" class="vuuui-elevated-button">
-    <template #icon>
-      <slot name="icon"></slot>
+    <template #icon v-if="$slots.icon">
+      <slot name="icon" />
     </template>
 
     <template #default>
