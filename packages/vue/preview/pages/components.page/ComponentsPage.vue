@@ -10,7 +10,7 @@ import Avatar from './Avatar.vue'
 
 const layout = useLayoutStore()
 layout.setActiveNavbar(1)
-layout.setAppTitle('Components')
+layout.setAppTitle('Components Components Components Components')
 </script>
 
 <template>

@@ -25,11 +25,11 @@
 
     .vuuui-app-bar-title {
       flex: 1;
-      overflow-x: hidden;
-      overflow-x: clip;
+      overflow: hidden;
       font-weight: bold;
       font-size: 1.1rem;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
