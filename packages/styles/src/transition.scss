@@ -1,0 +1,17 @@
+.vuuui-fade-up-enter-active,
+.vuuui-fade-up-leave-active {
+  transition: all var(--vuuui-transition-duration--short) ease-out;
+}
+
+.vuuui-fade-up-enter-from,
+.vuuui-fade-up-leave-to {
+  transform: top(20px);
+  opacity: 0;
+  margin-top: 10vh;
+}
+
+.vuuui-fade-up-enter-to,
+.vuuui-fade-up-leave-from {
+  opacity: 1;
+  margin-top: 0;
+}

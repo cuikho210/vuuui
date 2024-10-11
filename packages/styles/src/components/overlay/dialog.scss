@@ -25,10 +25,6 @@
   &[open] {
     visibility: visible;
     opacity: 1;
-
-    & > .vuuui-body {
-      margin-top: 0;
-    }
   }
 
   & > .vuuui-backdrop {
@@ -42,7 +38,6 @@
   & > .vuuui-body {
     display: block;
     position: relative;
-    margin-top: 10vh;
     box-shadow: 0 4px 1rem var(--vuuui-color-shadow);
     background-color: var(--vuuui-color-bg);
     padding: 0;
