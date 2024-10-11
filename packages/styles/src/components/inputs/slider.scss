@@ -1,84 +1,98 @@
 @import '../../base.scss';
 
+$track-w: 100%;
+$track-h: var(--vuuui-padding--half);
+$thumb-d: 1.7rem;
+$track-c: var(--vuuui-color-alt--light);
+$filll-c: var(--vuuui-color-primary--dark);
+$thumb-c: var(--vuuui-color-primary--dark);
+
+@mixin track($fill: 0) {
+  box-sizing: border-box;
+  border: none;
+  border-radius: var(--vuuui-radius);
+  background: $track-c;
+  width: $track-w;
+  height: $track-h;
+
+  @if $fill == 1 {
+    & {
+      background: linear-gradient($filll-c, $filll-c)
+        0 /
+        var(--sx)
+        100%
+        no-repeat
+        $track-c;
+    }
+  }
+}
+
+@mixin fill() {
+  border-radius: var(--vuuui-radius);
+  background: $filll-c;
+  height: $track-h;
+}
+
+@mixin thumb() {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 50%;
+  background: $thumb-c;
+  width: $thumb-d;
+  height: $thumb-d;
+}
+
 .vuuui-slider-wrapper {
   @extend .vuuui-base;
   position: relative;
   padding: 0 var(--vuuui-padding);
 
   .vuuui-slider {
-    $bar-size: var(--vuuui-padding--half);
-    $knob-size: 1.4rem;
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--val) - var(--min)) / var(--range));
+    --sx: calc(0.5 *#{$thumb-d} + var(--ratio) * (100% - #{$thumb-d}));
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    width: $track-w;
+    height: $thumb-d;
 
-    position: relative;
-    cursor: pointer;
-    border-radius: var(--vuuui-radius--half);
-    background-color: var(--vuuui-color-primary--lighter);
-    width: 100%;
-    height: $bar-size;
-
-    .vuuui-slider-filler {
-      transition-duration: var(--vuuui-transition-duration--short);
-      transition-property: width;
-      border-radius: var(--vuuui-radius--half);
-      background-color: var(--vuuui-color-primary);
-      width: 0;
-      height: 100%;
+    &,
+    &::-webkit-slider-thumb {
+      appearance: none;
     }
 
-    .vuuui-slider-knob {
-      position: absolute;
-      top: 0;
-      left: 0;
-      translate: -50% calc(-50% + $bar-size / 2);
-      transition-duration: var(--vuuui-transition-duration--short);
-      transition-property: left;
+    &::-webkit-slider-runnable-track {
+      @include track(1);
+    }
+    &::-moz-range-track {
+      @include track;
+    }
+    &::-ms-track {
+      @include track;
+    }
 
-      .vuuui-knob-body {
-        display: block;
-        position: relative;
-        width: $knob-size;
-        height: $knob-size;
+    &::-moz-range-progress {
+      @include fill;
+    }
+    &::-ms-fill-lower {
+      @include fill;
+    }
 
-        .vuuui-knob-main {
-          position: absolute;
-          top: 0;
-          left: 0;
-          transition-duration: var(--vuuui-transition-duration--short);
-          transition-property: background-color;
-          border-radius: 50%;
-          background-color: var(--vuuui-color-primary--dark);
-          width: 100%;
-          height: 100%;
-        }
+    &::-webkit-slider-thumb {
+      margin-top: calc(0.5 * ($track-h - $thumb-d));
+      @include thumb;
+    }
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+    &::-ms-thumb {
+      margin-top: 0;
+      @include thumb;
+    }
 
-        .vuuui-knob-outline {
-          position: absolute;
-          top: 0;
-          left: 0;
-          opacity: 0;
-          transition-duration: var(--vuuui-transition-duration--short);
-          transition-property: top, left, width, height, opacity;
-          border-radius: 50%;
-          background-color: rgba(var(--vuuui-color-primary--rgb), 0.2);
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      .vuuui-knob-body:hover,
-      .vuuui-active {
-        .vuuui-knob-outline {
-          top: -50%;
-          left: -50%;
-          opacity: 1;
-          width: 200%;
-          height: 200%;
-        }
-
-        .vuuui-knob-main {
-          background-color: var(--vuuui-color-primary--darker);
-        }
-      }
+    &::-ms-tooltip {
+      display: none;
     }
   }
 }

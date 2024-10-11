@@ -12,7 +12,7 @@ import {
   Switch,
 } from '../../../src'
 
-const files = ref<File | null>(null)
+const files = ref<File | undefined>(undefined)
 const sliderValue = ref(20)
 </script>
 
@@ -54,7 +54,7 @@ const sliderValue = ref(20)
     <br />
     <Slider :min="15" :max="50" v-model="sliderValue" />
     <br />
-    <Slider :min="15" :max="100" v-model="sliderValue" />
+    <Slider :min="15" :max="100" :step="5" v-model="sliderValue" />
     <br />
 
     <p>Switch</p>
