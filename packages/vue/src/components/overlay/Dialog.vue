@@ -6,6 +6,9 @@ import '@vuuui/styles/transition.scss'
 interface DialogProps {
   modelValue?: boolean
   backdropClose?: boolean
+  xs?: boolean
+  sm?: boolean
+  md?: boolean
 }
 
 const props = defineProps<DialogProps>()
@@ -25,7 +28,7 @@ const backdropClose = () => {
     <div class="vuuui-backdrop" @click="backdropClose"></div>
 
     <Transition name="vuuui-fade-up">
-      <Container class="vuuui-body" v-if="modelValue">
+      <Container v-bind="{ xs, sm, md }" class="vuuui-body" v-if="modelValue">
         <div class="vuuui-title">
           <div class="vuuui-title-left">
             <div class="vuuui-button-slot">

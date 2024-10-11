@@ -20,7 +20,7 @@ const dialog2Open = ref(false)
         Open dialog
       </ElevatedButton>
 
-      <Dialog v-model="dialog1Open" backdrop-close>
+      <Dialog v-model="dialog1Open" backdrop-close xs>
         <template #btnAction> </template>
 
         <template #btnClose>
@@ -41,7 +41,7 @@ const dialog2Open = ref(false)
             Open dialog 2
           </ElevatedButton>
 
-          <Dialog v-model="dialog2Open" backdrop-close>
+          <Dialog v-model="dialog2Open" backdrop-close sm>
             <template #btnAction> </template>
 
             <template #btnClose>
