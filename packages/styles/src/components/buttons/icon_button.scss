@@ -23,6 +23,10 @@
     height: 100%;
   }
 
+  .vuuui-body {
+    line-height: 0;
+  }
+
   &:not(:disabled, [active='true']):hover {
     background-color: var(--vuuui-color-primary--light);
   }
