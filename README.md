@@ -17,6 +17,7 @@ My UI library
 - [x] Spacer
 - [ ] Menu
 - [x] Card
+- [x] Breadcrumb
 
 #### Buttons
 
@@ -60,3 +61,4 @@ My UI library
 #### Misc
 
 - [x] Spinner
+- [x] LinearProgressIndicator

@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import { useLayoutStore } from '../../layout.store'
-import { Container } from '../../../src'
+import { Container, Breadcrumb } from '../../../src'
 import Colors from './Colors.vue'
 import Spinner from './Spinner.vue'
 import Buttons from './Buttons.vue'
@@ -15,6 +16,12 @@ layout.setAppTitle('Components Components Components Components')
 
 <template>
   <Container sm>
+    <Breadcrumb>
+      <RouterLink to="/"> Home </RouterLink>
+      <RouterLink to=""> Components </RouterLink>
+    </Breadcrumb>
+    <br />
+
     <Colors /><br />
     <Spinner /><br />
     <Avatar /><br />

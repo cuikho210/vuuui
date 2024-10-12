@@ -1,0 +1,22 @@
+@import '../../base.scss';
+
+.vuuui-breadcrumb {
+  @extend .vuuui-base;
+
+  position: relative;
+
+  & > a {
+    color: var(--vuuui-color-text-info);
+
+    &:not(:last-child)::after {
+      padding: 0 var(--vuuui-padding--sm);
+      content: '/';
+      color: var(--vuuui-color-text);
+    }
+
+    &:last-child {
+      pointer-events: none;
+      color: var(--vuuui-color-primary--dark);
+    }
+  }
+}
