@@ -11,7 +11,13 @@ import {
   RiShieldUserLine,
   RiSettingsLine,
 } from '@remixicon/vue'
-import { NavigationBarButton, NavigationBar, AppBar, IconButton } from '../src'
+import {
+  NavigationBarButton,
+  NavigationBar,
+  AppBar,
+  IconButton,
+  LinearProgressIndicator,
+} from '../src'
 import { RouterView } from 'vue-router'
 import { useLayoutStore } from './layout.store'
 
@@ -79,6 +85,7 @@ const links = [
         <IconButton> <RiSettingsLine /> </IconButton>
       </template>
     </AppBar>
+    <LinearProgressIndicator />
   </div>
 
   <div class="app-body">

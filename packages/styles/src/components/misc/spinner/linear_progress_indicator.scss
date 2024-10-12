@@ -1,0 +1,37 @@
+@import '../../../base.scss';
+
+.vuuui-linear-progress-indicator {
+  @extend .vuuui-base;
+
+  --line-height: var(--vuuui-padding--sm);
+  --anim-duration: 1.7s;
+
+  display: block;
+  position: relative;
+  background-color: var(--vuuui-color-primary--lighter);
+  width: 100%;
+  height: var(--line-height);
+  overflow: hidden;
+
+  .vuuui-linear-progress-indicator-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: vuuui-linear-progress-animation var(--anim-duration) linear
+      infinite;
+    background-color: var(--vuuui-color-primary--dark);
+    width: 0;
+    height: 100%;
+  }
+
+  @keyframes vuuui-linear-progress-animation {
+    0% {
+      left: -8%;
+      width: 8%;
+    }
+    100% {
+      left: 100%;
+      width: 100%;
+    }
+  }
+}
