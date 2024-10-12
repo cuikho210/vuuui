@@ -29,6 +29,7 @@ $theme--default: (
 
 $colors: (
   color-shadow--soft: rgba(0, 0, 0, 0.05),
+  color-shadow--md: rgba(0, 0, 0, 0.075),
   color-shadow: rgba(0, 0, 0, 0.1),
   color-shadow--strong: rgba(0, 0, 0, 0.16),
   color-border: rgba(var(--vuuui-color-text--rgb), 0.07),
