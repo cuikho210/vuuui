@@ -2,15 +2,17 @@
 
 .vuuui-switch {
   @extend .vuuui-base;
-  $gap: var(--vuuui-padding--half);
-  $icon-width: calc(3rem - $gap);
-  $dot-size: 1.4rem;
+  $label-gap: var(--vuuui-padding--half);
+  $dot-size: 1.32rem;
+  $dot-gap: 0.2rem;
+  $body-width: calc(3rem - $label-gap);
+  $body-height: $dot-size + ($dot-gap * 1.5);
 
   display: flex;
   position: relative;
   justify-content: flex-start;
   align-items: center;
-  gap: $gap;
+  gap: $label-gap;
   transition-property: background-color;
   cursor: pointer;
   border-radius: var(--vuuui-radius--half);
@@ -30,8 +32,7 @@
         background-color: var(--vuuui-color-primary--darker);
 
         .vuuui-switch-dot {
-          left: 100%;
-          translate: -100% -50%;
+          left: calc(100% - $dot-gap - $dot-size);
           background-color: var(--vuuui-color-primary--light);
         }
       }
@@ -43,18 +44,18 @@
     transition-duration: var(--vuuui-transition-duration--short);
     transition-property: background-color;
     outline: 1px solid var(--vuuui-color-primary--dark);
-    border-radius: var(--vuuui-radius);
+    border-radius: $body-height;
     background-color: var(--vuuui-color-bg);
-    width: $icon-width;
-    height: $dot-size;
+    width: $body-width;
+    height: $body-height;
 
     .vuuui-switch-dot {
       position: absolute;
       top: 50%;
-      left: 0;
+      left: $dot-gap;
       translate: 0 -50%;
       transition-duration: var(--vuuui-transition-duration--short);
-      transition-property: background-color, left, translate;
+      transition-property: background-color, left;
       border-radius: 50%;
       background-color: var(--vuuui-color-primary--dark);
       width: $dot-size;
