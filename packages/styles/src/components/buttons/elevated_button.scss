@@ -4,7 +4,6 @@
   @extend .vuuui-text-button-base;
   transition-property: background-color, box-shadow, opacity;
   box-shadow: 0 2px 2px var(--vuuui-color-shadow);
-
   background-color: var(--vuuui-color-primary--lighter);
 
   &:not(:disabled, [active='true']):hover {
@@ -14,7 +13,7 @@
 
   &[active='true'] {
     box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
-    background-color: var(--vuuui-color-alt--light);
+    background-color: var(--vuuui-color-alt);
   }
 
   &:not(:disabled):active {

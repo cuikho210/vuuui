@@ -3,7 +3,6 @@
 .vuuui-filled-button {
   @extend .vuuui-elevated-button;
   box-shadow: none;
-
   background-color: var(--vuuui-color-primary);
 
   &:not(:disabled, [active='true']):hover {
@@ -11,6 +10,7 @@
   }
 
   &[active='true'] {
-    background-color: var(--vuuui-color-alt);
+    background-color: var(--vuuui-color-alt--darker);
+    color: var(--vuuui-color-bg);
   }
 }
