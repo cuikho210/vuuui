@@ -15,6 +15,7 @@ import {
   TextButton,
   OutlinedButton,
   IconButton,
+  Gap,
 } from '../../../src'
 import { ref } from 'vue'
 
@@ -26,7 +27,7 @@ const active = ref(true)
 <template>
   <section>
     <h2>Buttons</h2>
-    <br />
+    <Gap />
 
     <Spacer>
       <ElevatedButton>Normal</ElevatedButton>
@@ -38,7 +39,7 @@ const active = ref(true)
       </ElevatedButton>
       <ElevatedButton :loading="loading">Loading</ElevatedButton>
     </Spacer>
-    <br />
+    <Gap />
 
     <Spacer>
       <FilledButton>Normal</FilledButton>
@@ -50,7 +51,7 @@ const active = ref(true)
       </FilledButton>
       <FilledButton :loading="loading">Loading</FilledButton>
     </Spacer>
-    <br />
+    <Gap />
 
     <Spacer>
       <TextButton>Normal</TextButton>
@@ -62,7 +63,7 @@ const active = ref(true)
       </TextButton>
       <TextButton :loading="loading">Loading</TextButton>
     </Spacer>
-    <br />
+    <Gap />
 
     <Spacer>
       <OutlinedButton>Normal</OutlinedButton>
@@ -74,7 +75,7 @@ const active = ref(true)
       </OutlinedButton>
       <OutlinedButton :loading="loading">Loading</OutlinedButton>
     </Spacer>
-    <br />
+    <Gap />
 
     <Spacer>
       <IconButton @click="disabled = !disabled" title="Toggle disabled">
@@ -104,6 +105,6 @@ const active = ref(true)
         <RiHeart3Line size="2rem" />
       </IconButton>
     </Spacer>
-    <br />
+    <Gap />
   </section>
 </template>
