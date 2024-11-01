@@ -19,4 +19,8 @@
   &[md='true'] {
     max-width: var(--vuuui-break-md);
   }
+
+  &[fluid='true'] {
+    width: 100%;
+  }
 }
