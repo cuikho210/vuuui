@@ -7,6 +7,12 @@
   overflow: auto;
   font-size: inherit;
 
+  &[readonly] {
+    ul[data-type='taskList'] li label {
+      pointer-events: none;
+    }
+  }
+
   h1 {
     font-size: xx-large;
   }
