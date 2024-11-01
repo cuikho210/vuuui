@@ -1,4 +1,4 @@
-@import './text_button.scss';
+@use 'text_button.scss';
 
 .vuuui-outlined-button {
   @extend .vuuui-text-button;

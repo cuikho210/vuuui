@@ -1,4 +1,4 @@
-@import '../../buttons/button_base.scss';
+@use '../../buttons/button_base.scss';
 
 .vuuui-navigation-bar-button {
   @extend .vuuui-button-base;

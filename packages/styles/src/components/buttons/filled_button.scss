@@ -1,4 +1,4 @@
-@import './elevated_button.scss';
+@use 'elevated_button.scss';
 
 .vuuui-filled-button {
   @extend .vuuui-elevated-button;

@@ -1,6 +1,6 @@
 @use 'sass:map';
-@import '../../base.scss';
-@import '../../vuuui.scss';
+@use '../../base.scss';
+@use '../../vuuui.scss';
 
 .vuuui-text-input {
   @extend .vuuui-base;

@@ -1,4 +1,4 @@
-@import './button_base.scss';
+@use 'button_base.scss';
 
 .vuuui-text-button-base {
   @extend .vuuui-button-base;

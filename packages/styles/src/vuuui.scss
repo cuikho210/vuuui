@@ -1,4 +1,4 @@
-@import './utils.scss';
+@use 'utils.scss';
 
 $theme--default: (
   color-primary--text: #570000,
@@ -66,9 +66,9 @@ $break-point: (
 ) !default;
 
 :root {
-  @include generate_colors($theme--default);
-  @include with_prefix($colors);
-  @include with_prefix($spacing);
-  @include with_prefix($misc);
-  @include with_prefix($break-point);
+  @include utils.generate_colors($theme--default);
+  @include utils.with_prefix($colors);
+  @include utils.with_prefix($spacing);
+  @include utils.with_prefix($misc);
+  @include utils.with_prefix($break-point);
 }

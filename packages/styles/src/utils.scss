@@ -1,3 +1,4 @@
+@use "sass:string";
 @use 'sass:color';
 
 @function convertHexToRGB($hex) {
@@ -9,7 +10,7 @@
 @mixin generate_colors($colors) {
   // Colors, RGB Colors
   @each $color, $value in $colors {
-    @if str-slice(#{$value}, 1, 1) == '#' {
+    @if string.slice(#{$value}, 1, 1) == '#' {
       --vuuui-#{$color}: #{$value};
       --vuuui-#{$color}--rgb: #{convertHexToRGB($value)};
     } @else {

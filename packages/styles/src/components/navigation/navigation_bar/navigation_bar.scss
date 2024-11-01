@@ -1,5 +1,6 @@
-@import '../../../base.scss';
-@import '../../../vuuui.scss';
+@use "sass:map";
+@use '../../../base.scss';
+@use '../../../vuuui.scss';
 
 .vuuui-navigation-bar {
   @extend .vuuui-base;
@@ -13,7 +14,7 @@
   width: 100%;
   height: auto;
 
-  @media screen and (min-width: map-get($break-point, break-xs)) {
+  @media screen and (min-width: map.get(vuuui.$break-point, break-xs)) {
     flex-direction: column;
     justify-content: flex-start;
     border-top-left-radius: 0;
