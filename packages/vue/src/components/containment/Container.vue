@@ -5,13 +5,14 @@ interface ContainerProps {
   xs?: boolean
   sm?: boolean
   md?: boolean
+  fluid?: boolean
 }
 
 defineProps<ContainerProps>()
 </script>
 
 <template>
-  <section class="vuuui-container" v-bind="{ xs, sm, md }">
+  <section class="vuuui-container" v-bind="{ xs, sm, md, fluid }">
     <slot></slot>
   </section>
 </template>

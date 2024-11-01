@@ -9,6 +9,7 @@ interface DialogProps {
   xs?: boolean
   sm?: boolean
   md?: boolean
+  fluid?: boolean
 }
 
 const props = defineProps<DialogProps>()
@@ -28,7 +29,11 @@ const backdropClose = () => {
     <div class="vuuui-backdrop" @click="backdropClose"></div>
 
     <Transition name="vuuui-fade-up">
-      <Container v-bind="{ xs, sm, md }" class="vuuui-body" v-if="modelValue">
+      <Container
+        v-bind="{ xs, sm, md, fluid }"
+        class="vuuui-body"
+        v-if="modelValue"
+      >
         <div class="vuuui-title">
           <div class="vuuui-title-left">
             <div class="vuuui-button-slot">

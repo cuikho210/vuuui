@@ -5,6 +5,7 @@ import { Spacer, ElevatedButton, Dialog, IconButton } from '../../../src'
 
 const dialog1Open = ref(false)
 const dialog2Open = ref(false)
+const dialog3Open = ref(false)
 </script>
 
 <template>
@@ -18,6 +19,13 @@ const dialog2Open = ref(false)
           <RiEmotionHappyLine />
         </template>
         Open dialog
+      </ElevatedButton>
+
+      <ElevatedButton @click="dialog3Open = true">
+        <template #icon>
+          <RiEmotionHappyLine />
+        </template>
+        Open dialog 3
       </ElevatedButton>
 
       <Dialog v-model="dialog1Open" backdrop-close xs>
@@ -67,6 +75,22 @@ const dialog2Open = ref(false)
               <p>It's the day the emperor returns home</p>
             </template>
           </Dialog>
+        </template>
+      </Dialog>
+
+      <Dialog v-model="dialog3Open" backdrop-close sm fluid>
+        <template #btnAction> </template>
+
+        <template #btnClose>
+          <IconButton @click="dialog3Open = false">
+            <RiCloseLine />
+          </IconButton>
+        </template>
+
+        <template #title> Ahihi </template>
+
+        <template #default>
+          <p>This is the content ahihi</p>
         </template>
       </Dialog>
     </Spacer>
