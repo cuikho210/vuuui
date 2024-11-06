@@ -1,4 +1,5 @@
 import '@vuuui/styles/vuuui.scss'
+import '@vuuui/styles/tiptap.scss'
 import './index.scss'
 
 import { createApp } from 'vue'

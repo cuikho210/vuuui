@@ -8,19 +8,28 @@
   font-size: inherit;
 
   &[readonly] {
+    overflow: hidden;
+
     ul[data-type='taskList'] li label {
       pointer-events: none;
     }
   }
 
   h1 {
-    font-size: xx-large;
+    font-size: 1.8em;
   }
   h2 {
-    font-size: x-large;
+    font-size: 1.4em;
   }
   h3 {
-    font-size: larger;
+    font-size: 1.2em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+
+  p {
+    min-height: 1em;
   }
 
   hr {
@@ -35,11 +44,18 @@
     font-size: inherit;
   }
 
+  img {
+    border-radius: var(--vuuui-radius);
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
   pre {
     margin: var(--vuuui-padding--half) auto;
     border-radius: var(--vuuui-radius);
     background-color: var(--vuuui-color-wrapper);
     padding: var(--vuuui-padding);
+    overflow: auto;
 
     code {
       border-radius: unset;
