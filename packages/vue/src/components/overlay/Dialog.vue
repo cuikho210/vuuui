@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { watch } from 'vue'
 import { Container } from '../../'
 import '@vuuui/styles/components/overlay/dialog.scss'
 import '@vuuui/styles/transition.scss'
@@ -18,9 +19,25 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
 }>()
 
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    if (newValue) setBodyOverflowHidden()
+    else unsetBodyOverflowHidden()
+  },
+)
+
 const backdropClose = () => {
   if (!props.backdropClose) return
   emit('update:modelValue', false)
+}
+
+function setBodyOverflowHidden() {
+  document.body.style.overflow = 'hidden'
+}
+
+function unsetBodyOverflowHidden() {
+  document.body.style.overflow = ''
 }
 </script>
 
