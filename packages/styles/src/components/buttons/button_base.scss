@@ -21,8 +21,7 @@
   }
 
   &:not([active='true']):disabled {
-    opacity: 0.7;
-    color: rgba(var(--vuuui-color-text--rgb), 0.4);
+    opacity: 0.5;
   }
 
   &:disabled {
