@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { watch, onBeforeUnmount } from 'vue'
 import { Container } from '../../'
 import '@vuuui/styles/components/overlay/dialog.scss'
 import '@vuuui/styles/transition.scss'
@@ -18,6 +18,10 @@ const props = defineProps<DialogProps>()
 const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
 }>()
+
+onBeforeUnmount(() => {
+  unsetBodyOverflowHidden()
+})
 
 watch(
   () => props.modelValue,
