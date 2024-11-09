@@ -10,9 +10,11 @@
   padding: 0;
 }
 
+$scrollbar-size: var(--vuuui-padding--half);
+
 ::-webkit-scrollbar {
-  width: var(--vuuui-padding--half);
-  height: var(--vuuui-padding--half);
+  width: $scrollbar-size;
+  height: $scrollbar-size;
 }
 
 ::-webkit-scrollbar-track {
@@ -30,6 +32,17 @@
 
 body {
   font-family: system-ui;
+
+  &[data-vuuui-dialog-level] {
+    overflow-y: hidden;
+
+    @supports (-webkit-font-smoothing: antialiased) {
+      &,
+      .app-bar {
+        padding-right: $scrollbar-size;
+      }
+    }
+  }
 }
 
 a {

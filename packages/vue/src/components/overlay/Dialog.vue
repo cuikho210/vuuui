@@ -20,14 +20,14 @@ const emit = defineEmits<{
 }>()
 
 onBeforeUnmount(() => {
-  unsetBodyOverflowHidden()
+  decreDataDialogLevel()
 })
 
 watch(
   () => props.modelValue,
   (newValue) => {
-    if (newValue) setBodyOverflowHidden()
-    else unsetBodyOverflowHidden()
+    if (newValue) increDataDialogLevel()
+    else decreDataDialogLevel()
   },
 )
 
@@ -36,12 +36,23 @@ const backdropClose = () => {
   emit('update:modelValue', false)
 }
 
-function setBodyOverflowHidden() {
-  document.body.style.overflow = 'hidden'
+function increDataDialogLevel() {
+  let level = Number(document.body.getAttribute('data-vuuui-dialog-level')) || 0
+  if (level > 0) {
+    document.body.setAttribute('data-vuuui-dialog-level', String(level + 1))
+  } else {
+    document.body.setAttribute('data-vuuui-dialog-level', '1')
+  }
 }
 
-function unsetBodyOverflowHidden() {
-  document.body.style.overflow = ''
+function decreDataDialogLevel() {
+  let level = Number(document.body.getAttribute('data-vuuui-dialog-level')) || 0
+  if (level > 1) {
+    level -= 1
+    document.body.setAttribute('data-vuuui-dialog-level', String(level))
+  } else {
+    document.body.removeAttribute('data-vuuui-dialog-level')
+  }
 }
 </script>
 
