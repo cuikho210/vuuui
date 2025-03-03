@@ -6,12 +6,12 @@
   box-shadow: 0 2px 2px var(--vuuui-color-shadow);
   background-color: var(--vuuui-color-primary--lighter);
 
-  &:not(:disabled, [active='true']):hover {
+  &:not(:disabled, [data-active='true']):hover {
     box-shadow: 0 2px 4px var(--vuuui-color-shadow--strong);
     background-color: var(--vuuui-color-primary--light);
   }
 
-  &[active='true'] {
+  &[data-active='true'] {
     box-shadow: 0 2px 2px var(--vuuui-color-shadow--strong);
     background-color: var(--vuuui-color-alt);
   }

@@ -20,7 +20,7 @@
     top: 1px;
   }
 
-  &:not([active='true']):disabled {
+  &:not([data-active='true']):disabled {
     opacity: 0.5;
   }
 

@@ -5,11 +5,11 @@
   box-shadow: none;
   background-color: var(--vuuui-color-primary);
 
-  &:not(:disabled, [active='true']):hover {
+  &:not(:disabled, [data-active='true']):hover {
     background-color: var(--vuuui-color-primary--dark);
   }
 
-  &[active='true'] {
+  &[data-active='true'] {
     background-color: var(--vuuui-color-alt--darker);
     color: var(--vuuui-color-bg);
   }

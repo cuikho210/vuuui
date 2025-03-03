@@ -27,11 +27,11 @@
     line-height: 0;
   }
 
-  &:not(:disabled, [active='true']):hover {
+  &:not(:disabled, [data-active='true']):hover {
     background-color: var(--vuuui-color-primary--light);
   }
 
-  &[active='true'] {
+  &[data-active='true'] {
     background-color: var(--vuuui-color-alt);
     color: var(--vuuui-color-primary--text);
   }
