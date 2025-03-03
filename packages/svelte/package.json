@@ -37,6 +37,7 @@
 		}
 	},
 	"peerDependencies": {
+		"@vuuui/styles": "*",
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
