@@ -9,4 +9,8 @@
 	<a href="/components/buttons">
 		<TextButton>Buttons</TextButton>
 	</a>
+
+	<a href="/components/avatar">
+		<TextButton>Avatar</TextButton>
+	</a>
 </Spacer>
