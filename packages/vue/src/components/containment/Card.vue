@@ -5,11 +5,18 @@ defineProps<{
   xs?: boolean
   sm?: boolean
   md?: boolean
+  fluid?: boolean
 }>()
 </script>
 
 <template>
-  <section class="vuuui-card" v-bind="{ xs, sm, md }">
+  <section
+    class="vuuui-card"
+    :data-xs="xs"
+    :data-sm="sm"
+    :data-md="md"
+    :data-fluid="fluid"
+  >
     <slot></slot>
   </section>
 </template>

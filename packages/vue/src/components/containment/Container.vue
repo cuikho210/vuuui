@@ -12,7 +12,13 @@ defineProps<ContainerProps>()
 </script>
 
 <template>
-  <section class="vuuui-container" v-bind="{ xs, sm, md, fluid }">
+  <section
+    class="vuuui-container"
+    :data-xs="xs"
+    :data-sm="sm"
+    :data-md="md"
+    :data-fluid="fluid"
+  >
     <slot></slot>
   </section>
 </template>
