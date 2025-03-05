@@ -21,4 +21,8 @@
 	<a href="/components/spinners">
 		<TextButton>Spinners</TextButton>
 	</a>
+
+	<a href="/components/inputs">
+		<TextButton>Inputs</TextButton>
+	</a>
 </Spacer>
