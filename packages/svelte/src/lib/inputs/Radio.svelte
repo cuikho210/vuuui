@@ -1,19 +1,16 @@
 <script lang="ts">
 	import '@vuuui/styles/components/inputs/radio_input.scss'
+	import type { HTMLInputAttributes } from 'svelte/elements'
 
-	let {
-		placeholder,
-		value,
-		group = $bindable()
-	}: {
-		placeholder?: string
-		value?: string
+	interface RadioProps extends HTMLInputAttributes {
 		group?: string
-	} = $props()
+	}
+
+	let { placeholder, value, group = $bindable(), ...stuff }: RadioProps = $props()
 </script>
 
 <label class="vuuui-radio">
-	<input type="radio" {value} bind:group />
+	<input type="radio" {value} bind:group {...stuff} />
 
 	<div class="vuuui-icon">
 		<div class="vuuui-checkmark">

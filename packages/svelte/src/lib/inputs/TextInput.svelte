@@ -1,20 +1,17 @@
 <script lang="ts">
 	import '@vuuui/styles/components/inputs/text_input.scss'
-	import { Snippet } from 'svelte'
+	import type { Snippet } from 'svelte'
+	import type { HTMLInputAttributes } from 'svelte/elements'
 
-	let {
-		icon,
-		value = $bindable(),
-		placeholder
-	}: {
+	interface TextInputProps extends HTMLInputAttributes {
 		icon?: Snippet
-		value?: string
-		placeholder?: string
-	} = $props()
+	}
+
+	let { icon, value = $bindable(), placeholder, ...stuff }: TextInputProps = $props()
 </script>
 
 <div class="vuuui-text-input">
-	<input bind:value {placeholder} />
+	<input bind:value {placeholder} {...stuff} />
 
 	<div class="vuuui-icon">
 		{#if icon}

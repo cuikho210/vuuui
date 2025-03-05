@@ -1,17 +1,8 @@
 <script lang="ts">
 	import '@vuuui/styles/components/inputs/slider.scss'
+	import type { HTMLInputAttributes } from 'svelte/elements'
 
-	let {
-		value = $bindable(),
-		min,
-		max,
-		step
-	}: {
-		value?: number
-		min?: number
-		max?: number
-		step?: number
-	} = $props()
+	let { value = $bindable(), ...stuff }: HTMLInputAttributes = $props()
 </script>
 
 <div class="vuuui-slider-wrapper">
@@ -19,11 +10,9 @@
 		type="range"
 		class="vuuui-slider"
 		bind:value
-		{min}
-		{max}
-		{step}
 		style:--val={value || 0}
-		style:--min={min || 0}
-		style:--max={max || 100}
+		style:--min={stuff.min || 0}
+		style:--max={stuff.max || 100}
+		{...stuff}
 	/>
 </div>

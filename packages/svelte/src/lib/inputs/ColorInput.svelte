@@ -1,20 +1,17 @@
 <script lang="ts">
 	import '@vuuui/styles/components/inputs/color_input.scss'
-	import { Snippet } from 'svelte'
+	import type { Snippet } from 'svelte'
+	import type { HTMLInputAttributes } from 'svelte/elements'
 
-	let {
-		value = $bindable(),
-		placeholder,
-		icon
-	}: {
-		value?: string
-		placeholder?: string
+	interface ColorInputProps extends HTMLInputAttributes {
 		icon?: Snippet
-	} = $props()
+	}
+
+	let { value = $bindable(), placeholder, icon, ...stuff }: ColorInputProps = $props()
 </script>
 
 <label class="vuuui-color-input">
-	<input type="color" bind:value {placeholder} />
+	<input type="color" bind:value {placeholder} {...stuff} />
 
 	<div class="vuuui-icon">
 		{#if icon}
