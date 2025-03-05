@@ -13,4 +13,12 @@
 	<a href="/components/avatar">
 		<TextButton>Avatar</TextButton>
 	</a>
+
+	<a href="/components/colors">
+		<TextButton>Colors</TextButton>
+	</a>
+
+	<a href="/components/spinners">
+		<TextButton>Spinners</TextButton>
+	</a>
 </Spacer>
