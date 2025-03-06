@@ -1,22 +1,26 @@
 <script lang="ts">
+	import type { HTMLAttributes } from 'svelte/elements'
 	import '@vuuui/styles/components/containment/container.scss'
-	import type { Snippet } from 'svelte'
 
-	let {
-		children,
-		xs,
-		sm,
-		md,
-		fluid
-	}: {
-		children: Snippet
+	interface ContainerProps extends HTMLAttributes<HTMLElement> {
 		xs?: boolean
 		sm?: boolean
 		md?: boolean
 		fluid?: boolean
-	} = $props()
+	}
+
+	let { children, xs, sm, md, fluid, ...rest }: ContainerProps = $props()
 </script>
 
-<section class="vuuui-container" data-xs={xs} data-sm={sm} data-md={md} data-fluid={fluid}>
-	{@render children()}
+<section
+	{...rest}
+	data-xs={xs}
+	data-sm={sm}
+	data-md={md}
+	data-fluid={fluid}
+	class="vuuui-container {rest.class}"
+>
+	{#if children}
+		{@render children()}
+	{/if}
 </section>
