@@ -1,4 +1,5 @@
-@import '@vuuui/styles/vuuui.scss';
+@use '@vuuui/styles/vuuui.scss';
+@use 'sass:map';
 
 .app-navigation {
 	display: block;
@@ -31,7 +32,7 @@
 	height: var(--appbar-height);
 }
 
-@media screen and (min-width: map-get($break-point, break-xs)) {
+@media screen and (min-width: map.get(vuuui.$break-point, break-xs)) {
 	.app-navigation {
 		width: auto;
 		height: 100%;
