@@ -29,4 +29,8 @@
 	<a href="/components/overlay">
 		<TextButton>Overlay</TextButton>
 	</a>
+
+	<a href="/components/navigation">
+		<TextButton>Navigation</TextButton>
+	</a>
 </Spacer>
