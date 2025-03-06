@@ -48,11 +48,11 @@
 		{#each links as link, i (i)}
 			<NavigationBarButton active={activeIndex == i}>
 				{#snippet icon()}
-					<link.icon />
+					<link.icon font-size="1rem" />
 				{/snippet}
 
 				{#snippet iconActive()}
-					<link.iconActive />
+					<link.iconActive font-size="1rem" />
 				{/snippet}
 
 				{link.label}
