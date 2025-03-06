@@ -24,7 +24,7 @@
     }
   }
 
-  &[active='true'] {
+  &[data-active='true'] {
     & > .vuuui-icon {
       background-color: var(--vuuui-color-primary);
       color: var(--vuuui-color-primary--text);
