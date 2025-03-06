@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '@vuuui/styles/vuuui.scss'
-	import '$lib/index.scss'
+	import './index.scss'
 
 	import { Container, Gap, Spacer, TextButton } from '$lib/index.js'
 </script>

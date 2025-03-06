@@ -25,4 +25,8 @@
 	<a href="/components/inputs">
 		<TextButton>Inputs</TextButton>
 	</a>
+
+	<a href="/components/overlay">
+		<TextButton>Overlay</TextButton>
+	</a>
 </Spacer>
