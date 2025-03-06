@@ -7,7 +7,7 @@
   border: 1px solid var(--vuuui-color-primary--light);
 
   &:not(:disabled):hover,
-  &[active='true'] {
+  &[data-active='true'] {
     border: 1px solid var(--vuuui-color-primary);
   }
 }

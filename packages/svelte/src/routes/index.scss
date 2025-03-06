@@ -1,0 +1,54 @@
+:root {
+	--navbar-desktop-width: 6rem;
+	--navbar-mobile-height: 5rem;
+	--appbar-height: 3rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+$scrollbar-size: var(--vuuui-padding--half);
+
+::-webkit-scrollbar {
+	width: $scrollbar-size;
+	height: $scrollbar-size;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: var(--vuuui-radius--half);
+	background-color: var(--vuuui-color-primary--light);
+
+	&:hover {
+		background-color: var(--vuuui-color-primary);
+	}
+}
+
+body {
+	font-family: system-ui;
+
+	&[data-vuuui-dialog-level] {
+		overflow-y: hidden;
+
+		@supports (-webkit-font-smoothing: antialiased) {
+			&,
+			.app-bar {
+				padding-right: $scrollbar-size;
+			}
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 1.7rem;
+}

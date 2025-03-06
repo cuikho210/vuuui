@@ -8,19 +8,19 @@
   border-radius: var(--vuuui-radius);
   padding: var(--vuuui-padding);
 
-  &[xs='true'] {
+  &[data-xs='true'] {
     max-width: var(--vuuui-break-xs);
   }
 
-  &[sm='true'] {
+  &[data-sm='true'] {
     max-width: var(--vuuui-break-sm);
   }
 
-  &[md='true'] {
+  &[data-md='true'] {
     max-width: var(--vuuui-break-md);
   }
 
-  &[fluid='true'] {
+  &[data-fluid='true'] {
     width: 100%;
   }
 }

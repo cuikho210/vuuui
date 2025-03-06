@@ -1,0 +1,58 @@
+@use '@vuuui/styles/vuuui.scss';
+@use 'sass:map';
+
+.app-navigation {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+}
+
+.app-bar {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 51;
+	width: 100%;
+}
+
+.app-body {
+	margin-top: var(--appbar-height);
+	margin-bottom: var(--navbar-mobile-height);
+}
+
+.vuuui-navbar {
+	height: var(--navbar-mobile-height);
+}
+
+.vuuui-appbar {
+	height: var(--appbar-height);
+}
+
+@media screen and (min-width: map.get(vuuui.$break-point, break-xs)) {
+	.app-navigation {
+		width: auto;
+		height: 100%;
+	}
+
+	.app-body {
+		margin-bottom: 0;
+	}
+
+	.app-body,
+	.app-bar {
+		margin-left: var(--navbar-desktop-width);
+	}
+
+	.app-bar {
+		width: calc(100% - var(--navbar-desktop-width));
+	}
+
+	.vuuui-navbar {
+		width: var(--navbar-desktop-width);
+		height: 100%;
+	}
+}

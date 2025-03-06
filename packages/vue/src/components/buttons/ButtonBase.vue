@@ -7,10 +7,7 @@ const isDisabled = computed(() => props.loading || props.disabled)
 </script>
 
 <template>
-  <button
-    :disabled="isDisabled"
-    :active="active"
-  >
+  <button :disabled="isDisabled" :data-active="active">
     <slot />
   </button>
 </template>
