@@ -39,14 +39,14 @@
 		}
 	]
 
-	let activeIndex = $state(0)
+	let activeIndex = $state(1)
 	let pageTitle = $state(links[0].label)
 </script>
 
 <div class="app-navigation">
 	<NavigationBar class="vuuui-navbar">
 		{#each links as link, i (i)}
-			<NavigationBarButton active={activeIndex == i}>
+			<NavigationBarButton active={activeIndex == i} href={link.path}>
 				{#snippet icon()}
 					<link.icon font-size="1rem" />
 				{/snippet}
