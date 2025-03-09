@@ -1,15 +1,12 @@
 <script lang="ts">
 	import '@vuuui/styles/components/containment/avatar.scss'
+	import type { HTMLImgAttributes } from 'svelte/elements'
 
-	let {
-		src,
-		size = '64px',
-		alt
-	}: {
-		src: string
-		alt?: string
-		size?: string
-	} = $props()
+	interface AvatarProps extends HTMLImgAttributes {
+		size: string | number
+	}
+
+	let { size = '64px', ...rest }: AvatarProps = $props()
 </script>
 
-<img class="vuuui-avatar" style:width={size} {src} {alt} />
+<img {...rest} class="vuuui-avatar {rest.class}" style:width={size} />

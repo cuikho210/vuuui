@@ -1,10 +1,12 @@
 <script lang="ts">
 	import '@vuuui/styles/components/containment/breadcrumb.scss'
-	import type { Snippet } from 'svelte'
+	import type { HTMLAttributes } from 'svelte/elements'
 
-	let { children }: { children: Snippet } = $props()
+	let { children, ...rest }: HTMLAttributes<HTMLDivElement> = $props()
 </script>
 
-<div class="vuuui-breadcrumb">
-	{@render children()}
+<div {...rest} class="vuuui-breadcrumb {rest.class}">
+	{#if children}
+		{@render children()}
+	{/if}
 </div>

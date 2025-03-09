@@ -1,22 +1,26 @@
 <script lang="ts">
 	import '@vuuui/styles/components/containment/card.scss'
-	import type { Snippet } from 'svelte'
+	import type { HTMLAttributes } from 'svelte/elements'
 
-	let {
-		children,
-		xs,
-		sm,
-		md,
-		fluid
-	}: {
-		children: Snippet
+	interface CardProps extends HTMLAttributes<HTMLElement> {
 		xs?: boolean
 		sm?: boolean
 		md?: boolean
 		fluid?: boolean
-	} = $props()
+	}
+
+	let { children, xs, sm, md, fluid, ...rest }: CardProps = $props()
 </script>
 
-<section class="vuuui-card" data-xs={xs} data-sm={sm} data-md={md} data-fluid={fluid}>
-	{@render children()}
+<section
+	{...rest}
+	class="vuuui-card {rest.class}"
+	data-xs={xs}
+	data-sm={sm}
+	data-md={md}
+	data-fluid={fluid}
+>
+	{#if children}
+		{@render children()}
+	{/if}
 </section>
