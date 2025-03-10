@@ -6,4 +6,4 @@
 	let props: TextButtonBaseProps = $props()
 </script>
 
-<TextButtonBase {...props} class="vuuui-filled-button" />
+<TextButtonBase {...props} class="vuuui-filled-button {props.class}" />

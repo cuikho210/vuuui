@@ -6,4 +6,4 @@
 	let props: TextButtonBaseProps = $props()
 </script>
 
-<TextButtonBase {...props} class="vuuui-outlined-button" />
+<TextButtonBase {...props} class="vuuui-outlined-button {props.class}" />
